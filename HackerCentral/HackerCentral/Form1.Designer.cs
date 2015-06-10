@@ -27,33 +27,41 @@
          this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
          this.homeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
          this.codingProjectsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-         this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-         this.tasksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-         this.historyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-         this.goalsToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+         this.codingListOfProjectsItem = new System.Windows.Forms.ToolStripMenuItem();
+         this.codingTasksItem = new System.Windows.Forms.ToolStripMenuItem();
+         this.codingHistoryItem = new System.Windows.Forms.ToolStripMenuItem();
+         this.codingGoalsItem = new System.Windows.Forms.ToolStripMenuItem();
+         this.codingNewProjectItem = new System.Windows.Forms.ToolStripMenuItem();
          this.financesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-         this.tasksToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-         this.historyToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-         this.goalsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+         this.fitnessProgressItem = new System.Windows.Forms.ToolStripMenuItem();
+         this.fitnessHistoryItem = new System.Windows.Forms.ToolStripMenuItem();
+         this.fitnessGoalsItem = new System.Windows.Forms.ToolStripMenuItem();
+         this.fitnessAddExerciseItem = new System.Windows.Forms.ToolStripMenuItem();
          this.behavioralToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-         this.tasksToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-         this.historyToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-         this.goalsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+         this.behavioralProgressItem = new System.Windows.Forms.ToolStripMenuItem();
+         this.behavioralHistoryItem = new System.Windows.Forms.ToolStripMenuItem();
+         this.behaviorialGoalsItem = new System.Windows.Forms.ToolStripMenuItem();
          this.financesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-         this.currentMonthToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-         this.historyToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
-         this.newTransactionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-         this.artToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+         this.financesCurrentMonthItem = new System.Windows.Forms.ToolStripMenuItem();
+         this.financesHistoryItem = new System.Windows.Forms.ToolStripMenuItem();
+         this.financesNewTransactionItem = new System.Windows.Forms.ToolStripMenuItem();
+         this.artTasksItem = new System.Windows.Forms.ToolStripMenuItem();
          this.tasksToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
-         this.historyToolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
-         this.goalsToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+         this.artHistoryItem = new System.Windows.Forms.ToolStripMenuItem();
+         this.artGoalsItem = new System.Windows.Forms.ToolStripMenuItem();
          this.musicToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-         this.tasksToolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
-         this.historyToolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
-         this.goalsToolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
+         this.musicTasksItem = new System.Windows.Forms.ToolStripMenuItem();
+         this.musicHistoryItem = new System.Windows.Forms.ToolStripMenuItem();
+         this.musicGoalsItem = new System.Windows.Forms.ToolStripMenuItem();
          this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-         this.settingsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+         this.settingsSettingsItem = new System.Windows.Forms.ToolStripMenuItem();
          this.InfoPanel = new System.Windows.Forms.Panel();
+         this.researchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+         this.researchTasksItem = new System.Windows.Forms.ToolStripMenuItem();
+         this.researchReadingsItem = new System.Windows.Forms.ToolStripMenuItem();
+         this.researchGoalsItem = new System.Windows.Forms.ToolStripMenuItem();
+         this.researchHistoryItem = new System.Windows.Forms.ToolStripMenuItem();
+         this.addNewTrackerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
          this.menuStrip1.SuspendLayout();
          this.SuspendLayout();
          // 
@@ -66,9 +74,10 @@
             this.financesToolStripMenuItem,
             this.behavioralToolStripMenuItem,
             this.financesToolStripMenuItem1,
-            this.artToolStripMenuItem,
+            this.artTasksItem,
             this.musicToolStripMenuItem,
-            this.settingsToolStripMenuItem});
+            this.settingsToolStripMenuItem,
+            this.researchToolStripMenuItem});
          this.menuStrip1.Location = new System.Drawing.Point(0, 0);
          this.menuStrip1.Name = "menuStrip1";
          this.menuStrip1.Size = new System.Drawing.Size(977, 24);
@@ -94,220 +103,236 @@
          // codingProjectsToolStripMenuItem
          // 
          this.codingProjectsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem1,
-            this.tasksToolStripMenuItem,
-            this.historyToolStripMenuItem,
-            this.goalsToolStripMenuItem2});
+            this.codingListOfProjectsItem,
+            this.codingTasksItem,
+            this.codingHistoryItem,
+            this.codingGoalsItem,
+            this.codingNewProjectItem});
          this.codingProjectsToolStripMenuItem.ForeColor = System.Drawing.Color.DarkRed;
          this.codingProjectsToolStripMenuItem.Name = "codingProjectsToolStripMenuItem";
          this.codingProjectsToolStripMenuItem.Size = new System.Drawing.Size(103, 20);
          this.codingProjectsToolStripMenuItem.Text = "Coding Projects";
+         this.codingProjectsToolStripMenuItem.Click += new System.EventHandler(this.codingProjectsToolStripMenuItem_Click);
          // 
-         // toolStripMenuItem1
+         // codingListOfProjectsItem
          // 
-         this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-         this.toolStripMenuItem1.Size = new System.Drawing.Size(153, 22);
-         this.toolStripMenuItem1.Text = "List Of Projects";
-         this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
+         this.codingListOfProjectsItem.Name = "codingListOfProjectsItem";
+         this.codingListOfProjectsItem.Size = new System.Drawing.Size(153, 22);
+         this.codingListOfProjectsItem.Text = "List Of Projects";
+         this.codingListOfProjectsItem.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
          // 
-         // tasksToolStripMenuItem
+         // codingTasksItem
          // 
-         this.tasksToolStripMenuItem.Name = "tasksToolStripMenuItem";
-         this.tasksToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
-         this.tasksToolStripMenuItem.Text = "Tasks";
-         this.tasksToolStripMenuItem.Click += new System.EventHandler(this.tasksToolStripMenuItem_Click);
+         this.codingTasksItem.Name = "codingTasksItem";
+         this.codingTasksItem.Size = new System.Drawing.Size(153, 22);
+         this.codingTasksItem.Text = "Tasks";
+         this.codingTasksItem.Click += new System.EventHandler(this.tasksToolStripMenuItem_Click);
          // 
-         // historyToolStripMenuItem
+         // codingHistoryItem
          // 
-         this.historyToolStripMenuItem.Name = "historyToolStripMenuItem";
-         this.historyToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
-         this.historyToolStripMenuItem.Text = "History";
-         this.historyToolStripMenuItem.Click += new System.EventHandler(this.historyToolStripMenuItem_Click);
+         this.codingHistoryItem.Name = "codingHistoryItem";
+         this.codingHistoryItem.Size = new System.Drawing.Size(153, 22);
+         this.codingHistoryItem.Text = "History";
+         this.codingHistoryItem.Click += new System.EventHandler(this.historyToolStripMenuItem_Click);
          // 
-         // goalsToolStripMenuItem2
+         // codingGoalsItem
          // 
-         this.goalsToolStripMenuItem2.Name = "goalsToolStripMenuItem2";
-         this.goalsToolStripMenuItem2.Size = new System.Drawing.Size(153, 22);
-         this.goalsToolStripMenuItem2.Text = "Goals";
-         this.goalsToolStripMenuItem2.Click += new System.EventHandler(this.goalsToolStripMenuItem2_Click);
+         this.codingGoalsItem.Name = "codingGoalsItem";
+         this.codingGoalsItem.Size = new System.Drawing.Size(153, 22);
+         this.codingGoalsItem.Text = "Goals";
+         this.codingGoalsItem.Click += new System.EventHandler(this.goalsToolStripMenuItem2_Click);
+         // 
+         // codingNewProjectItem
+         // 
+         this.codingNewProjectItem.Name = "codingNewProjectItem";
+         this.codingNewProjectItem.Size = new System.Drawing.Size(153, 22);
+         this.codingNewProjectItem.Text = "New Project";
          // 
          // financesToolStripMenuItem
          // 
          this.financesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tasksToolStripMenuItem1,
-            this.historyToolStripMenuItem1,
-            this.goalsToolStripMenuItem1});
+            this.fitnessProgressItem,
+            this.fitnessHistoryItem,
+            this.fitnessGoalsItem,
+            this.fitnessAddExerciseItem});
          this.financesToolStripMenuItem.ForeColor = System.Drawing.Color.DarkRed;
          this.financesToolStripMenuItem.Name = "financesToolStripMenuItem";
          this.financesToolStripMenuItem.Size = new System.Drawing.Size(55, 20);
          this.financesToolStripMenuItem.Text = "Fitness";
          this.financesToolStripMenuItem.Click += new System.EventHandler(this.financesToolStripMenuItem_Click);
          // 
-         // tasksToolStripMenuItem1
+         // fitnessProgressItem
          // 
-         this.tasksToolStripMenuItem1.Name = "tasksToolStripMenuItem1";
-         this.tasksToolStripMenuItem1.Size = new System.Drawing.Size(112, 22);
-         this.tasksToolStripMenuItem1.Text = "Tasks";
-         this.tasksToolStripMenuItem1.Click += new System.EventHandler(this.tasksToolStripMenuItem1_Click);
+         this.fitnessProgressItem.Name = "fitnessProgressItem";
+         this.fitnessProgressItem.Size = new System.Drawing.Size(152, 22);
+         this.fitnessProgressItem.Text = "Progress";
+         this.fitnessProgressItem.Click += new System.EventHandler(this.tasksToolStripMenuItem1_Click);
          // 
-         // historyToolStripMenuItem1
+         // fitnessHistoryItem
          // 
-         this.historyToolStripMenuItem1.Name = "historyToolStripMenuItem1";
-         this.historyToolStripMenuItem1.Size = new System.Drawing.Size(112, 22);
-         this.historyToolStripMenuItem1.Text = "History";
-         this.historyToolStripMenuItem1.Click += new System.EventHandler(this.historyToolStripMenuItem1_Click);
+         this.fitnessHistoryItem.Name = "fitnessHistoryItem";
+         this.fitnessHistoryItem.Size = new System.Drawing.Size(152, 22);
+         this.fitnessHistoryItem.Text = "History";
+         this.fitnessHistoryItem.Click += new System.EventHandler(this.historyToolStripMenuItem1_Click);
          // 
-         // goalsToolStripMenuItem1
+         // fitnessGoalsItem
          // 
-         this.goalsToolStripMenuItem1.Name = "goalsToolStripMenuItem1";
-         this.goalsToolStripMenuItem1.Size = new System.Drawing.Size(112, 22);
-         this.goalsToolStripMenuItem1.Text = "Goals";
-         this.goalsToolStripMenuItem1.Click += new System.EventHandler(this.goalsToolStripMenuItem1_Click);
+         this.fitnessGoalsItem.Name = "fitnessGoalsItem";
+         this.fitnessGoalsItem.Size = new System.Drawing.Size(152, 22);
+         this.fitnessGoalsItem.Text = "Goals";
+         this.fitnessGoalsItem.Click += new System.EventHandler(this.goalsToolStripMenuItem1_Click);
+         // 
+         // fitnessAddExerciseItem
+         // 
+         this.fitnessAddExerciseItem.Name = "fitnessAddExerciseItem";
+         this.fitnessAddExerciseItem.Size = new System.Drawing.Size(152, 22);
+         this.fitnessAddExerciseItem.Text = "Add Exersize";
          // 
          // behavioralToolStripMenuItem
          // 
          this.behavioralToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tasksToolStripMenuItem2,
-            this.historyToolStripMenuItem2,
-            this.goalsToolStripMenuItem});
+            this.behavioralProgressItem,
+            this.behavioralHistoryItem,
+            this.behaviorialGoalsItem,
+            this.addNewTrackerToolStripMenuItem});
          this.behavioralToolStripMenuItem.ForeColor = System.Drawing.Color.DarkRed;
          this.behavioralToolStripMenuItem.Name = "behavioralToolStripMenuItem";
          this.behavioralToolStripMenuItem.Size = new System.Drawing.Size(74, 20);
          this.behavioralToolStripMenuItem.Text = "Behavioral";
          // 
-         // tasksToolStripMenuItem2
+         // behavioralProgressItem
          // 
-         this.tasksToolStripMenuItem2.Name = "tasksToolStripMenuItem2";
-         this.tasksToolStripMenuItem2.Size = new System.Drawing.Size(112, 22);
-         this.tasksToolStripMenuItem2.Text = "Tasks";
-         this.tasksToolStripMenuItem2.Click += new System.EventHandler(this.tasksToolStripMenuItem2_Click);
+         this.behavioralProgressItem.Name = "behavioralProgressItem";
+         this.behavioralProgressItem.Size = new System.Drawing.Size(152, 22);
+         this.behavioralProgressItem.Text = "Progress";
+         this.behavioralProgressItem.Click += new System.EventHandler(this.tasksToolStripMenuItem2_Click);
          // 
-         // historyToolStripMenuItem2
+         // behavioralHistoryItem
          // 
-         this.historyToolStripMenuItem2.Name = "historyToolStripMenuItem2";
-         this.historyToolStripMenuItem2.Size = new System.Drawing.Size(112, 22);
-         this.historyToolStripMenuItem2.Text = "History";
-         this.historyToolStripMenuItem2.Click += new System.EventHandler(this.historyToolStripMenuItem2_Click);
+         this.behavioralHistoryItem.Name = "behavioralHistoryItem";
+         this.behavioralHistoryItem.Size = new System.Drawing.Size(152, 22);
+         this.behavioralHistoryItem.Text = "History";
+         this.behavioralHistoryItem.Click += new System.EventHandler(this.historyToolStripMenuItem2_Click);
          // 
-         // goalsToolStripMenuItem
+         // behaviorialGoalsItem
          // 
-         this.goalsToolStripMenuItem.Name = "goalsToolStripMenuItem";
-         this.goalsToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
-         this.goalsToolStripMenuItem.Text = "Goals";
-         this.goalsToolStripMenuItem.Click += new System.EventHandler(this.goalsToolStripMenuItem_Click);
+         this.behaviorialGoalsItem.Name = "behaviorialGoalsItem";
+         this.behaviorialGoalsItem.Size = new System.Drawing.Size(152, 22);
+         this.behaviorialGoalsItem.Text = "Goals";
+         this.behaviorialGoalsItem.Click += new System.EventHandler(this.goalsToolStripMenuItem_Click);
          // 
          // financesToolStripMenuItem1
          // 
          this.financesToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.currentMonthToolStripMenuItem,
-            this.historyToolStripMenuItem3,
-            this.newTransactionToolStripMenuItem});
+            this.financesCurrentMonthItem,
+            this.financesHistoryItem,
+            this.financesNewTransactionItem});
          this.financesToolStripMenuItem1.ForeColor = System.Drawing.Color.DarkRed;
          this.financesToolStripMenuItem1.Name = "financesToolStripMenuItem1";
          this.financesToolStripMenuItem1.Size = new System.Drawing.Size(65, 20);
          this.financesToolStripMenuItem1.Text = "Finances";
          // 
-         // currentMonthToolStripMenuItem
+         // financesCurrentMonthItem
          // 
-         this.currentMonthToolStripMenuItem.Name = "currentMonthToolStripMenuItem";
-         this.currentMonthToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
-         this.currentMonthToolStripMenuItem.Text = "Current Month";
-         this.currentMonthToolStripMenuItem.Click += new System.EventHandler(this.currentMonthToolStripMenuItem_Click);
+         this.financesCurrentMonthItem.Name = "financesCurrentMonthItem";
+         this.financesCurrentMonthItem.Size = new System.Drawing.Size(163, 22);
+         this.financesCurrentMonthItem.Text = "Current Month";
+         this.financesCurrentMonthItem.Click += new System.EventHandler(this.currentMonthToolStripMenuItem_Click);
          // 
-         // historyToolStripMenuItem3
+         // financesHistoryItem
          // 
-         this.historyToolStripMenuItem3.Name = "historyToolStripMenuItem3";
-         this.historyToolStripMenuItem3.Size = new System.Drawing.Size(163, 22);
-         this.historyToolStripMenuItem3.Text = "History";
-         this.historyToolStripMenuItem3.Click += new System.EventHandler(this.historyToolStripMenuItem3_Click);
+         this.financesHistoryItem.Name = "financesHistoryItem";
+         this.financesHistoryItem.Size = new System.Drawing.Size(163, 22);
+         this.financesHistoryItem.Text = "History";
+         this.financesHistoryItem.Click += new System.EventHandler(this.historyToolStripMenuItem3_Click);
          // 
-         // newTransactionToolStripMenuItem
+         // financesNewTransactionItem
          // 
-         this.newTransactionToolStripMenuItem.Name = "newTransactionToolStripMenuItem";
-         this.newTransactionToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
-         this.newTransactionToolStripMenuItem.Text = "New Transaction";
-         this.newTransactionToolStripMenuItem.Click += new System.EventHandler(this.newTransactionToolStripMenuItem_Click);
+         this.financesNewTransactionItem.Name = "financesNewTransactionItem";
+         this.financesNewTransactionItem.Size = new System.Drawing.Size(163, 22);
+         this.financesNewTransactionItem.Text = "New Transaction";
+         this.financesNewTransactionItem.Click += new System.EventHandler(this.newTransactionToolStripMenuItem_Click);
          // 
-         // artToolStripMenuItem
+         // artTasksItem
          // 
-         this.artToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+         this.artTasksItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tasksToolStripMenuItem3,
-            this.historyToolStripMenuItem4,
-            this.goalsToolStripMenuItem3});
-         this.artToolStripMenuItem.ForeColor = System.Drawing.Color.DarkRed;
-         this.artToolStripMenuItem.Name = "artToolStripMenuItem";
-         this.artToolStripMenuItem.Size = new System.Drawing.Size(35, 20);
-         this.artToolStripMenuItem.Text = "Art";
+            this.artHistoryItem,
+            this.artGoalsItem});
+         this.artTasksItem.ForeColor = System.Drawing.Color.DarkRed;
+         this.artTasksItem.Name = "artTasksItem";
+         this.artTasksItem.Size = new System.Drawing.Size(35, 20);
+         this.artTasksItem.Text = "Art";
          // 
          // tasksToolStripMenuItem3
          // 
          this.tasksToolStripMenuItem3.Name = "tasksToolStripMenuItem3";
-         this.tasksToolStripMenuItem3.Size = new System.Drawing.Size(112, 22);
+         this.tasksToolStripMenuItem3.Size = new System.Drawing.Size(152, 22);
          this.tasksToolStripMenuItem3.Text = "Tasks";
          this.tasksToolStripMenuItem3.Click += new System.EventHandler(this.tasksToolStripMenuItem3_Click);
          // 
-         // historyToolStripMenuItem4
+         // artHistoryItem
          // 
-         this.historyToolStripMenuItem4.Name = "historyToolStripMenuItem4";
-         this.historyToolStripMenuItem4.Size = new System.Drawing.Size(112, 22);
-         this.historyToolStripMenuItem4.Text = "History";
-         this.historyToolStripMenuItem4.Click += new System.EventHandler(this.historyToolStripMenuItem4_Click);
+         this.artHistoryItem.Name = "artHistoryItem";
+         this.artHistoryItem.Size = new System.Drawing.Size(152, 22);
+         this.artHistoryItem.Text = "History";
+         this.artHistoryItem.Click += new System.EventHandler(this.historyToolStripMenuItem4_Click);
          // 
-         // goalsToolStripMenuItem3
+         // artGoalsItem
          // 
-         this.goalsToolStripMenuItem3.Name = "goalsToolStripMenuItem3";
-         this.goalsToolStripMenuItem3.Size = new System.Drawing.Size(112, 22);
-         this.goalsToolStripMenuItem3.Text = "Goals";
-         this.goalsToolStripMenuItem3.Click += new System.EventHandler(this.goalsToolStripMenuItem3_Click);
+         this.artGoalsItem.Name = "artGoalsItem";
+         this.artGoalsItem.Size = new System.Drawing.Size(152, 22);
+         this.artGoalsItem.Text = "Goals";
+         this.artGoalsItem.Click += new System.EventHandler(this.goalsToolStripMenuItem3_Click);
          // 
          // musicToolStripMenuItem
          // 
          this.musicToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tasksToolStripMenuItem4,
-            this.historyToolStripMenuItem5,
-            this.goalsToolStripMenuItem4});
+            this.musicTasksItem,
+            this.musicHistoryItem,
+            this.musicGoalsItem});
          this.musicToolStripMenuItem.ForeColor = System.Drawing.Color.DarkRed;
          this.musicToolStripMenuItem.Name = "musicToolStripMenuItem";
          this.musicToolStripMenuItem.Size = new System.Drawing.Size(51, 20);
          this.musicToolStripMenuItem.Text = "Music";
          // 
-         // tasksToolStripMenuItem4
+         // musicTasksItem
          // 
-         this.tasksToolStripMenuItem4.Name = "tasksToolStripMenuItem4";
-         this.tasksToolStripMenuItem4.Size = new System.Drawing.Size(112, 22);
-         this.tasksToolStripMenuItem4.Text = "Tasks";
-         this.tasksToolStripMenuItem4.Click += new System.EventHandler(this.tasksToolStripMenuItem4_Click);
+         this.musicTasksItem.Name = "musicTasksItem";
+         this.musicTasksItem.Size = new System.Drawing.Size(152, 22);
+         this.musicTasksItem.Text = "Tasks";
+         this.musicTasksItem.Click += new System.EventHandler(this.tasksToolStripMenuItem4_Click);
          // 
-         // historyToolStripMenuItem5
+         // musicHistoryItem
          // 
-         this.historyToolStripMenuItem5.Name = "historyToolStripMenuItem5";
-         this.historyToolStripMenuItem5.Size = new System.Drawing.Size(112, 22);
-         this.historyToolStripMenuItem5.Text = "History";
-         this.historyToolStripMenuItem5.Click += new System.EventHandler(this.historyToolStripMenuItem5_Click);
+         this.musicHistoryItem.Name = "musicHistoryItem";
+         this.musicHistoryItem.Size = new System.Drawing.Size(152, 22);
+         this.musicHistoryItem.Text = "History";
+         this.musicHistoryItem.Click += new System.EventHandler(this.historyToolStripMenuItem5_Click);
          // 
-         // goalsToolStripMenuItem4
+         // musicGoalsItem
          // 
-         this.goalsToolStripMenuItem4.Name = "goalsToolStripMenuItem4";
-         this.goalsToolStripMenuItem4.Size = new System.Drawing.Size(112, 22);
-         this.goalsToolStripMenuItem4.Text = "Goals";
-         this.goalsToolStripMenuItem4.Click += new System.EventHandler(this.goalsToolStripMenuItem4_Click);
+         this.musicGoalsItem.Name = "musicGoalsItem";
+         this.musicGoalsItem.Size = new System.Drawing.Size(152, 22);
+         this.musicGoalsItem.Text = "Goals";
+         this.musicGoalsItem.Click += new System.EventHandler(this.goalsToolStripMenuItem4_Click);
          // 
          // settingsToolStripMenuItem
          // 
          this.settingsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.settingsToolStripMenuItem1});
+            this.settingsSettingsItem});
          this.settingsToolStripMenuItem.ForeColor = System.Drawing.Color.DarkRed;
          this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
          this.settingsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
          this.settingsToolStripMenuItem.Text = "Settings";
          this.settingsToolStripMenuItem.Click += new System.EventHandler(this.settingsToolStripMenuItem_Click);
          // 
-         // settingsToolStripMenuItem1
+         // settingsSettingsItem
          // 
-         this.settingsToolStripMenuItem1.Name = "settingsToolStripMenuItem1";
-         this.settingsToolStripMenuItem1.Size = new System.Drawing.Size(116, 22);
-         this.settingsToolStripMenuItem1.Text = "Settings";
-         this.settingsToolStripMenuItem1.Click += new System.EventHandler(this.settingsToolStripMenuItem1_Click);
+         this.settingsSettingsItem.Name = "settingsSettingsItem";
+         this.settingsSettingsItem.Size = new System.Drawing.Size(152, 22);
+         this.settingsSettingsItem.Text = "Settings";
+         this.settingsSettingsItem.Click += new System.EventHandler(this.settingsToolStripMenuItem1_Click);
          // 
          // InfoPanel
          // 
@@ -319,6 +344,49 @@
          this.InfoPanel.TabIndex = 1;
          this.InfoPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.InfoPanel_Paint);
          // 
+         // researchToolStripMenuItem
+         // 
+         this.researchToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.researchTasksItem,
+            this.researchReadingsItem,
+            this.researchGoalsItem,
+            this.researchHistoryItem});
+         this.researchToolStripMenuItem.ForeColor = System.Drawing.Color.DarkRed;
+         this.researchToolStripMenuItem.Name = "researchToolStripMenuItem";
+         this.researchToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
+         this.researchToolStripMenuItem.Text = "Research";
+         this.researchToolStripMenuItem.Click += new System.EventHandler(this.researchToolStripMenuItem_Click);
+         // 
+         // researchTasksItem
+         // 
+         this.researchTasksItem.Name = "researchTasksItem";
+         this.researchTasksItem.Size = new System.Drawing.Size(152, 22);
+         this.researchTasksItem.Text = "Tasks";
+         // 
+         // researchReadingsItem
+         // 
+         this.researchReadingsItem.Name = "researchReadingsItem";
+         this.researchReadingsItem.Size = new System.Drawing.Size(152, 22);
+         this.researchReadingsItem.Text = "Readings";
+         // 
+         // researchGoalsItem
+         // 
+         this.researchGoalsItem.Name = "researchGoalsItem";
+         this.researchGoalsItem.Size = new System.Drawing.Size(152, 22);
+         this.researchGoalsItem.Text = "Goals";
+         // 
+         // researchHistoryItem
+         // 
+         this.researchHistoryItem.Name = "researchHistoryItem";
+         this.researchHistoryItem.Size = new System.Drawing.Size(152, 22);
+         this.researchHistoryItem.Text = "History";
+         // 
+         // addNewTrackerToolStripMenuItem
+         // 
+         this.addNewTrackerToolStripMenuItem.Name = "addNewTrackerToolStripMenuItem";
+         this.addNewTrackerToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
+         this.addNewTrackerToolStripMenuItem.Text = "Add New Tracker";
+         // 
          // Form1
          // 
          this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -329,7 +397,8 @@
          this.Controls.Add(this.menuStrip1);
          this.MainMenuStrip = this.menuStrip1;
          this.Name = "Form1";
-         this.Text = "Form1";
+         this.Text = "Hacker Central";
+         this.Load += new System.EventHandler(this.Form1_Load);
          this.menuStrip1.ResumeLayout(false);
          this.menuStrip1.PerformLayout();
          this.ResumeLayout(false);
@@ -344,32 +413,40 @@
       private System.Windows.Forms.ToolStripMenuItem codingProjectsToolStripMenuItem;
       private System.Windows.Forms.ToolStripMenuItem financesToolStripMenuItem;
       private System.Windows.Forms.ToolStripMenuItem homeToolStripMenuItem;
-      private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
-      private System.Windows.Forms.ToolStripMenuItem tasksToolStripMenuItem;
-      private System.Windows.Forms.ToolStripMenuItem historyToolStripMenuItem;
-      private System.Windows.Forms.ToolStripMenuItem goalsToolStripMenuItem2;
-      private System.Windows.Forms.ToolStripMenuItem tasksToolStripMenuItem1;
-      private System.Windows.Forms.ToolStripMenuItem historyToolStripMenuItem1;
-      private System.Windows.Forms.ToolStripMenuItem goalsToolStripMenuItem1;
+      private System.Windows.Forms.ToolStripMenuItem codingListOfProjectsItem;
+      private System.Windows.Forms.ToolStripMenuItem codingTasksItem;
+      private System.Windows.Forms.ToolStripMenuItem codingHistoryItem;
+      private System.Windows.Forms.ToolStripMenuItem codingGoalsItem;
+      private System.Windows.Forms.ToolStripMenuItem fitnessProgressItem;
+      private System.Windows.Forms.ToolStripMenuItem fitnessHistoryItem;
+      private System.Windows.Forms.ToolStripMenuItem fitnessGoalsItem;
       private System.Windows.Forms.ToolStripMenuItem behavioralToolStripMenuItem;
-      private System.Windows.Forms.ToolStripMenuItem tasksToolStripMenuItem2;
-      private System.Windows.Forms.ToolStripMenuItem historyToolStripMenuItem2;
-      private System.Windows.Forms.ToolStripMenuItem goalsToolStripMenuItem;
+      private System.Windows.Forms.ToolStripMenuItem behavioralProgressItem;
+      private System.Windows.Forms.ToolStripMenuItem behavioralHistoryItem;
+      private System.Windows.Forms.ToolStripMenuItem behaviorialGoalsItem;
       private System.Windows.Forms.ToolStripMenuItem financesToolStripMenuItem1;
-      private System.Windows.Forms.ToolStripMenuItem currentMonthToolStripMenuItem;
-      private System.Windows.Forms.ToolStripMenuItem historyToolStripMenuItem3;
-      private System.Windows.Forms.ToolStripMenuItem newTransactionToolStripMenuItem;
-      private System.Windows.Forms.ToolStripMenuItem artToolStripMenuItem;
+      private System.Windows.Forms.ToolStripMenuItem financesCurrentMonthItem;
+      private System.Windows.Forms.ToolStripMenuItem financesHistoryItem;
+      private System.Windows.Forms.ToolStripMenuItem financesNewTransactionItem;
+      private System.Windows.Forms.ToolStripMenuItem artTasksItem;
       private System.Windows.Forms.ToolStripMenuItem tasksToolStripMenuItem3;
-      private System.Windows.Forms.ToolStripMenuItem historyToolStripMenuItem4;
-      private System.Windows.Forms.ToolStripMenuItem goalsToolStripMenuItem3;
+      private System.Windows.Forms.ToolStripMenuItem artHistoryItem;
+      private System.Windows.Forms.ToolStripMenuItem artGoalsItem;
       private System.Windows.Forms.ToolStripMenuItem musicToolStripMenuItem;
-      private System.Windows.Forms.ToolStripMenuItem tasksToolStripMenuItem4;
-      private System.Windows.Forms.ToolStripMenuItem historyToolStripMenuItem5;
-      private System.Windows.Forms.ToolStripMenuItem goalsToolStripMenuItem4;
+      private System.Windows.Forms.ToolStripMenuItem musicTasksItem;
+      private System.Windows.Forms.ToolStripMenuItem musicHistoryItem;
+      private System.Windows.Forms.ToolStripMenuItem musicGoalsItem;
       private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
-      private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem1;
+      private System.Windows.Forms.ToolStripMenuItem settingsSettingsItem;
       private System.Windows.Forms.Panel InfoPanel;
+      private System.Windows.Forms.ToolStripMenuItem codingNewProjectItem;
+      private System.Windows.Forms.ToolStripMenuItem fitnessAddExerciseItem;
+      private System.Windows.Forms.ToolStripMenuItem researchToolStripMenuItem;
+      private System.Windows.Forms.ToolStripMenuItem researchTasksItem;
+      private System.Windows.Forms.ToolStripMenuItem researchReadingsItem;
+      private System.Windows.Forms.ToolStripMenuItem researchGoalsItem;
+      private System.Windows.Forms.ToolStripMenuItem researchHistoryItem;
+      private System.Windows.Forms.ToolStripMenuItem addNewTrackerToolStripMenuItem;
    }
 }
 

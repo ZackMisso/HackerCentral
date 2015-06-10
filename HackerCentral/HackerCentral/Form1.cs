@@ -113,5 +113,17 @@ namespace HackerCentral {
       private void settingsToolStripMenuItem_Click(object sender, EventArgs e) {
 
       }
+
+      private void codingProjectsToolStripMenuItem_Click(object sender, EventArgs e) {
+
+      }
+
+      private void researchToolStripMenuItem_Click(object sender, EventArgs e) {
+
+      }
+
+      private void Form1_Load(object sender, EventArgs e) {
+
+      }
    }
 }
