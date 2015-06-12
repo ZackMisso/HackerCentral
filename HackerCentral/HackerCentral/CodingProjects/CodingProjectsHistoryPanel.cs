@@ -1,4 +1,6 @@
-﻿namespace HackerCentral.CodingProjects {
-   public class CodingProjectsHistoryPanel {
+﻿using HackerCentral.Common;
+
+namespace HackerCentral.CodingProjects {
+   public class CodingProjectsHistoryPanel : CustomPanel{
    }
 }
