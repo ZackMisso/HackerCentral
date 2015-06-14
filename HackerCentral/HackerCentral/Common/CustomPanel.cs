@@ -1,4 +1,7 @@
 ﻿namespace HackerCentral.Common {
-   public abstract class CustomPanel {
+   public interface CustomPanel {
+      ClickResults handleClick(int x, int y);
+      void initialize(Panel window);
+      void 
    }
 }

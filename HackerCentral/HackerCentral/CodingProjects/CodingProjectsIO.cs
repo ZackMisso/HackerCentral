@@ -14,10 +14,46 @@ namespace HackerCentral.CodingProjects {
          return list;
       }
 
+      public List<CodingProjectsTask> readTasksFromFile(){
+         var list = new List<CodingProjectsTask>();
+         // to be impelemnted
+         return list;
+      }
+
+      public List<CodingProjectsTask> readFinishedTasksFromFile(){
+         var list = new List<CodingProjectsTask>();
+         // to be implemented
+         return list;
+      }
+
+      public List<CodingProjectsGoal> readGoalsFromFile(){
+         var list = new List<CodingProjectsGoal>();
+         // to be implemented
+         return list;
+      }
+
+      public List<CodingProjectsGoal> readFinishedGoalsFromFile(){
+         var list = new List<CodingProjectsGoal>();
+         // to be implemented
+         return list;
+      }
+
       public int getLinesOfCodeForProject(string url, List<string> typesOfFiles){
-         int lines = 0;
+         var lines = 0;
          // to be implemented
          return lines;
+      }
+
+      public void writeCodingProjectsDataToFile(List<CodingProject> projects){
+         // to be implemented
+      }
+
+      public void writeCodingProjectsTasksToFile(List<CodingProjectsTask> tasks){
+         // to be implemented
+      }
+
+      public void writeCodingProjectsGoalsToFile(List<CodingProjectsGoal> goals){
+         // to be implemented
       }
 
       // setter methods

@@ -6,7 +6,9 @@ namespace HackerCentral.CodingProjects {
       private List<Task> tasks;
       private string url;
       private string name;
+      private string description;
       private int linesOfCode;
+      private int projectID;
 
       public CodingProject(string val) {
          url = val;
@@ -24,14 +26,18 @@ namespace HackerCentral.CodingProjects {
       public List<string> getTypesOfFiles() { return typesOfFiles; }
       public List<Task> getTasks() { return tasks; }
       public string getName() { return name; }
+      public string getDescription() { return description; }
       public string getUrl() { return url; }
       public int getLinesOfCode() { return linesOfCode; }
+      public int getProjectID() { return projectID; }
 
       // setter methods
       public void setTypesOfFiles(List<string> param) { typesOfFiles = param; }
       public void setTasks(List<Task> param) { tasks = param; }
       public void setName(string param) { name = param; }
+      public void setDescription(string param) { description = param; }
       public void setUrl(string param) { url = param; }
       public void setLinesOfCode(int param) { linesOfCode = param; }
+      public void setProjectID(int param) { projectID = param; }
    }
 }

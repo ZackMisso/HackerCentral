@@ -66,10 +66,16 @@
     <Compile Include="CodingProjects\CodingProjectsNewProjectPanel.cs" />
     <Compile Include="CodingProjects\CodingProjectsTask.cs" />
     <Compile Include="CodingProjects\CodingProjectsTasksPanel.cs" />
+    <Compile Include="Common\ClickResults.cs" />
     <Compile Include="Common\CustomPanel.cs" />
+    <Compile Include="Common\Enum\GoalStatusEnum.cs" />
+    <Compile Include="Common\Enum\TaskStatusEnum.cs" />
     <Compile Include="Common\GlobalIO.cs" />
     <Compile Include="Common\GlobalManager.cs" />
+    <Compile Include="Common\Goal.cs" />
+    <Compile Include="Common\Point.cs" />
     <Compile Include="Common\Task.cs" />
+    <Compile Include="Common\TaskGoal.cs" />
     <Compile Include="DataStructures\DoubleWithDescription.cs" />
     <Compile Include="DataStructures\IntWithDescription.cs" />
     <Compile Include="Finances\FinanceData.cs" />
