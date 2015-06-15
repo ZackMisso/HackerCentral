@@ -1,4 +1,6 @@
-﻿namespace HackerCentral.School {
-   public class SchoolManager {
+﻿using HackerCentral.Common;
+
+namespace HackerCentral.School {
+   public class SchoolManager : Manager{
    }
 }

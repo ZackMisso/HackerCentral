@@ -1,4 +1,6 @@
-﻿namespace HackerCentral.Finances {
-   public class FinancesManager {
+﻿using HackerCentral.Common;
+
+namespace HackerCentral.Finances {
+   public class FinancesManager : Manager{
    }
 }

@@ -1,4 +1,6 @@
-﻿namespace HackerCentral.Common {
+﻿// TODO :: REPLACE THIS CLASS WITH SYSTEM.DRAWING.POINT
+
+namespace HackerCentral.Common {
    public class Point {
       private int xpos;
       private int ypos;

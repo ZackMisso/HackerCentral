@@ -1,4 +1,6 @@
-﻿namespace HackerCentral.Art {
-   public class ArtIO {
+﻿using HackerCentral.Common;
+
+namespace HackerCentral.Art {
+   public class ArtIO : IO{
    }
 }

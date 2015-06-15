@@ -1,7 +1,7 @@
 ﻿using HackerCentral.CodingProjects;
 
 namespace HackerCentral.Common {
-   public class GlobalManager {
+   public class GlobalManager : Manager{
       private CodingProjectsManager codingProjectsManager;
 
       public GlobalManager() {
@@ -9,7 +9,7 @@ namespace HackerCentral.Common {
       }
 
       public void update() {
-         // to be implement
+         codingProjectsManager.update();
       }
 
       // getter methods

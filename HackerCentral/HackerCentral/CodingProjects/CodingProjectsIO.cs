@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 
 namespace HackerCentral.CodingProjects {
-   public class CodingProjectsIO {
+   public class CodingProjectsIO : IO{
       private string globalCodingProjectsUrl;
 
       public CodingProjectIO() {

@@ -1,4 +1,6 @@
-﻿namespace HackerCentral.Music {
-   public class MusicIO {
+﻿using HackerCentral.Common;
+
+namespace HackerCentral.Music {
+   public class MusicIO : IO{
    }
 }

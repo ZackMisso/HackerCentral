@@ -50,6 +50,7 @@
          this.tasksToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
          this.artHistoryItem = new System.Windows.Forms.ToolStripMenuItem();
          this.artGoalsItem = new System.Windows.Forms.ToolStripMenuItem();
+         this.artProgressItem = new System.Windows.Forms.ToolStripMenuItem();
          this.musicToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
          this.musicTasksItem = new System.Windows.Forms.ToolStripMenuItem();
          this.musicHistoryItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -61,13 +62,13 @@
          this.researchReadingsItem = new System.Windows.Forms.ToolStripMenuItem();
          this.researchGoalsItem = new System.Windows.Forms.ToolStripMenuItem();
          this.researchHistoryItem = new System.Windows.Forms.ToolStripMenuItem();
-         this.InfoPanel = new System.Windows.Forms.Panel();
          this.schoolToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
          this.schoolTasksItem = new System.Windows.Forms.ToolStripMenuItem();
          this.schoolHistoryItem = new System.Windows.Forms.ToolStripMenuItem();
          this.schoolClassesItem = new System.Windows.Forms.ToolStripMenuItem();
          this.schoolAddClassItem = new System.Windows.Forms.ToolStripMenuItem();
-         this.artProgressItem = new System.Windows.Forms.ToolStripMenuItem();
+         this.InfoPanel = new System.Windows.Forms.Panel();
+         this.settingsUpdateItem = new System.Windows.Forms.ToolStripMenuItem();
          this.MainMenu.SuspendLayout();
          this.SuspendLayout();
          // 
@@ -281,23 +282,29 @@
          // tasksToolStripMenuItem3
          // 
          this.tasksToolStripMenuItem3.Name = "tasksToolStripMenuItem3";
-         this.tasksToolStripMenuItem3.Size = new System.Drawing.Size(152, 22);
+         this.tasksToolStripMenuItem3.Size = new System.Drawing.Size(119, 22);
          this.tasksToolStripMenuItem3.Text = "Tasks";
          this.tasksToolStripMenuItem3.Click += new System.EventHandler(this.tasksToolStripMenuItem3_Click);
          // 
          // artHistoryItem
          // 
          this.artHistoryItem.Name = "artHistoryItem";
-         this.artHistoryItem.Size = new System.Drawing.Size(152, 22);
+         this.artHistoryItem.Size = new System.Drawing.Size(119, 22);
          this.artHistoryItem.Text = "History";
          this.artHistoryItem.Click += new System.EventHandler(this.historyToolStripMenuItem4_Click);
          // 
          // artGoalsItem
          // 
          this.artGoalsItem.Name = "artGoalsItem";
-         this.artGoalsItem.Size = new System.Drawing.Size(152, 22);
+         this.artGoalsItem.Size = new System.Drawing.Size(119, 22);
          this.artGoalsItem.Text = "Goals";
          this.artGoalsItem.Click += new System.EventHandler(this.goalsToolStripMenuItem3_Click);
+         // 
+         // artProgressItem
+         // 
+         this.artProgressItem.Name = "artProgressItem";
+         this.artProgressItem.Size = new System.Drawing.Size(119, 22);
+         this.artProgressItem.Text = "Progress";
          // 
          // musicToolStripMenuItem
          // 
@@ -334,7 +341,8 @@
          // settingsToolStripMenuItem
          // 
          this.settingsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.settingsSettingsItem});
+            this.settingsSettingsItem,
+            this.settingsUpdateItem});
          this.settingsToolStripMenuItem.ForeColor = System.Drawing.Color.DarkRed;
          this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
          this.settingsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
@@ -344,7 +352,7 @@
          // settingsSettingsItem
          // 
          this.settingsSettingsItem.Name = "settingsSettingsItem";
-         this.settingsSettingsItem.Size = new System.Drawing.Size(116, 22);
+         this.settingsSettingsItem.Size = new System.Drawing.Size(152, 22);
          this.settingsSettingsItem.Text = "Settings";
          this.settingsSettingsItem.Click += new System.EventHandler(this.settingsToolStripMenuItem1_Click);
          // 
@@ -364,36 +372,26 @@
          // researchTasksItem
          // 
          this.researchTasksItem.Name = "researchTasksItem";
-         this.researchTasksItem.Size = new System.Drawing.Size(152, 22);
+         this.researchTasksItem.Size = new System.Drawing.Size(122, 22);
          this.researchTasksItem.Text = "Tasks";
          // 
          // researchReadingsItem
          // 
          this.researchReadingsItem.Name = "researchReadingsItem";
-         this.researchReadingsItem.Size = new System.Drawing.Size(152, 22);
+         this.researchReadingsItem.Size = new System.Drawing.Size(122, 22);
          this.researchReadingsItem.Text = "Readings";
          // 
          // researchGoalsItem
          // 
          this.researchGoalsItem.Name = "researchGoalsItem";
-         this.researchGoalsItem.Size = new System.Drawing.Size(152, 22);
+         this.researchGoalsItem.Size = new System.Drawing.Size(122, 22);
          this.researchGoalsItem.Text = "Goals";
          // 
          // researchHistoryItem
          // 
          this.researchHistoryItem.Name = "researchHistoryItem";
-         this.researchHistoryItem.Size = new System.Drawing.Size(152, 22);
+         this.researchHistoryItem.Size = new System.Drawing.Size(122, 22);
          this.researchHistoryItem.Text = "History";
-         // 
-         // InfoPanel
-         // 
-         this.InfoPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(12)))), ((int)(((byte)(12)))));
-         this.InfoPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-         this.InfoPanel.Location = new System.Drawing.Point(773, 27);
-         this.InfoPanel.Name = "InfoPanel";
-         this.InfoPanel.Size = new System.Drawing.Size(204, 571);
-         this.InfoPanel.TabIndex = 1;
-         this.InfoPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.InfoPanel_Paint);
          // 
          // schoolToolStripMenuItem
          // 
@@ -410,32 +408,42 @@
          // schoolTasksItem
          // 
          this.schoolTasksItem.Name = "schoolTasksItem";
-         this.schoolTasksItem.Size = new System.Drawing.Size(152, 22);
+         this.schoolTasksItem.Size = new System.Drawing.Size(126, 22);
          this.schoolTasksItem.Text = "Tasks";
          // 
          // schoolHistoryItem
          // 
          this.schoolHistoryItem.Name = "schoolHistoryItem";
-         this.schoolHistoryItem.Size = new System.Drawing.Size(152, 22);
+         this.schoolHistoryItem.Size = new System.Drawing.Size(126, 22);
          this.schoolHistoryItem.Text = "History";
          // 
          // schoolClassesItem
          // 
          this.schoolClassesItem.Name = "schoolClassesItem";
-         this.schoolClassesItem.Size = new System.Drawing.Size(152, 22);
+         this.schoolClassesItem.Size = new System.Drawing.Size(126, 22);
          this.schoolClassesItem.Text = "Classes";
          // 
          // schoolAddClassItem
          // 
          this.schoolAddClassItem.Name = "schoolAddClassItem";
-         this.schoolAddClassItem.Size = new System.Drawing.Size(152, 22);
+         this.schoolAddClassItem.Size = new System.Drawing.Size(126, 22);
          this.schoolAddClassItem.Text = "Add Class";
          // 
-         // artProgressItem
+         // InfoPanel
          // 
-         this.artProgressItem.Name = "artProgressItem";
-         this.artProgressItem.Size = new System.Drawing.Size(152, 22);
-         this.artProgressItem.Text = "Progress";
+         this.InfoPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(12)))), ((int)(((byte)(12)))));
+         this.InfoPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+         this.InfoPanel.Location = new System.Drawing.Point(773, 27);
+         this.InfoPanel.Name = "InfoPanel";
+         this.InfoPanel.Size = new System.Drawing.Size(204, 573);
+         this.InfoPanel.TabIndex = 1;
+         this.InfoPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.InfoPanel_Paint);
+         // 
+         // settingsUpdateItem
+         // 
+         this.settingsUpdateItem.Name = "settingsUpdateItem";
+         this.settingsUpdateItem.Size = new System.Drawing.Size(152, 22);
+         this.settingsUpdateItem.Text = "Update";
          // 
          // Form1
          // 
@@ -503,6 +511,7 @@
       private System.Windows.Forms.ToolStripMenuItem schoolClassesItem;
       private System.Windows.Forms.ToolStripMenuItem schoolAddClassItem;
       private System.Windows.Forms.ToolStripMenuItem artProgressItem;
+      private System.Windows.Forms.ToolStripMenuItem settingsUpdateItem;
    }
 }
 

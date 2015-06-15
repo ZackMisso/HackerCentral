@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using HackerCentral.Common;
 
 namespace HackerCentral.CodingProjects {
    public class CodingProject {
@@ -11,7 +12,13 @@ namespace HackerCentral.CodingProjects {
       private int projectID;
 
       public CodingProject(string val) {
+         typesOfFiles = new List<string>();
+         tasks = new List<Task>();
          url = val;
+         name = "";
+         description = "";
+         linesOfCode = 0;
+         projectID = -1;
       }
 
       public void update(CodingProjectsIO io) {

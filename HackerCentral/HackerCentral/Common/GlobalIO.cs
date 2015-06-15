@@ -1,5 +1,5 @@
 ﻿namespace HackerCentral.Common {
-   public class GlobalIO {
+   public class GlobalIO : IO{
       private string globalUrl;
       private CodingProjectsIO codingProjectsIO;
 

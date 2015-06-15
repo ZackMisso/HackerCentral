@@ -1,4 +1,6 @@
-﻿namespace HackerCentral.Finances {
-   public class FinancesIO {
+﻿using HackerCentral.Common;
+
+namespace HackerCentral.Finances {
+   public class FinancesIO : IO{
    }
 }

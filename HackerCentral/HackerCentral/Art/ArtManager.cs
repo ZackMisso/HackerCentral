@@ -1,4 +1,6 @@
-﻿namespace HackerCentral.Art {
-   public class ArtManager {
+﻿using HackerCentral.Common;
+
+namespace HackerCentral.Art {
+   public class ArtManager : Manager{
    }
 }
