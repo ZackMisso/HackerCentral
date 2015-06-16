@@ -21,6 +21,6 @@ namespace HackerCentral.Common {
       public void setDescription(string param) { description = param; }
       public void setTaskID(int param) { taskID = param; }
       public void setEffort(int param) { effort = param; }
-      public void setStatus(TaskStatusEnum status) { status = param; }
+      public void setStatus(TaskStatusEnum param) { status = param; }
    }
 }

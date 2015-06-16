@@ -3,7 +3,7 @@
       private string description;
       private double value;
 
-      public IntWithDescription(double val,string desc) {
+      public DoubleWithDescription(double val,string desc) {
          description = desc;
          value = val;
       }

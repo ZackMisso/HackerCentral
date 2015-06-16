@@ -5,7 +5,7 @@ namespace HackerCentral.Common {
       private CodingProjectsManager codingProjectsManager;
 
       public GlobalManager() {
-         codingProjectsManager = new CodingProjectManager();
+         codingProjectsManager = new CodingProjectsManager();
       }
 
       public void update() {

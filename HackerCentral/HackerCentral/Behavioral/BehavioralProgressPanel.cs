@@ -6,21 +6,21 @@ namespace HackerCentral.Behaviorial {
          // to be implemented
       }
 
-      public void initialize(Form1 form){
+      public void initialize(Form1 form) {
          base.initialize(form);
          // to be implemented
       }
 
-      public ClickResults handleClick(int x, int y){
+      public override ClickResults handleClick(int x, int y) {
          // to be implemented
          return null;
       }
 
-      public void handleResults(ResultHandler handler){
+      public override void handleResults(ResultHandler handler){
          // to be implemented
       }
 
-      public void clear(){
+      public override void clear() {
          // to be implemented
       }
    }

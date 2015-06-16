@@ -76,7 +76,6 @@
     <Compile Include="Common\Goal.cs" />
     <Compile Include="Common\IO.cs" />
     <Compile Include="Common\Manager.cs" />
-    <Compile Include="Common\Point.cs" />
     <Compile Include="Common\ResultHandler.cs" />
     <Compile Include="Common\Task.cs" />
     <Compile Include="Common\TaskGoal.cs" />

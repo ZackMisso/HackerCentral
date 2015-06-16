@@ -1,10 +1,11 @@
 ﻿using System.Collections.Generic;
+using HackerCentral.Common;
 
 namespace HackerCentral.CodingProjects {
    public class CodingProjectsIO : IO{
       private string globalCodingProjectsUrl;
 
-      public CodingProjectIO() {
+      public CodingProjectsIO() {
          globalCodingProjectsUrl = "";
       }
 

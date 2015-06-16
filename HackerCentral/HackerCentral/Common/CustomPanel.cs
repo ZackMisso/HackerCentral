@@ -17,7 +17,7 @@ namespace HackerCentral.Common {
       }
 
       public void removeControlFromWindow(Control control) {
-         windows.Controls.Remove(control);
+         window.Controls.Remove(control);
       }
 
       //public void addLabelToWindow(Label label) {

@@ -6,7 +6,7 @@ namespace HackerCentral.CodingProjects {
          // to be implemented
       }
 
-      public void updateGoal(object obj) {
+      public override void updateGoal(object obj) {
          var project = (CodingProject)obj;
       }
    }

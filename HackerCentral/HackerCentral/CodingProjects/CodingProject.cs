@@ -26,7 +26,7 @@ namespace HackerCentral.CodingProjects {
       }
 
       public void addTask(Task task) {
-         tasks.add(task);
+         tasks.Add(task);
       }
 
       // getter methods

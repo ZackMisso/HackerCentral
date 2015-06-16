@@ -9,7 +9,7 @@ namespace HackerCentral.Common{
          // to be implemnted
       }
 
-      public void updateGoal(object obj) {
+      public override void updateGoal(object obj) {
          // to be implmented
       }
 

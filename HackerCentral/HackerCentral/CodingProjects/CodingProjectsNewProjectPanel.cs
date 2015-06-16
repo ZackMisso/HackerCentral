@@ -1,4 +1,6 @@
-﻿using System.Windows.Forms;
+﻿using System;
+using System.Drawing;
+using System.Windows.Forms;
 using HackerCentral.Common;
 using HackerCentral.Common.Enum;
 
@@ -21,7 +23,7 @@ namespace HackerCentral.CodingProjects {
          // create the name box
          nameBox = new TextBox();
          nameBox.Location = new System.Drawing.Point(100, 60);
-         nameBox..Size = new System.Drawing.Size(100, 20);
+         nameBox.Size = new System.Drawing.Size(100, 20);
          // create the description box
          descriptionBox = new TextBox();
          descriptionBox.Location = new System.Drawing.Point(100, 80);
@@ -61,9 +63,9 @@ namespace HackerCentral.CodingProjects {
          addControlToWindow(descriptionLabel);
       }
 
-      public ClickResults handleClick(int x, int y){
+      public override ClickResults handleClick(int x, int y) {
          ClickResults results = new ClickResults();
-         if (wasControlClicked(submitButton)) {
+         if (wasControlClicked(submitButton,x,y)) {
             if (!String.IsNullOrWhiteSpace(nameBox.Text) && !String.IsNullOrWhiteSpace(descriptionBox.Text)) {
                results.setRequestManager(true);
                results.setResultToHandle(ResultToHandleEnum.CreatedNewCodingProject);
@@ -74,14 +76,14 @@ namespace HackerCentral.CodingProjects {
          return results;
       }
 
-      public void handleResults(ResultHandler handler){
-         if (handler.getResultToHandle() == ResultToHandle.CreatedNewCodingProject) {
+      public override void handleResults(ResultHandler handler) {
+         if (handler.getResultToHandle() == ResultToHandleEnum.CreatedNewCodingProject) {
             CodingProjectsManager manager = (CodingProjectsManager)handler.getManager();
             // to be implemented
          }
       }
 
-      public void clear(){
+      public override void clear() {
          removeControlFromWindow(nameBox);
          removeControlFromWindow(descriptionBox);
          removeControlFromWindow(submitButton);

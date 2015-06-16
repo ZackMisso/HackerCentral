@@ -16,7 +16,7 @@ namespace HackerCentral.CodingProjects {
          projectNumberOfLinesLabels = new List<Label>();
       }
 
-      public void initialize(Form1 form){
+      public void initialize(Form1 form) {
          base.initialize(form);
          if(manager == null){
             MessageBox.Show("Manager was set to null. Continuous loop.");
@@ -25,29 +25,33 @@ namespace HackerCentral.CodingProjects {
          createLabels(manager.getProjects());
       }
 
-      public void clear(){
-         while(projectDescriptionLabel.Any()){
+      public override void clear() {
+         while(projectDescriptionLabels.Count > 0){
             removeControlFromWindow(projectDescriptionLabels[0]);
             projectDescriptionLabels.RemoveAt(0);
          }
-         while(projectNameLabels.Any()){
+         while(projectNameLabels.Count > 0){
             removeControlFromWindow(projectNameLabels[0]);
             projectNameLabels.RemoveAt(0);
          }
-         while(projectNumberOfLinesLabels.Any()){
+         while(projectNumberOfLinesLabels.Count > 0){
             removeControlFromWindow(projectNameLabels[0]);
             projectNameLabels.RemoveAt(0);
          }
          setWindow(null);
       }
 
-      public ClickResults handleClick(int x, int y){
+      public override ClickResults handleClick(int x, int y) {
          var results = new ClickResults();
          results.setShouldClose(false);
          return results;
       }
 
-      public createLabels(List<CodingProject> projects){
+      public override void handleResults(ResultHandler handler) {
+         // to be implemented
+      }
+
+      public void createLabels(List<CodingProject> projects){
          for(int i = 0; i < projects.Count; i++){
             // create name label
             Label name = new Label();
@@ -55,21 +59,21 @@ namespace HackerCentral.CodingProjects {
             name.Location = new Point(12, 40 + i * 30);
             name.ForeColor = System.Drawing.Color.RoyalBlue;
             name.Size = new Size(70, 13);
-            name.Text = project.getName();
+            name.Text = projects[i].getName();
             // create descriptions label
             Label description = new Label();
-            descriptions.AutoSize = true;
-            descriptions.Location = new Point(100, 40 + i * 30);
-            descriptions.ForeColor = System.Drawing.Color.RoyalBlue;
-            descriptions.Size = new Size(70, 13);
-            descriptions.Text = project.getDescription();
+            description.AutoSize = true;
+            description.Location = new Point(100, 40 + i * 30);
+            description.ForeColor = System.Drawing.Color.RoyalBlue;
+            description.Size = new Size(70, 13);
+            description.Text = projects[i].getDescription();
             // create number of lines label
             Label numberOfLines = new Label();
             numberOfLines.AutoSize = true;
             numberOfLines.Location = new Point(12, 52 + i * 30);
             numberOfLines.ForeColor = System.Drawing.Color.RoyalBlue;
             numberOfLines.Size = new Size(70, 13);
-            numberOfLines.Text = project.getLinesOfCode().ToString();
+            numberOfLines.Text = projects[i].getLinesOfCode().ToString();
             projectNameLabels.Add(name);
             projectDescriptionLabels.Add(description);
             projectNumberOfLinesLabels.Add(numberOfLines);
