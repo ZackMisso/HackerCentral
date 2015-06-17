@@ -42,6 +42,7 @@ namespace HackerCentral.CodingProjects {
       }
 
       // getters
+      public IO getIO() { return io; }
       public List<CodingProject> getProjects() { return projects; }
       public int getNextProjectID() { return nextProjectID; }
       public int getNextTaskID() { return nextTaskID; }

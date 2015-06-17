@@ -1,10 +1,10 @@
 ﻿using HackerCentral.Common;
 
-namespace HackerCentral.Finances {
-   public class FinancesManager : Manager{
-      private FinancesIO io;
+namespace HackerCentral.Settings {
+   public class SettingsManager : Manager{
+      private SettingsIO io;
 
-      public FinancesManager() {
+      public SettingsManager() {
          // to be implemented
       }
 

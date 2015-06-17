@@ -22,11 +22,11 @@ namespace HackerCentral.CodingProjects {
          base.initialize(form);
          // create the name box
          nameBox = new TextBox();
-         nameBox.Location = new System.Drawing.Point(100, 60);
+         nameBox.Location = new System.Drawing.Point(200, 60);
          nameBox.Size = new System.Drawing.Size(100, 20);
          // create the description box
          descriptionBox = new TextBox();
-         descriptionBox.Location = new System.Drawing.Point(100, 80);
+         descriptionBox.Location = new System.Drawing.Point(200, 100);
          descriptionBox.Size = new System.Drawing.Size(200, 60);
          // create the submit button
          submitButton = new Button();
@@ -51,7 +51,7 @@ namespace HackerCentral.CodingProjects {
          // create the description label
          descriptionLabel = new Label();
          descriptionLabel.AutoSize = true;
-         descriptionLabel.Location = new Point(15, 80);
+         descriptionLabel.Location = new Point(15, 100);
          descriptionLabel.ForeColor = System.Drawing.Color.RoyalBlue;
          descriptionLabel.Size = new Size(70, 13);
          descriptionLabel.Text = "Enter Project Description: ";

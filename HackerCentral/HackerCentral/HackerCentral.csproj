@@ -118,9 +118,11 @@
     <Compile Include="School\SchoolAddClassPanel.cs" />
     <Compile Include="School\SchoolClassesPanel.cs" />
     <Compile Include="School\SchoolHistoryPanel.cs" />
+    <Compile Include="School\SchoolIO.cs" />
     <Compile Include="School\SchoolManager.cs" />
     <Compile Include="School\SchoolTasksPanel.cs" />
     <Compile Include="Settings\SettingsIO.cs" />
+    <Compile Include="Settings\SettingsManager.cs" />
     <Compile Include="Settings\SettingsSettingsPanel.cs" />
     <Compile Include="UIObjects\Graph.cs" />
     <EmbeddedResource Include="Form1.resx">

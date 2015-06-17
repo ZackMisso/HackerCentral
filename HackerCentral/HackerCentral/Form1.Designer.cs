@@ -57,6 +57,7 @@
          this.musicGoalsItem = new System.Windows.Forms.ToolStripMenuItem();
          this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
          this.settingsSettingsItem = new System.Windows.Forms.ToolStripMenuItem();
+         this.settingsUpdateItem = new System.Windows.Forms.ToolStripMenuItem();
          this.researchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
          this.researchTasksItem = new System.Windows.Forms.ToolStripMenuItem();
          this.researchReadingsItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -68,7 +69,6 @@
          this.schoolClassesItem = new System.Windows.Forms.ToolStripMenuItem();
          this.schoolAddClassItem = new System.Windows.Forms.ToolStripMenuItem();
          this.InfoPanel = new System.Windows.Forms.Panel();
-         this.settingsUpdateItem = new System.Windows.Forms.ToolStripMenuItem();
          this.MainMenu.SuspendLayout();
          this.SuspendLayout();
          // 
@@ -155,6 +155,7 @@
          this.codingNewProjectItem.Name = "codingNewProjectItem";
          this.codingNewProjectItem.Size = new System.Drawing.Size(153, 22);
          this.codingNewProjectItem.Text = "New Project";
+         this.codingNewProjectItem.Click += new System.EventHandler(this.codingNewProjectItem_Click);
          // 
          // financesToolStripMenuItem
          // 
@@ -352,9 +353,15 @@
          // settingsSettingsItem
          // 
          this.settingsSettingsItem.Name = "settingsSettingsItem";
-         this.settingsSettingsItem.Size = new System.Drawing.Size(152, 22);
+         this.settingsSettingsItem.Size = new System.Drawing.Size(116, 22);
          this.settingsSettingsItem.Text = "Settings";
          this.settingsSettingsItem.Click += new System.EventHandler(this.settingsToolStripMenuItem1_Click);
+         // 
+         // settingsUpdateItem
+         // 
+         this.settingsUpdateItem.Name = "settingsUpdateItem";
+         this.settingsUpdateItem.Size = new System.Drawing.Size(116, 22);
+         this.settingsUpdateItem.Text = "Update";
          // 
          // researchToolStripMenuItem
          // 
@@ -438,12 +445,6 @@
          this.InfoPanel.Size = new System.Drawing.Size(204, 573);
          this.InfoPanel.TabIndex = 1;
          this.InfoPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.InfoPanel_Paint);
-         // 
-         // settingsUpdateItem
-         // 
-         this.settingsUpdateItem.Name = "settingsUpdateItem";
-         this.settingsUpdateItem.Size = new System.Drawing.Size(152, 22);
-         this.settingsUpdateItem.Text = "Update";
          // 
          // Form1
          // 

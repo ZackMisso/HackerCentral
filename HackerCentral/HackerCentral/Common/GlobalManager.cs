@@ -8,11 +8,19 @@ namespace HackerCentral.Common {
          codingProjectsManager = new CodingProjectsManager();
       }
 
+      public void initializeAllIO(GlobalIO io) {
+         // to be implemented
+      }
+
       public void update() {
          codingProjectsManager.update();
       }
 
+      public IO getIO() {
+         return null;
+      }
+
       // getter methods
-      public CodingProjectsManager getCodingProjectManager() { return codingProjectsManager; }
+      public CodingProjectsManager getCodingProjectsManager() { return codingProjectsManager; }
    }
 }

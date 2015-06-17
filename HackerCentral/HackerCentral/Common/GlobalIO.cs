@@ -5,14 +5,22 @@ namespace HackerCentral.Common {
       private string globalUrl;
       private CodingProjectsIO codingProjectsIO;
 
-      public GlobalIO(string url) {
-         globalUrl = url;
-         initializeAllIO();
+      public GlobalIO() {
+         // to be implemented
+         //initializeAllIO();
       }
 
-      private void initializeAllIO() {
-         // to be implemented
+      public GlobalIO(string url) {
+         globalUrl = url;
+         //initializeAllIO();
       }
+
+      public string getCodingProjectsDirectory() {
+         // to be implemented
+         return "";
+      }
+
+      // Add more as needed
 
       // getter methods
       public CodingProjectsIO getCodingProjectsIO() { return codingProjectsIO; }
