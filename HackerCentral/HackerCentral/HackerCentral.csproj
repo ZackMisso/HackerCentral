@@ -57,6 +57,7 @@
     <Compile Include="Behavioral\BehavioralManager.cs" />
     <Compile Include="Behavioral\BehavioralProgressPanel.cs" />
     <Compile Include="CodingProjects\CodingProject.cs" />
+    <Compile Include="CodingProjects\CodingProjectsAddTaskPanel.cs" />
     <Compile Include="CodingProjects\CodingProjectsGoal.cs" />
     <Compile Include="CodingProjects\CodingProjectsGoalsPanel.cs" />
     <Compile Include="CodingProjects\CodingProjectsHistoryPanel.cs" />

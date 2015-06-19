@@ -1,6 +1,6 @@
-﻿namespace HackerCentral.Common.Enum {
-   public enum ResultToHandleEnum {
-      None,
-      CreatedNewCodingProject
-   };
-}
+﻿//namespace HackerCentral.Common.Enum {
+//   public enum ResultToHandleEnum {
+//      None,
+//      CreatedNewCodingProject
+//   };
+//}

@@ -3,9 +3,13 @@
 namespace HackerCentral.Common {
    public abstract class CustomPanel {
       private Form1 window;
+      private Manager manager;
+      private IO io;
 
       public CustomPanel() {
-         // to be implemented
+         window = null;
+         manager = null;
+         io = null;
       }
 
       public void initialize(Form1 form) {
@@ -33,14 +37,18 @@ namespace HackerCentral.Common {
          return false;
       }
 
-      public abstract ClickResults handleClick(int x, int y);
-      public abstract void handleResults(ResultHandler handler);
+      //public abstract ClickResults handleClick(int x, int y);
+      //public abstract void handleResults(ResultHandler handler);
       public abstract void clear();
 
       // getter methods
       public Form1 getWindow() { return window; }
+      public Manager getManager() { return manager; }
+      public IO getIO() { return io; }
 
       // setter methods
       public void setWindow(Form1 param) { window = param; }
+      public void setManager(Manager param) { manager = param; }
+      public void setIO(IO param) { io = paraml; }
    }
 }

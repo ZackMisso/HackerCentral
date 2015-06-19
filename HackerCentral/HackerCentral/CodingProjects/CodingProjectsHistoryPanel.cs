@@ -11,15 +11,6 @@ namespace HackerCentral.CodingProjects {
          // to be implemented
       }
 
-      public override ClickResults handleClick(int x, int y) {
-         // to be implemented
-         return null;
-      }
-
-      public override void handleResults(ResultHandler handler) {
-         // to be implemented
-      }
-
       public override void clear() {
          // to be implemented
       }

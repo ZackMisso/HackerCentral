@@ -1,4 +1,4 @@
-﻿using HackerCentral.Common.Enum;
+﻿/*using HackerCentral.Common.Enum;
 
 namespace HackerCentral.Common {
    public class ResultHandler {
@@ -34,3 +34,4 @@ namespace HackerCentral.Common {
       public void setClose(bool param) { close = param; }
    }
 }
+*/

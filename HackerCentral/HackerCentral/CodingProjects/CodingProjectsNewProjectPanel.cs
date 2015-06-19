@@ -15,7 +15,12 @@ namespace HackerCentral.CodingProjects {
 
       public CodingProjectsNewProjectPanel()
          : base() {
-         // does nothing
+         nameBox = null;
+         descriptionBox = null;
+         path = null;
+         nameLabel = null;
+         descriptionLabel = null;
+         submitButton = null;
       }
 
       public void initialize(Form1 form){
@@ -34,6 +39,7 @@ namespace HackerCentral.CodingProjects {
          submitButton.Size = new System.Drawing.Size(75, 23);
          submitButton.Text = "Submit";
          submitButton.UseVisualStyleBackColor = true;
+         submitButton.Click += new System.EventHandler(submitButtonClicked);
          // create the url label
          path = new Label();
          path.AutoSize = true;
@@ -63,25 +69,44 @@ namespace HackerCentral.CodingProjects {
          addControlToWindow(descriptionLabel);
       }
 
-      public override ClickResults handleClick(int x, int y) {
-         ClickResults results = new ClickResults();
-         if (wasControlClicked(submitButton,x,y)) {
-            if (!String.IsNullOrWhiteSpace(nameBox.Text) && !String.IsNullOrWhiteSpace(descriptionBox.Text)) {
-               results.setRequestManager(true);
-               results.setResultToHandle(ResultToHandleEnum.CreatedNewCodingProject);
-            } else {
-               MessageBox.Show("Invalid Input Information");
+      private void submitButtonClicked(object sender, EventArgs e) {
+         if (!String.IsNullOrWhiteSpace(nameBox.Text) && !String.IsNullOrWhiteSpace(descriptionBox.Text)) {
+            var folderDialog = new FolderBrowserDialog();
+            var result = folderDialog.ShowDialog();
+            if (result == DialogResult.OK) {
+               path.Text = result.SelectedPath;
+               createCodingProject(result.SelectedPath);
             }
+         } else {
+            MessageBox.Show("Invalid Input Information");
          }
-         return results;
       }
 
-      public override void handleResults(ResultHandler handler) {
-         if (handler.getResultToHandle() == ResultToHandleEnum.CreatedNewCodingProject) {
-            CodingProjectsManager manager = (CodingProjectsManager)handler.getManager();
-            // to be implemented
-         }
+      private void createdCodingProject(string url) {
+         var project = new CodingProject(url);
+         project.update((CodingProjectsIO)getIO());
+         ((CodingProjectsManager)getManager()).getProjects().Add(project);
       }
+
+      //public override ClickResults handleClick(int x, int y) {
+      //   ClickResults results = new ClickResults();
+      //   if (wasControlClicked(submitButton,x,y)) {
+      //      if (!String.IsNullOrWhiteSpace(nameBox.Text) && !String.IsNullOrWhiteSpace(descriptionBox.Text)) {
+      //         results.setRequestManager(true);
+      //         results.setResultToHandle(ResultToHandleEnum.CreatedNewCodingProject);
+      //      } else {
+      //         MessageBox.Show("Invalid Input Information");
+      //      }
+      //   }
+      //   return results;
+      //}
+
+      //public override void handleResults(ResultHandler handler) {
+      //   if (handler.getResultToHandle() == ResultToHandleEnum.CreatedNewCodingProject) {
+      //      CodingProjectsManager manager = (CodingProjectsManager)handler.getManager();
+      //      // to be implemented
+      //   }
+      //}
 
       public override void clear() {
          removeControlFromWindow(nameBox);
