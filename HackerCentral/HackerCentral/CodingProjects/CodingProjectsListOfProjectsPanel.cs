@@ -41,15 +41,15 @@ namespace HackerCentral.CodingProjects {
          setWindow(null);
       }
 
-      public override ClickResults handleClick(int x, int y) {
-         var results = new ClickResults();
-         results.setShouldClose(false);
-         return results;
-      }
+      //public override ClickResults handleClick(int x, int y) {
+      //   var results = new ClickResults();
+      //   results.setShouldClose(false);
+      //   return results;
+      //}
 
-      public override void handleResults(ResultHandler handler) {
-         // to be implemented
-      }
+      //public override void handleResults(ResultHandler handler) {
+      //   // to be implemented
+      //}
 
       public void createLabels(List<CodingProject> projects){
          for(int i = 0; i < projects.Count; i++){
@@ -74,6 +74,7 @@ namespace HackerCentral.CodingProjects {
             numberOfLines.ForeColor = System.Drawing.Color.RoyalBlue;
             numberOfLines.Size = new Size(70, 13);
             numberOfLines.Text = projects[i].getLinesOfCode().ToString();
+            // add items to window
             projectNameLabels.Add(name);
             projectDescriptionLabels.Add(description);
             projectNumberOfLinesLabels.Add(numberOfLines);

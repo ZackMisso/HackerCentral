@@ -62,10 +62,14 @@
     <Compile Include="CodingProjects\CodingProjectsGoalsPanel.cs" />
     <Compile Include="CodingProjects\CodingProjectsHistoryPanel.cs" />
     <Compile Include="CodingProjects\CodingProjectsIO.cs" />
+    <Compile Include="CodingProjects\CodingProjectsLineGoal.cs" />
     <Compile Include="CodingProjects\CodingProjectsListOfProjectsPanel.cs" />
     <Compile Include="CodingProjects\CodingProjectsManager.cs" />
+    <Compile Include="CodingProjects\CodingProjectsMasterGoal.cs" />
+    <Compile Include="CodingProjects\CodingProjectsNewGoalPanel.cs" />
     <Compile Include="CodingProjects\CodingProjectsNewProjectPanel.cs" />
     <Compile Include="CodingProjects\CodingProjectsTask.cs" />
+    <Compile Include="CodingProjects\CodingProjectsTaskGoal.cs" />
     <Compile Include="CodingProjects\CodingProjectsTasksPanel.cs" />
     <Compile Include="Common\ClickResults.cs" />
     <Compile Include="Common\CustomPanel.cs" />

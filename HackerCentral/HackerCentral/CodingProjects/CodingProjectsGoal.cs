@@ -1,13 +1,17 @@
 ﻿using HackerCentral.Common;
 
 namespace HackerCentral.CodingProjects {
-   public class CodingProjectsGoal : Goal{
-      public CodingProjectsGoal() {
-         // to be implemented
-      }
+   public abstract class CodingProjectsGoal : Goal{
+      private CodingProject project;
 
-      public override void updateGoal(object obj) {
-         var project = (CodingProject)obj;
-      }
+      public CodingProjectsGoal() {
+         project = null;
+      }      
+
+      // getter methods
+      public CodingProject getProject() { return project; }
+
+      // setter methods
+      public void setProject(CodingProject param) { project = param; }
    }
 }

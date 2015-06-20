@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using System;
+using System.Windows.Forms;
 using HackerCentral.Common;
 
 namespace HackerCentral.CodingProjects {
@@ -69,6 +70,13 @@ namespace HackerCentral.CodingProjects {
          effortLabel.ForeColor = System.Drawing.Color.RoyalBlue;
          effortLabel.Size = new Size(70, 13);
          effortLabel.Text = "Effort Level: ";
+         // create the coding Projects Box
+         codingProjectsBox.FormattingEnabled = true;
+         codingProjectsBox.Location = new System.Drawing.Point(400, 180);
+         codingProjectsBox.Size = new System.Drawing.Size(100, 30);
+         var codingProjects = ((CodingProjectsManager)getManager()).getProjects();
+         for(CodingProject project in codingProjects)
+            codingProjectsBox.Add(project.getName());
          // add the items to the level
          addControlToWindow(nameBox);
          addControlToWindow(descriptionBox);
@@ -77,10 +85,30 @@ namespace HackerCentral.CodingProjects {
          addControlToWindow(nameLabel);
          addControlToWindow(descriptionLabel);
          addControlToWindow(effortLabel);
+         addControlToWindow(codingProjectsBox);
       }
 
       private void submitButtonClicked() {
-         // to be implemented
+         // will add a Task if the UI Items are filled in
+         if (!String.IsNullOrWhiteSpace(nameBox.Text) && !String.IsNullOrWhiteSpace(descriptionBox.Text) && !String.IsNullOrWhiteSpace(effortLevelBox.Text) && codingProjectsBox.SelectedItem != null) {
+            var task = new CodingProjectsTask();
+            //task.setTaskID(GlobalManager.getNextTaskID()); // maybe
+            task.setName(nameBox.Text);
+            task.setDescription(descriptionBox.Text);
+            task.setEffortLevel(Convert.ToInt32(effortLevelBox.Text));
+            var manager = (CodingProjectsManager)getManager();
+            var project = null;
+            for(CodingProject proj in manager.getProjects())
+               if(proj.getName().Equals((string)codingProjectsBox.SelectedItem, StringComparison.Ordinal))
+                  project = proj;
+            if(project != null){
+               task.setProject(project);
+               project.addTask(task);
+            }
+            manager.addNewCodingTask(task)
+         }else{
+            MessageBox.Show("Invalid input information");
+         }
       }
 
       public override void clear() {
@@ -91,6 +119,8 @@ namespace HackerCentral.CodingProjects {
          removeControlFromWindow(nameLabel);
          removeControlFromWindow(descriptionLabel);
          removeControlFromWindow(effortLabel);
+         revomeControlFromWindow(codingProjectsBox);
+         codingProjectsBox.Items.clear();
       }
    }
 }
