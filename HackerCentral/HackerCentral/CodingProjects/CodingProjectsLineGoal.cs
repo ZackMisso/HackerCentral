@@ -1,7 +1,7 @@
 ﻿namespace HackerCentral.CodingProjects {
    public class CodingProjectsLineGoal : CodingProjectsGoal{
       private int originalLineCount;
-      private int goalLineCoount;
+      private int goalLineCount;
 
       public CodingProjectsLineGoal()
          : base() {

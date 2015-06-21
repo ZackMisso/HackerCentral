@@ -13,60 +13,21 @@ namespace HackerCentral.CodingProjects {
       private Label descriptionLabel;
       private Button submitButton;
 
-      public CodingProjectsNewProjectPanel()
-         : base() {
-         nameBox = null;
-         descriptionBox = null;
-         path = null;
-         nameLabel = null;
-         descriptionLabel = null;
-         submitButton = null;
-      }
-
       public void initialize(Form1 form){
          base.initialize(form);
          // create the name box
-         nameBox = new TextBox();
-         nameBox.Location = new System.Drawing.Point(200, 60);
-         nameBox.Size = new System.Drawing.Size(100, 20);
+         nameBox = createTextBox(new Point(200, 60), new Size(100, 20));
          // create the description box
-         descriptionBox = new TextBox();
-         descriptionBox.Location = new System.Drawing.Point(200, 100);
-         descriptionBox.Size = new System.Drawing.Size(200, 60);
+         descriptionBox = createTextBox(new Point(200, 100), new Size(200, 60));
          // create the submit button
-         submitButton = new Button();
-         submitButton.Location = new System.Drawing.Point(100, 150);
-         submitButton.Size = new System.Drawing.Size(75, 23);
-         submitButton.Text = "Submit";
-         submitButton.UseVisualStyleBackColor = true;
+         submitButton = createButton(new Point(100, 150), new Size(75, 23), "Submit");
          submitButton.Click += new System.EventHandler(submitButtonClicked);
          // create the url label
-         path = new Label();
-         path.AutoSize = true;
-         path.Location = new Point(15, 40);
-         path.ForeColor = System.Drawing.Color.RoyalBlue;
-         path.Size = new Size(70, 13);
-         path.Text = "";
+         path = createLabel(new Point(15, 40), new Size(70, 13), ""); 
          // create the name label
-         nameLabel = new Label();
-         nameLabel.AutoSize = true;
-         nameLabel.Location = new Point(15, 60);
-         nameLabel.ForeColor = System.Drawing.Color.RoyalBlue;
-         nameLabel.Size = new Size(70, 13);
-         nameLabel.Text = "Enter Project Name: ";
+         nameLabel = createLabel(new Point(15, 60), new Size(70, 13), "Enter Project Name: ");
          // create the description label
-         descriptionLabel = new Label();
-         descriptionLabel.AutoSize = true;
-         descriptionLabel.Location = new Point(15, 100);
-         descriptionLabel.ForeColor = System.Drawing.Color.RoyalBlue;
-         descriptionLabel.Size = new Size(70, 13);
-         descriptionLabel.Text = "Enter Project Description: ";
-         addControlToWindow(nameBox);
-         addControlToWindow(descriptionBox);
-         addControlToWindow(submitButton);
-         addControlToWindow(path);
-         addControlToWindow(nameLabel);
-         addControlToWindow(descriptionLabel);
+         descriptionLabel = createLabel(new Point(15, 100), new Size(70, 13), "Enter Project Description: ");
       }
 
       private void submitButtonClicked(object sender, EventArgs e) {
@@ -74,39 +35,22 @@ namespace HackerCentral.CodingProjects {
             var folderDialog = new FolderBrowserDialog();
             var result = folderDialog.ShowDialog();
             if (result == DialogResult.OK) {
-               path.Text = result.SelectedPath;
-               createCodingProject(result.SelectedPath);
+               path.Text = folderDialog.SelectedPath;
+               createCodingProject(folderDialog.SelectedPath);
+               MessageBox.Show("Created Project " + nameBox.Text);
             }
          } else {
             MessageBox.Show("Invalid Input Information");
          }
       }
 
-      private void createdCodingProject(string url) {
+      private void createCodingProject(string url) {
          var project = new CodingProject(url);
+         project.setName(nameBox.Text);
+         project.setDescription(descriptionBox.Text);
          project.update((CodingProjectsIO)getIO());
-         ((CodingProjectsManager)getManager()).getProjects().Add(project);
+         ((CodingProjectsManager)getManager()).addNewCodingProject(project);
       }
-
-      //public override ClickResults handleClick(int x, int y) {
-      //   ClickResults results = new ClickResults();
-      //   if (wasControlClicked(submitButton,x,y)) {
-      //      if (!String.IsNullOrWhiteSpace(nameBox.Text) && !String.IsNullOrWhiteSpace(descriptionBox.Text)) {
-      //         results.setRequestManager(true);
-      //         results.setResultToHandle(ResultToHandleEnum.CreatedNewCodingProject);
-      //      } else {
-      //         MessageBox.Show("Invalid Input Information");
-      //      }
-      //   }
-      //   return results;
-      //}
-
-      //public override void handleResults(ResultHandler handler) {
-      //   if (handler.getResultToHandle() == ResultToHandleEnum.CreatedNewCodingProject) {
-      //      CodingProjectsManager manager = (CodingProjectsManager)handler.getManager();
-      //      // to be implemented
-      //   }
-      //}
 
       public override void clear() {
          removeControlFromWindow(nameBox);

@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using System.Drawing;
+using System.Windows.Forms;
 
 namespace HackerCentral.Common {
    public abstract class CustomPanel {
@@ -6,14 +7,48 @@ namespace HackerCentral.Common {
       private Manager manager;
       private IO io;
 
-      public CustomPanel() {
-         window = null;
-         manager = null;
-         io = null;
-      }
-
       public void initialize(Form1 form) {
          window = form;
+         manager = window.getCurrentManager();
+         io = window.getCurrentIO();
+      }
+
+      public TextBox createTextBox(Point loc, Size size) {
+         var box = new TextBox();
+         box.Location = loc;
+         box.Size = size;
+         addControlToWindow(box);
+         return box;
+      }
+
+      public Button createButton(Point loc, Size size, string text) {
+         var button = new Button();
+         button.Location = loc;
+         button.Size = size;
+         button.Text = text;
+         button.UseVisualStyleBackColor = true;
+         addControlToWindow(button);
+         return button;
+      }
+
+      public Label createLabel(Point loc, Size size, string text) {
+         var label = new Label();
+         label.AutoSize = true;
+         label.Location = loc;
+         label.Size = size;
+         label.ForeColor = Color.RoyalBlue;
+         label.Text = text;
+         addControlToWindow(label);
+         return label;
+      }
+
+      public ListBox createListBox(Point loc, Size size) {
+         var box = new ListBox();
+         box.FormattingEnabled = true;
+         box.Location = loc;
+         box.Size = size;
+         addControlToWindow(box);
+         return box;
       }
 
       public void addControlToWindow(Control control) {
@@ -24,21 +59,13 @@ namespace HackerCentral.Common {
          window.Controls.Remove(control);
       }
 
-      //public void addLabelToWindow(Label label) {
-      //   window.Controls.Add(label);
-      //}
-
-      //public void removeLabelFromWindow(Label label) {
-      //   window.Controls.Remove(label);
-      //}
-
       public bool wasControlClicked(Control control, int x,int y) {
          // to be implemented
          return false;
       }
 
-      //public abstract ClickResults handleClick(int x, int y);
-      //public abstract void handleResults(ResultHandler handler);
+      //public abstract ClickResults handleClick(int x, int y); // maybe implement later
+      //public abstract void handleResults(ResultHandler handler); // maybe implement later
       public abstract void clear();
 
       // getter methods
@@ -49,6 +76,6 @@ namespace HackerCentral.Common {
       // setter methods
       public void setWindow(Form1 param) { window = param; }
       public void setManager(Manager param) { manager = param; }
-      public void setIO(IO param) { io = paraml; }
+      public void setIO(IO param) { io = param; }
    }
 }

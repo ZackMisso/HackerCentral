@@ -59,10 +59,6 @@ namespace HackerCentral {
 
       }
 
-      private void toolStripMenuItem1_Click(object sender, EventArgs e) {
-
-      }
-
       private void tasksToolStripMenuItem_Click(object sender, EventArgs e) {
 
       }
@@ -168,21 +164,34 @@ namespace HackerCentral {
       }
 
       private void codingNewProjectItem_Click(object sender, EventArgs e) {
-         if(view != null){
+         if(view != null)
             view.clear();
-         }
          currentManager = globalManager.getCodingProjectsManager();
          currentIO = currentManager.getIO();
          view = new CodingProjectsNewProjectPanel();
          ((CodingProjectsNewProjectPanel)view).initialize(this);
       }
 
-      private void button1_Click_1(object sender, EventArgs e) {
-
+      private void codingProjectsNewTaskItem_Click(object sender, EventArgs e) {
+         if (view != null)
+            view.clear();
+         currentManager = globalManager.getCodingProjectsManager();
+         currentIO = currentManager.getIO();
+         view = new CodingProjectsAddTaskPanel();
+         ((CodingProjectsAddTaskPanel)view).initialize(this);
       }
 
-      private void listBox1_SelectedIndexChanged(object sender, EventArgs e) {
-
+      private void codingListOfProjectsItem_Click(object sender, EventArgs e) {
+         if (view != null)
+            view.clear();
+         currentManager = globalManager.getCodingProjectsManager();
+         currentIO = currentManager.getIO();
+         view = new CodingProjectsListOfProjectsPanel();
+         ((CodingProjectsListOfProjectsPanel)view).initialize(this);
       }
+
+      // getter methods
+      public Manager getCurrentManager() { return currentManager; }
+      public IO getCurrentIO() { return currentIO; }
    }
 }

@@ -32,6 +32,7 @@
          this.codingHistoryItem = new System.Windows.Forms.ToolStripMenuItem();
          this.codingGoalsItem = new System.Windows.Forms.ToolStripMenuItem();
          this.codingNewProjectItem = new System.Windows.Forms.ToolStripMenuItem();
+         this.codingProjectsNewTaskItem = new System.Windows.Forms.ToolStripMenuItem();
          this.financesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
          this.fitnessProgressItem = new System.Windows.Forms.ToolStripMenuItem();
          this.fitnessHistoryItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -115,7 +116,8 @@
             this.codingTasksItem,
             this.codingHistoryItem,
             this.codingGoalsItem,
-            this.codingNewProjectItem});
+            this.codingNewProjectItem,
+            this.codingProjectsNewTaskItem});
          this.codingProjectsToolStripMenuItem.ForeColor = System.Drawing.Color.DarkRed;
          this.codingProjectsToolStripMenuItem.Name = "codingProjectsToolStripMenuItem";
          this.codingProjectsToolStripMenuItem.Size = new System.Drawing.Size(103, 20);
@@ -127,7 +129,7 @@
          this.codingListOfProjectsItem.Name = "codingListOfProjectsItem";
          this.codingListOfProjectsItem.Size = new System.Drawing.Size(153, 22);
          this.codingListOfProjectsItem.Text = "List Of Projects";
-         this.codingListOfProjectsItem.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
+         this.codingListOfProjectsItem.Click += new System.EventHandler(this.codingListOfProjectsItem_Click);
          // 
          // codingTasksItem
          // 
@@ -156,6 +158,13 @@
          this.codingNewProjectItem.Size = new System.Drawing.Size(153, 22);
          this.codingNewProjectItem.Text = "New Project";
          this.codingNewProjectItem.Click += new System.EventHandler(this.codingNewProjectItem_Click);
+         // 
+         // codingProjectsNewTaskItem
+         // 
+         this.codingProjectsNewTaskItem.Name = "codingProjectsNewTaskItem";
+         this.codingProjectsNewTaskItem.Size = new System.Drawing.Size(153, 22);
+         this.codingProjectsNewTaskItem.Text = "New Task";
+         this.codingProjectsNewTaskItem.Click += new System.EventHandler(this.codingProjectsNewTaskItem_Click);
          // 
          // financesToolStripMenuItem
          // 
@@ -513,6 +522,7 @@
       private System.Windows.Forms.ToolStripMenuItem schoolAddClassItem;
       private System.Windows.Forms.ToolStripMenuItem artProgressItem;
       private System.Windows.Forms.ToolStripMenuItem settingsUpdateItem;
+      private System.Windows.Forms.ToolStripMenuItem codingProjectsNewTaskItem;
    }
 }
 

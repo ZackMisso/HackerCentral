@@ -6,14 +6,12 @@ namespace HackerCentral.Common {
       private CodingProjectsIO codingProjectsIO;
 
       public GlobalIO() {
-         id = 0;
          // to be implemented
          //initializeAllIO();
       }
 
       public GlobalIO(string url) {
          globalUrl = url;
-         id = 0;
          //initializeAllIO();
       }
 
