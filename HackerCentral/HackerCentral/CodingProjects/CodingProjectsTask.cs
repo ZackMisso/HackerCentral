@@ -4,10 +4,6 @@ namespace HackerCentral.CodingProjects {
    public class CodingProjectsTask : Task{
       private CodingProject project;
 
-      public CodingProjectsTask() : base(){
-         project = null;
-      }
-
       // getter methods
       public CodingProject getProject() { return project; }
 

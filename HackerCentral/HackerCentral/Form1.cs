@@ -190,6 +190,15 @@ namespace HackerCentral {
          ((CodingProjectsListOfProjectsPanel)view).initialize(this);
       }
 
+      private void codingProjectsNewGoalItem_Click(object sender, EventArgs e) {
+         if (view != null)
+            view.clear();
+         currentManager = globalManager.getCodingProjectsManager();
+         currentIO = currentManager.getIO();
+         view = new CodingProjectsNewGoalPanel();
+         ((CodingProjectsNewGoalPanel)view).initialize(this);
+      }
+
       // getter methods
       public Manager getCurrentManager() { return currentManager; }
       public IO getCurrentIO() { return currentIO; }

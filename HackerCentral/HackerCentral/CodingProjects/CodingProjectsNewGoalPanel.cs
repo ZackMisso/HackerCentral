@@ -1,11 +1,20 @@
-﻿using HackerCentral.Common;
+﻿using System.Windows.Forms;
+using System.Collections.Generic;
+using HackerCentral.Common;
 
 namespace HackerCentral.CodingProjects {
    public class CodingProjectsNewGoalPanel : CustomPanel{
-      public CodingProjectsNewGoalPanel()
-         : base() {
-         // to be implemented
-      }
+      private CodingProject selectedProject;
+      private List<Label> tasks;
+      private ListBox typeOfGoal;
+      private ListBox project;
+      private ListBox tasks;
+      private TextBox numberInput;
+      private Label typeOfGoalLabel;
+      private Label projectLabel;
+      private Label addTask;
+      private Button submitButton;
+      private Button addTaskButton;
 
       public void initialize(Form1 form) {
          base.initialize(form);
@@ -13,7 +22,8 @@ namespace HackerCentral.CodingProjects {
       }
 
       public override void clear() {
-         // to be implemented
+         selectedProject = null;
+         // to be implmented if more is needed
       }
    }
 }

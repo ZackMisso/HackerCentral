@@ -70,6 +70,7 @@
          this.schoolClassesItem = new System.Windows.Forms.ToolStripMenuItem();
          this.schoolAddClassItem = new System.Windows.Forms.ToolStripMenuItem();
          this.InfoPanel = new System.Windows.Forms.Panel();
+         this.codingProjectsNewGoalItem = new System.Windows.Forms.ToolStripMenuItem();
          this.MainMenu.SuspendLayout();
          this.SuspendLayout();
          // 
@@ -117,7 +118,8 @@
             this.codingHistoryItem,
             this.codingGoalsItem,
             this.codingNewProjectItem,
-            this.codingProjectsNewTaskItem});
+            this.codingProjectsNewTaskItem,
+            this.codingProjectsNewGoalItem});
          this.codingProjectsToolStripMenuItem.ForeColor = System.Drawing.Color.DarkRed;
          this.codingProjectsToolStripMenuItem.Name = "codingProjectsToolStripMenuItem";
          this.codingProjectsToolStripMenuItem.Size = new System.Drawing.Size(103, 20);
@@ -455,6 +457,13 @@
          this.InfoPanel.TabIndex = 1;
          this.InfoPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.InfoPanel_Paint);
          // 
+         // codingProjectsNewGoalItem
+         // 
+         this.codingProjectsNewGoalItem.Name = "codingProjectsNewGoalItem";
+         this.codingProjectsNewGoalItem.Size = new System.Drawing.Size(153, 22);
+         this.codingProjectsNewGoalItem.Text = "New Goal";
+         this.codingProjectsNewGoalItem.Click += new System.EventHandler(this.codingProjectsNewGoalItem_Click);
+         // 
          // Form1
          // 
          this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -523,6 +532,7 @@
       private System.Windows.Forms.ToolStripMenuItem artProgressItem;
       private System.Windows.Forms.ToolStripMenuItem settingsUpdateItem;
       private System.Windows.Forms.ToolStripMenuItem codingProjectsNewTaskItem;
+      private System.Windows.Forms.ToolStripMenuItem codingProjectsNewGoalItem;
    }
 }
 

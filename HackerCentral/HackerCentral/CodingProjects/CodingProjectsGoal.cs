@@ -2,11 +2,7 @@
 
 namespace HackerCentral.CodingProjects {
    public abstract class CodingProjectsGoal : Goal{
-      private CodingProject project;
-
-      public CodingProjectsGoal() {
-         project = null;
-      }      
+      private CodingProject project;      
 
       // getter methods
       public CodingProject getProject() { return project; }

@@ -3,12 +3,6 @@
       private int originalLineCount;
       private int goalLineCount;
 
-      public CodingProjectsLineGoal()
-         : base() {
-         originalLineCount = 0;
-         goalLineCount = 0;
-      }
-
       public override void updateGoal(object obj) {
          var project = (CodingProject)obj;
       }
