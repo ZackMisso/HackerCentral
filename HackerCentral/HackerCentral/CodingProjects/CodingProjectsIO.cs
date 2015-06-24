@@ -3,10 +3,10 @@ using HackerCentral.Common;
 
 namespace HackerCentral.CodingProjects {
    public class CodingProjectsIO : IO{
-      private string globalCodingProjectsUrl;
+      private string codingProjectsUrl;
 
-      public CodingProjectsIO() {
-         globalCodingProjectsUrl = "";
+      public CodingProjectsIO(string url) {
+         codingProjectsUrl = url;
       }
 
       public List<CodingProject> readCodingProjectsFromFile(){
@@ -58,6 +58,6 @@ namespace HackerCentral.CodingProjects {
       }
 
       // setter methods
-      public void setGlobalCodingProjectsUrl(string param) { globalCodingProjectsUrl = param; }
+      public void setCodingProjectsUrl(string param) { codingProjectsUrl = param; }
    }
 }

@@ -10,5 +10,8 @@ namespace HackerCentral.School {
 
       // getter methods
       public IO getIO() { return io; }
+
+      // setter methods
+      public void setIO(SchoolIO param) { io = param; }
    }
 }

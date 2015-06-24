@@ -10,5 +10,8 @@ namespace HackerCentral.Finances {
 
       // getter methods
       public IO getIO() { return io; }
+
+      // setter methods
+      public void setIO(FinancesIO param) { io = param; }
    }
 }

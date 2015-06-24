@@ -8,6 +8,10 @@ namespace HackerCentral.Research {
          // to be implemented
       }
 
+      // getter methods
       public IO getIO() { return io; }
+
+      // setter methods
+      public void setIO(ResearchIO param) { io = param; }
    }
 }

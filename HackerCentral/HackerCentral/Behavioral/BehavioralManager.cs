@@ -10,5 +10,8 @@ namespace HackerCentral.Behavioral {
 
       // getter methods
       public IO getIO() { return io; }
+
+      // setter methods
+      public void setIO(BehavioralIO param) { io = param; }
    }
 }

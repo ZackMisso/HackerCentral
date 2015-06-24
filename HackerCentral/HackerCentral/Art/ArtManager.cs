@@ -10,5 +10,8 @@ namespace HackerCentral.Art {
 
       // getter methods
       public IO getIO() { return io; }
+
+      // setter methods
+      public void setIO(ArtIO param) { io = param; }
    }
 }

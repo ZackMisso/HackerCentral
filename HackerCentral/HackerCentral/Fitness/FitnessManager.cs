@@ -10,5 +10,8 @@ namespace HackerCentral.Fitness {
 
       // getter methods
       public IO getIO() { return io; }
+
+      // setter methods
+      public void setIO(FitnessIO param) { io = param; }
    }
 }
