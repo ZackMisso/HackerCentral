@@ -7,7 +7,7 @@ namespace HackerCentral.CodingProjects {
    public class CodingProjectsListOfProjectsPanel : CustomPanel{
       private List<Label> descriptionLabels;
       private List<Label> nameLabels;
-      private List<Label> numperOfLinesLabels;
+      private List<Label> numberOfLinesLabels;
       private List<Label> projectDescriptionLabels;
       private List<Label> projectNameLabels;
       private List<Label> projectNumberOfLinesLabels;
@@ -33,11 +33,11 @@ namespace HackerCentral.CodingProjects {
          }
          while(nameLabels.Count > 0){
             removeControlFromWindow(nameLabels[0]);
-            nameLabels.RemoveAt(0)
+            nameLabels.RemoveAt(0);
          }
          while(numberOfLinesLabels.Count > 0){
             removeControlFromWindow(numberOfLinesLabels[0]);
-            numberOfLinesLabels.RemoveAt(0)
+            numberOfLinesLabels.RemoveAt(0);
          }
          while(projectDescriptionLabels.Count > 0){
             removeControlFromWindow(projectDescriptionLabels[0]);

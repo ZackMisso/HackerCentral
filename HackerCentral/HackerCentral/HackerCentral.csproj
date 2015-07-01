@@ -44,18 +44,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Art\ArtGoal.cs" />
     <Compile Include="Art\ArtGoalsPanel.cs" />
     <Compile Include="Art\ArtHistoryPanel.cs" />
     <Compile Include="Art\ArtIO.cs" />
+    <Compile Include="Art\ArtIterationTask.cs" />
     <Compile Include="Art\ArtManager.cs" />
+    <Compile Include="Art\ArtPiece.cs" />
+    <Compile Include="Art\ArtPieceTask.cs" />
     <Compile Include="Art\ArtProgressPanel.cs" />
+    <Compile Include="Art\ArtTask.cs" />
     <Compile Include="Art\ArtTasksPanel.cs" />
     <Compile Include="Behavioral\BehavioralAddNewTrackerPanel.cs" />
+    <Compile Include="Behavioral\BehavioralGoal.cs" />
     <Compile Include="Behavioral\BehavioralGoalsPanel.cs" />
     <Compile Include="Behavioral\BehavioralHistoryPanel.cs" />
     <Compile Include="Behavioral\BehavioralIO.cs" />
+    <Compile Include="Behavioral\BehavioralLimit.cs" />
     <Compile Include="Behavioral\BehavioralManager.cs" />
     <Compile Include="Behavioral\BehavioralProgressPanel.cs" />
+    <Compile Include="Behavioral\BehavioralTracker.cs" />
     <Compile Include="CodingProjects\CodingProject.cs" />
     <Compile Include="CodingProjects\CodingProjectsAddTaskPanel.cs" />
     <Compile Include="CodingProjects\CodingProjectsGoal.cs" />
@@ -87,13 +95,16 @@
     <Compile Include="DataStructures\DoubleWithDescription.cs" />
     <Compile Include="DataStructures\IntWithDescription.cs" />
     <Compile Include="Finances\FinanceData.cs" />
+    <Compile Include="Finances\FinancesBudget.cs" />
     <Compile Include="Finances\FinancesCurrentMonthPanel.cs" />
     <Compile Include="Finances\FinancesHistoryPanel.cs" />
     <Compile Include="Finances\FinancesIO.cs" />
     <Compile Include="Finances\FinancesManager.cs" />
     <Compile Include="Finances\FinancesNewTransactionPanel.cs" />
-    <Compile Include="Fitness\ExerciseData.cs" />
+    <Compile Include="Finances\FinancesTransaction.cs" />
     <Compile Include="Fitness\FitnessAddExercisePanel.cs" />
+    <Compile Include="Fitness\FitnessExercise.cs" />
+    <Compile Include="Fitness\FitnessExerciseGoal.cs" />
     <Compile Include="Fitness\FitnessGoalsPanel.cs" />
     <Compile Include="Fitness\FitnessHistoryPanel.cs" />
     <Compile Include="Fitness\FitnessIO.cs" />

@@ -1,4 +1,4 @@
 ﻿namespace HackerCentral.Fitness {
-   public class ExerciseData {
+   public class FitnessExerciseGoal {
    }
 }

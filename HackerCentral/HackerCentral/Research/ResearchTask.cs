@@ -1,7 +1,7 @@
 ﻿using HackerCentral.Common;
 
-namespace HackerCentral.Research : Task{
-   public class ResearchTask {
+namespace HackerCentral.Research{
+   public class ResearchTask : Task{
       // to be implemented
    }
 }

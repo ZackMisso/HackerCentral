@@ -12,6 +12,10 @@ namespace HackerCentral.Research {
          goals = new List<ResearchGoal>();
       }
 
+      public void update() {
+         // to be implemented
+      }
+
       // getter methods
       public List<ResearchTask> getTasks() { return tasks; }
       public List<ResearchGoal> getGoals() { return goals; }

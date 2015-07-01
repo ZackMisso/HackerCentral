@@ -6,9 +6,9 @@ namespace HackerCentral.CodingProjects {
    public class CodingProjectsNewGoalPanel : CustomPanel{
       private CodingProject selectedProject;
       private List<Label> tasks;
-      private ListBox typeOfGoal;
-      private ListBox project;
-      private ListBox tasks;
+      private ListBox typeOfGoalBox;
+      private ListBox projectsBox;
+      private ListBox tasksBox;
       private TextBox numberInput;
       private Label typeOfGoalLabel;
       private Label projectLabel;

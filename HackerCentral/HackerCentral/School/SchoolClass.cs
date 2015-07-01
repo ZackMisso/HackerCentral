@@ -8,7 +8,7 @@ namespace HackerCentral.School {
 
       public SchoolClass() {
          grades = new List<SchoolGradeContainer>();
-         currentAssignments = new List<SchoolAssignment>();
+         assignments = new List<SchoolAssignment>();
       }
 
       // getter methods

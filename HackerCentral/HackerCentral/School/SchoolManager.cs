@@ -12,6 +12,10 @@ namespace HackerCentral.School {
          goals = new List<SchoolGoal>();
       }
 
+      public void update() {
+         // to be implemented
+      }
+
       // getter methods
       public List<SchoolClass> getClasses() { return classes; }
       public List<SchoolGoal> getGoals() { return goals; }

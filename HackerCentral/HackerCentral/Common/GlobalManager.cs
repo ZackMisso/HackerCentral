@@ -46,7 +46,7 @@ namespace HackerCentral.Common {
          artManager.update();
          behavioralManager.update();
          codingProjectsManager.update();
-         financesManager.update();C:\Users\zmisso\Documents\HackerCentral\HackerCentral\HackerCentral\Common\GlobalIO.cs
+         financesManager.update();
          fitnessManager.update();
          musicManager.update();
          researchManager.update();

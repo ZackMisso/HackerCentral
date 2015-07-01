@@ -8,6 +8,10 @@ namespace HackerCentral.Music {
          // to be implemented
       }
 
+      public void update() {
+         // to be implemented
+      }
+
       // getter methods
       public IO getIO() { return io; }
 

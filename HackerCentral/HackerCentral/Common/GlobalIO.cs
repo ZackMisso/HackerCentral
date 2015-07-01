@@ -20,6 +20,10 @@ namespace HackerCentral.Common {
       private ResearchIO researchIO;
       private SchoolIO schoolIO;
 
+      public GlobalIO() {
+         // to be implemented
+      }
+
       public GlobalIO(string url) {
          globalUrl = url; // url to project
          loadProjectData();
