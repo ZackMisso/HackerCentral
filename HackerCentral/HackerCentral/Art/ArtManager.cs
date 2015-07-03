@@ -14,6 +14,10 @@ namespace HackerCentral.Art {
          goals = new List<ArtGoal>();
       }
 
+      public void initialize() {
+         // to be implemented
+      }
+
       public void update() {
          // to be implemented
       }

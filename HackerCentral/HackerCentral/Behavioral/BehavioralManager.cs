@@ -8,6 +8,10 @@ namespace HackerCentral.Behavioral {
          // to be implemented
       }
 
+      public void initialize() {
+         // to be implemented
+      }
+
       public void update() {
          // to be implemented
       }

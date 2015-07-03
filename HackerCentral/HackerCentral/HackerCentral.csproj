@@ -123,6 +123,7 @@
     <Compile Include="Music\MusicHistoryPanel.cs" />
     <Compile Include="Music\MusicIO.cs" />
     <Compile Include="Music\MusicManager.cs" />
+    <Compile Include="Music\MusicPiece.cs" />
     <Compile Include="Music\MusicTask.cs" />
     <Compile Include="Music\MusicTasksPanel.cs" />
     <Compile Include="Program.cs" />

@@ -20,9 +20,9 @@ namespace HackerCentral.Common {
       private ResearchIO researchIO;
       private SchoolIO schoolIO;
 
-      public GlobalIO() {
-         // to be implemented
-      }
+      //public GlobalIO() {
+      //   // to be implemented
+      //}
 
       public GlobalIO(string url) {
          globalUrl = url; // url to project
@@ -33,8 +33,8 @@ namespace HackerCentral.Common {
          if (File.Exists(globalUrl + "\\GlobalIO.txt"))
             loadSubsystemIO();
          else {
-            createHierarchyStructure();
             loadSubsystemIO();
+            createHierarchyStructure();
          }
       }
 
@@ -52,20 +52,28 @@ namespace HackerCentral.Common {
       private void createHierarchyStructure() {
          if (!Directory.Exists(globalUrl + "\\Art"))
             Directory.CreateDirectory(globalUrl + "\\Art");
+         artIO.createDirectoryStructure();
          if (!Directory.Exists(globalUrl + "\\Behavioral"))
             Directory.CreateDirectory(globalUrl + "\\Behavioral");
+         behavioralIO.createDirectoryStructure();
          if (!Directory.Exists(globalUrl + "\\CodingProjects"))
             Directory.CreateDirectory(globalUrl + "\\CodingProjects");
+         codingProjectsIO.createDirectoryStructure();
          if (!Directory.Exists(globalUrl + "\\Finances"))
             Directory.CreateDirectory(globalUrl + "\\Finances");
+         financesIO.createDirectoryStructure();
          if (!Directory.Exists(globalUrl + "\\Fitness"))
             Directory.CreateDirectory(globalUrl + "\\Fitness");
+         fitnessIO.createDirectoryStructure();
          if (!Directory.Exists(globalUrl + "\\Music"))
             Directory.CreateDirectory(globalUrl + "\\Music");
+         musicIO.createDirectoryStructure();
          if (!Directory.Exists(globalUrl + "\\Research"))
             Directory.CreateDirectory(globalUrl + "\\Research");
+         researchIO.createDirectoryStructure();
          if (!Directory.Exists(globalUrl + "\\School"))
             Directory.CreateDirectory(globalUrl + "\\School");
+         schoolIO.createDirectoryStructure();
       }
 
       // getter methods

@@ -28,9 +28,19 @@ namespace HackerCentral {
 
       public Form1() {
          InitializeComponent();
+         var url = GetLocationOfFileStructure();
          globalManager = new GlobalManager();
-         globalIO = new GlobalIO();
+         globalIO = new GlobalIO(url);
          globalManager.initializeAllIO(globalIO);
+      }
+
+      private string GetLocationOfFileStructure(){
+         var dialog = new FolderBrowserDialog();
+         if (dialog.ShowDialog() != DialogResult.OK){
+            MessageBox.Show("ERROR :: NEED LOCATION OF FILE STRUCTURE");
+            while(true) { }
+         }
+         return dialog.SelectedPath;
       }
 
       //protected override void OnMouseDown(MouseEventArgs e) {

@@ -12,6 +12,10 @@ namespace HackerCentral.Fitness {
          // to be implemented
       }
 
+      public void initialize() {
+         // to be implemented
+      }
+
       // getter methods
       public IO getIO() { return io; }
 

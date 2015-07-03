@@ -12,6 +12,10 @@ namespace HackerCentral.Research {
          goals = new List<ResearchGoal>();
       }
 
+      public void initialize() {
+         // to be implemented
+      }
+
       public void update() {
          // to be implemented
       }

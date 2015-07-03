@@ -40,6 +40,14 @@ namespace HackerCentral.Common {
          musicManager.setIO(io.getMusicIO());
          researchManager.setIO(io.getResearchIO());
          schoolManager.setIO(io.getSchoolIO());
+         artManager.initialize();
+         behavioralManager.initialize();
+         codingProjectsManager.initialize();
+         financesManager.initialize();
+         fitnessManager.initialize();
+         musicManager.initialize();
+         researchManager.initialize();
+         schoolManager.initialize();
       }
 
       public void update() {

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.IO;
+using System.Collections.Generic;
 using HackerCentral.Common;
 
 namespace HackerCentral.CodingProjects {
@@ -7,6 +8,23 @@ namespace HackerCentral.CodingProjects {
 
       public CodingProjectsIO(string url) {
          codingProjectsUrl = url;
+      }
+
+      public void createDirectoryStructure() {
+         if (!Directory.Exists(codingProjectsUrl + "\\Tasks"))
+            Directory.CreateDirectory(codingProjectsUrl + "\\Tasks");
+         if (!Directory.Exists(codingProjectsUrl + "\\Goals"))
+            Directory.CreateDirectory(codingProjectsUrl + "\\Goals");
+         if (!Directory.Exists(codingProjectsUrl + "\\Projects"))
+            Directory.CreateDirectory(codingProjectsUrl + "\\Projects");
+         if (!Directory.Exists(codingProjectsUrl + "\\History"))
+            Directory.CreateDirectory(codingProjectsUrl + "\\History");
+         if (!Directory.Exists(codingProjectsUrl + "\\History\\Tasks"))
+            Directory.CreateDirectory(codingProjectsUrl + "\\History\\Tasks");
+         if (!Directory.Exists(codingProjectsUrl + "\\History\\Goals"))
+            Directory.CreateDirectory(codingProjectsUrl + "\\History\\Goals");
+         if (!Directory.Exists(codingProjectsUrl + "\\History\\Projects"))
+            Directory.CreateDirectory(codingProjectsUrl + "\\History\\Projects");
       }
 
       public List<CodingProject> readCodingProjectsFromFile(){

@@ -12,6 +12,10 @@ namespace HackerCentral.School {
          goals = new List<SchoolGoal>();
       }
 
+      public void initialize() {
+         // to be implemented
+      }
+
       public void update() {
          // to be implemented
       }
