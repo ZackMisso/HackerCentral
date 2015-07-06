@@ -11,6 +11,12 @@ namespace HackerCentral.School {
          assignments = new List<SchoolAssignment>();
       }
 
+      public override string ToString() {
+         var sb = new StringBuilder();
+         // to be implemented
+         return sb.ToString();
+      }
+
       // getter methods
       public List<SchoolGradeContainer> getGrades() { return grades; }
       public List<SchoolAssignment> getAssignments() { return assignments; }

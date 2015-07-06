@@ -6,6 +6,12 @@
       private bool takeNotes;
       private bool readAll;
 
+      public override string ToString() {
+         var sb = new StringBuilder();
+         // to be implemented
+         return sb.ToString();
+      }
+
       // getter methods
       public ResearchReading getReading() { return reading; }
       public int getPagesToRead() { return pagesToRead; }

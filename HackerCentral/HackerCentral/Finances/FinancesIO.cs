@@ -29,10 +29,18 @@ namespace HackerCentral.Finances {
          return list;
       }
 
+      public void writeTransactionsToFiles(List<FinancesTransaction> list) {
+         // to be implemented
+      }
+
       public List<FinancesTransaction> readTransactionsFromHistory() {
          var list = new List<FinancesTransaction>();
          // to be implemented
          return list;
+      }
+
+      public void writeTransactionsToHistory(List<FinancesTransaction> list) {
+         // to be implemented
       }
 
       public List<FinancesBudget> readBudgetFromFiles() {
@@ -41,10 +49,18 @@ namespace HackerCentral.Finances {
          return list;
       }
 
+      public void writeBudgetToFiles(List<FinancesBudget> list) {
+         // to be implemented
+      }
+
       public List<FinancesBudget> readBudgetFromHistory() {
          var list = new List<FinancesBudget>();
          // to be implemented
          return list;
+      }
+
+      public void writeBudgetToHistory(List<FinancesBudget> list) {
+         // to be implemented
       }
 
       // setters

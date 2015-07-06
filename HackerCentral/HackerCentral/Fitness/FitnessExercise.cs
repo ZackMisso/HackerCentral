@@ -4,6 +4,12 @@
       private string name;
       private int totalReps;
       private bool hasGoal;
+
+      public override string ToString() {
+         var sb = new StringBuilder();
+         // to be implemented
+         return sb.ToString();
+      }
       
       // getter methods
       public FitnessExerciseGoal getGoal() { return goal; }

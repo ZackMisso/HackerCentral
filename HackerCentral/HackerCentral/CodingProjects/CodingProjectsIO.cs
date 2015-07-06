@@ -27,10 +27,28 @@ namespace HackerCentral.CodingProjects {
             Directory.CreateDirectory(codingProjectsUrl + "\\History\\Projects");
       }
 
-      public List<CodingProject> readCodingProjectsFromFile(){
+      public List<CodingProject> readCodingProjectsFromFiles(){
          var list = new List<CodingProject>();
-         // to be implemented
+         var files = Directory.GetFiles(codingProjectsUrl + "\\Projects");
+         for(string file in files){
+            var reader = new StreamReader(file);
+            var project = new CodingProject();
+            string line;
+            while(line = reader.ReadLine() != null){
+               string[] contents = line.Split(' ');
+               // to be implemented
+            }
+            list.Add(project);
+            reader.Close();
+         }
          return list;
+      }
+
+      public void writeCodingProjectsToFiles(List<CodingProject> list) {
+         foreach (CodingProject project in list) {
+            var filePath = codingProjectsUrl + "\\Projects\\" + project.getName() + ".txt";
+            File.WriteAllText(filePath, project.ToString());
+         }
       }
 
       public List<CodingProjectsTask> readTasksFromFile(){
@@ -39,10 +57,18 @@ namespace HackerCentral.CodingProjects {
          return list;
       }
 
+      public void writeTasksToFiles(List<CodingProjectsTask> list) {
+         // to be implemented
+      }
+
       public List<CodingProjectsTask> readFinishedTasksFromFile(){
          var list = new List<CodingProjectsTask>();
          // to be implemented
          return list;
+      }
+
+      public void writeTasksToHistory(List<CodingProjectsTask> list) {
+         // to be implemented
       }
 
       public List<CodingProjectsGoal> readGoalsFromFile(){
@@ -51,28 +77,24 @@ namespace HackerCentral.CodingProjects {
          return list;
       }
 
+      public void writeGoalsToFile(List<CodingProjectsGoal> list) {
+         // to be implemetned
+      }
+
       public List<CodingProjectsGoal> readFinishedGoalsFromFile(){
          var list = new List<CodingProjectsGoal>();
          // to be implemented
          return list;
       }
 
+      public void writeGoalsToHistory(List<CodingProjectsGoal> list) {
+         // to be implemented
+      }
+
       public int getLinesOfCodeForProject(string url, List<string> typesOfFiles){
          var lines = 0;
          // to be implemented
          return lines;
-      }
-
-      public void writeCodingProjectsDataToFile(List<CodingProject> projects){
-         // to be implemented
-      }
-
-      public void writeCodingProjectsTasksToFile(List<CodingProjectsTask> tasks){
-         // to be implemented
-      }
-
-      public void writeCodingProjectsGoalsToFile(List<CodingProjectsGoal> goals){
-         // to be implemented
       }
 
       // setter methods

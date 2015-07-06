@@ -7,6 +7,12 @@
          var project = (CodingProject)obj;
       }
 
+      public override string ToString() {
+         var sb = new StringBuilder();
+         // to be implemented
+         return sb.ToString();
+      }
+
       // getter methods
       public int getOriginalLineCount() { return originalLineCount; }
       public int getGoalLineCount() { return goalLineCount; }

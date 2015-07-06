@@ -33,10 +33,18 @@ namespace HackerCentral.Behavioral {
          return list;
       }
 
+      public void writeLimitsToFiles(List<BehavioralLimit> list) {
+         // to be implemented
+      }
+
       public List<BehavioralLimit> readLimitsFromHistory() {
          var list = new List<BehavioralLimit>();
          // to be implemented
          return list;
+      }
+
+      public void writeLimitsToHistory(List<BehavioralLimit> list) {
+         // to be implemented
       }
 
       public List<BehavioralGoal> readGoalsFromFiles() {
@@ -45,10 +53,18 @@ namespace HackerCentral.Behavioral {
          return list;
       }
 
+      public void writeGoalsToFiles(List<BehavioralGoal> list) {
+         // to be implemented
+      }
+
       public List<BehavioralGoal> readGoalsFromHistory() {
          var list = new List<BehavioralGoal>();
          // to be implemented
          return list;
+      }
+
+      public void writeGoalsToHistory(List<BehavioralGoal> list) {
+         // to be implemented
       }
 
       public List<BehavioralTracker> readTrackersFromFiles() {
@@ -57,10 +73,18 @@ namespace HackerCentral.Behavioral {
          return list;
       }
 
+      public void writeTrackersToFiles(List<BehavioralTracker> list) {
+         // to be implemented
+      }
+
       public List<BehavioralTracker> readTrackersFromHistory() {
          var list = new List<BehavioralTracker>();
          // to be implemented
          return list;
+      }
+
+      public void writeTrackersToHistory(List<BehavioralTracker> list) {
+         // to be implemented
       }
 
       // setter method

@@ -11,6 +11,12 @@ namespace HackerCentral.Finances {
          budgetTypes = new Dictionary<string, float>();
       }
 
+      public override string ToString() {
+         var sb = new StringBuilder();
+         // to be implemented
+         return sb.ToString();
+      }
+
       // getter methods
       public Dictionary<string, float> getBudgetTypes() { return budgetTypes; }
       public DateTime getStartDate() { return startDate; }

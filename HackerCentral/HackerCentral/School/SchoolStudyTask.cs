@@ -1,5 +1,5 @@
-﻿namespace HackerCentral.Behavioral {
-   public class BehavioralLimit {
+﻿namespace HackerCentral.School {
+   public class SchoolStudyTask : SchoolTask{
       public override string ToString() {
          var sb = new StringBuilder();
          // to be implemented

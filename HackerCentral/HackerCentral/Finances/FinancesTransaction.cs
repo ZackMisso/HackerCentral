@@ -8,6 +8,12 @@ namespace HackerCentral.Finances {
       private int budgetType;
       private bool doneByCash;
 
+      public override string ToString() {
+         var sb = new StringBuilder();
+         // to be implemented
+         return sb.ToString();
+      }
+
       // getter methods
       public DateTime getDate() { return date; }
       public string getReceiptID() { return receiptID; }

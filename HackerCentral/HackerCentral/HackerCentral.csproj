@@ -141,6 +141,7 @@
     <Compile Include="Research\ResearchTasksPanel.cs" />
     <Compile Include="School\SchoolAddClassPanel.cs" />
     <Compile Include="School\SchoolAssignment.cs" />
+    <Compile Include="School\SchoolAssignmentTask.cs" />
     <Compile Include="School\SchoolClass.cs" />
     <Compile Include="School\SchoolClassesPanel.cs" />
     <Compile Include="School\SchoolGoal.cs" />
@@ -148,6 +149,8 @@
     <Compile Include="School\SchoolHistoryPanel.cs" />
     <Compile Include="School\SchoolIO.cs" />
     <Compile Include="School\SchoolManager.cs" />
+    <Compile Include="School\SchoolStudyTask.cs" />
+    <Compile Include="School\SchoolTask.cs" />
     <Compile Include="School\SchoolTasksPanel.cs" />
     <Compile Include="Settings\SettingsIO.cs" />
     <Compile Include="Settings\SettingsManager.cs" />

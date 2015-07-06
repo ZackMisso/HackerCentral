@@ -14,6 +14,12 @@ namespace HackerCentral.Behavioral {
       private bool updatesWeekly;
       private bool updatesMonthly;
 
+      public override string ToString() {
+         var sb = new StringBuilder();
+         // to be implemented
+         return sb.ToString();
+      }
+
       // getter methods
       public BehavioralGoal getGoal() { return goal; }
       public BehavioralLimit getLimit() { return limit; }

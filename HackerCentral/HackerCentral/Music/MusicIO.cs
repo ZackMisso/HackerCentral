@@ -1,4 +1,5 @@
 ﻿using System.IO;
+using System.Collections.Generic;
 using HackerCentral.Common;
 
 namespace HackerCentral.Music {
@@ -7,6 +8,66 @@ namespace HackerCentral.Music {
 
       public MusicIO(string url) {
          musicUrl = url;
+      }
+
+      public List<MusicPiece> readPiecesFromFiles() {
+         var list = new List<MusicPiece>();
+         // to be implemented
+         return list;
+      }
+
+      public void writePiecesToFiles(List<MusicPiece> list) {
+         // to be implemented
+      }
+
+      public List<MusicPiece> readPiecesFromHistory() {
+         var list = new List<MusicPiece>();
+         // to be implemented
+         return list;
+      }
+
+      public void writePiecesToHistory(List<MusicPiece> list) {
+         // to be implemented
+      }
+
+      public List<MusicTask> readTasksFromFile() {
+         var list = new List<MusicTask>();
+         // to be implemented
+         return list;
+      }
+
+      public void writeTasksToFiles(List<MusicTask> list) {
+         // to be implemented
+      }
+
+      public List<MusicTask> readTasksFromHistory() {
+         var list = new List<MusicTask>();
+         // to be implemented
+         return list;
+      }
+
+      public void writeTasksToHistory(List<MusicTask> list) {
+         // to be implemented
+      }
+
+      public List<MusicGoal> readGoalsFromFiles() {
+         var list = new List<MusicGoal>();
+         // to be implemented
+         return list;
+      }
+
+      public void writeGoalsToFiles(List<MusicGoal> list) {
+         // to be implemented
+      }
+
+      public List<MusicGoal> readGoalsFromHistory() {
+         var list = new List<MusicGoal>();
+         // to be implemented
+         return list;
+      }
+
+      public void writeGoalsToHistory(List<MusicGoal> list) {
+         // to be implemented
       }
 
       public void createDirectoryStructure() {

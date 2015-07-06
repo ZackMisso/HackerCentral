@@ -1,4 +1,5 @@
 ﻿using System.IO;
+using System.Collections.Generic;
 using HackerCentral.Common;
 
 namespace HackerCentral.Research {
@@ -7,6 +8,66 @@ namespace HackerCentral.Research {
 
       public ResearchIO(string url) {
          researchUrl = url;
+      }
+
+      public List<ResearchGoal> readGoalsFromFiles() {
+         var list = new List<ResearchGoal>();
+         // to be implemented
+         return list;
+      }
+
+      public void writeGoalsToFiles(List<ResearchGoal> list) {
+         // to be implemented
+      }
+
+      public List<ResearchGoal> readGoalsFromHistory() {
+         var list = new List<ResearchGoal>();
+         // to be implemented
+         return list;
+      }
+
+      public void writeGoalsToHistory(List<ResearchGoal> list) {
+         // to be implemented
+      }
+
+      public List<ResearchReading> readReadingsFromFiles() {
+         var list = new List<ResearchReading>();
+         // to be implemented
+         return list;
+      }
+
+      public void writeReadingsToFiles(List<ResearchReading> list) {
+         // to be implemented
+      }
+
+      public List<ResearchReading> readReadingsFromHistory() {
+         var list = new List<ResearchReading>();
+         // to be implemented
+         return list;
+      }
+
+      public void writeReadingsToHistory(List<ResearchReading> list) {
+         // to be implemented
+      }
+
+      public List<ResearchTask> readTasksFromFiles() {
+         var list = new List<ResearchTask>();
+         // to be implemented
+         return list;
+      }
+
+      public void writeTasksToFiles(List<ResearchTask> list) {
+         // to be implemented
+      }
+
+      public List<ResearchTask> readTasksFromHistory() {
+         var list = new List<ResearchTask>();
+         // to be implemented
+         return list;
+      }
+
+      public void writeTasksToHistory(List<ResearchTask> list) {
+         // to be implemented
       }
 
       public void createDirectoryStructure() {

@@ -9,6 +9,12 @@ namespace HackerCentral.Art {
       private string format;
       private int iteration;
 
+      public override string ToString() {
+         var sb = new StringBuilder();
+         // to be implemented
+         return sb.ToString();
+      }
+
       // getter methods
       public DateTime getBegan() { return began; }
       public DateTime getFinished() { return finished; }

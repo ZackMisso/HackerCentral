@@ -8,6 +8,12 @@ namespace HackerCentral.School {
       private float outOf;
       private float grade;
 
+      public override string ToString() {
+         var sb = new StringBuilder();
+         // to be implemented
+         return sb.ToString();
+      }
+
       // getter methods
       public SchoolGradeContainer getContainer() { return container; }
       public DateTime getDueDate() { return dueDate; }

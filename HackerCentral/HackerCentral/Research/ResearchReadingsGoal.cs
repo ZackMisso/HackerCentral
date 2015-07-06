@@ -9,6 +9,12 @@ namespace HackerCentral.Research {
       private bool goalBasedOnPages;
       private bool allReadings;
 
+      public override string ToString() {
+         var sb = new StringBuilder();
+         // to be implemented
+         return sb.ToString();
+      }
+
       // getter methods
       public List<ResearchReading> getToRead() { return toRead; }
       public int getTotalPages() { return totalPages; }

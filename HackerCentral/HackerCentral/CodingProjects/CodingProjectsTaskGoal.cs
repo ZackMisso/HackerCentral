@@ -9,6 +9,12 @@ namespace HackerCentral.CodingProjects {
             tasks = new List<CodingProjectsTask>();
       }
 
+      public override string ToString() {
+         var sb = new StringBuilder();
+         // to be implemented
+         return sb.ToString();
+      }
+
       public override void updateGoal(object obj) {
          var project = (CodingProject)obj;
       }
