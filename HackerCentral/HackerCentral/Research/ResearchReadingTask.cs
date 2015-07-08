@@ -1,4 +1,6 @@
-﻿namespace HackerCentral.Research {
+﻿using System.Text;
+
+namespace HackerCentral.Research {
    public class ResearchReadingTask : ResearchTask{
       private ResearchReading reading;
       private int pagesToRead;

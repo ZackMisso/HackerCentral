@@ -1,4 +1,6 @@
-﻿namespace HackerCentral.CodingProjects {
+﻿using System.Text;
+
+namespace HackerCentral.CodingProjects {
    public class CodingProjectsLineGoal : CodingProjectsGoal{
       private int originalLineCount;
       private int goalLineCount;

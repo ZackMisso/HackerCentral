@@ -1,4 +1,6 @@
-﻿namespace HackerCentral.Art {
+﻿using System.Text;
+
+namespace HackerCentral.Art {
    public class ArtPieceTask : ArtTask{
       private ArtPiece piece;
 

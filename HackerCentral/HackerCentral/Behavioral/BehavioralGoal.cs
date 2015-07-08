@@ -1,4 +1,5 @@
-﻿using HackerCentral.Common;
+﻿using System.Text;
+using HackerCentral.Common;
 
 namespace HackerCentral.Behavioral {
    public class BehavioralGoal : Goal {

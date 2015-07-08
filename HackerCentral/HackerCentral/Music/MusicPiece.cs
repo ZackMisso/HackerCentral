@@ -1,4 +1,6 @@
-﻿namespace HackerCentral.Music {
+﻿using System.Text;
+
+namespace HackerCentral.Music {
    public class MusicPiece {
       public override string ToString() {
          var sb = new StringBuilder();

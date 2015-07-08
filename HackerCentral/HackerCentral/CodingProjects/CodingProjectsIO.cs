@@ -1,4 +1,6 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
+using System.Text;
 using System.Collections.Generic;
 using HackerCentral.Common;
 
@@ -30,15 +32,39 @@ namespace HackerCentral.CodingProjects {
       public List<CodingProject> readCodingProjectsFromFiles(){
          var list = new List<CodingProject>();
          var files = Directory.GetFiles(codingProjectsUrl + "\\Projects");
-         for(string file in files){
+         foreach(string file in files){
             var reader = new StreamReader(file);
-            var project = new CodingProject();
+            var project = new CodingProject(file);
             string line;
-            while(line = reader.ReadLine() != null){
-               string[] contents = line.Split(' ');
-               // to be implemented
+            while((line = reader.ReadLine()) != null){
+               var contents = line.Split(' ');
+               var index = 0;
+               project.setName(contents[index++]);
+               project.setUrl(contents[index++]);
+               // read last update here //
+               //project.
+               ///////////////////////////
+               project.setLinesOfCode(Convert.ToInt32(contents[index++]));
+               project.setProjectID(Convert.ToInt32(contents[index++]));
+               project.setProjectGoal(Convert.ToInt32(contents[index++]));
+               int numberOfTasks = Convert.ToInt32(contents[index++]);
+               for(int i = 0; i < numberOfTasks; i++){
+                  // to be implemented
+                  index++;
+               }
+               int numOfExtensions = Convert.ToInt32(contents[index++]);
+               List<string> fileTypes = new List<string>();
+               for(int i = 0; i < numOfExtensions; i++)
+                  fileTypes.Add(contents[index++]);
+               project.setTypesOfFiles(fileTypes);
+               var sb = new StringBuilder();
+               for(int i = 0; i < contents.Length; i++)
+                  sb.Append(contents[i] + " ");
+               //sb.Append("");
+               project.setDescription(sb.ToString());
+               list.Add(project);
             }
-            list.Add(project);
+            //list.Add(project);
             reader.Close();
          }
          return list;
@@ -51,7 +77,7 @@ namespace HackerCentral.CodingProjects {
          }
       }
 
-      public List<CodingProjectsTask> readTasksFromFile(){
+      public List<CodingProjectsTask> readTasksFromFiles(){
          var list = new List<CodingProjectsTask>();
          // to be impelemnted
          return list;
@@ -71,7 +97,7 @@ namespace HackerCentral.CodingProjects {
          // to be implemented
       }
 
-      public List<CodingProjectsGoal> readGoalsFromFile(){
+      public List<CodingProjectsGoal> readGoalsFromFiles(){
          var list = new List<CodingProjectsGoal>();
          // to be implemented
          return list;

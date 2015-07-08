@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 
 namespace HackerCentral.Art {
    public class ArtPiece {

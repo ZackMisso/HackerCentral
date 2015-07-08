@@ -19,11 +19,14 @@ namespace HackerCentral.CodingProjects {
       }
 
       public void initialize() {
-         projects = io.readCodingProjectsFromFile();
+         projects = io.readCodingProjectsFromFiles();
+         tasks = io.readTasksFromFiles();
+         goals = io.readGoalsFromFiles();
       }
 
       public void update() {
-         // to be implemented
+         foreach (CodingProject project in projects)
+            project.update(io);
       }
 
       public void addNewCodingProject(CodingProject project) {

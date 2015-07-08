@@ -1,4 +1,5 @@
-﻿using HackerCentral.Common;
+﻿using System.Text;
+using HackerCentral.Common;
 
 namespace HackerCentral.CodingProjects {
    public class CodingProjectsTask : Task{

@@ -1,4 +1,6 @@
-﻿namespace HackerCentral.Fitness {
+﻿using System.Text;
+
+namespace HackerCentral.Fitness {
    public class FitnessExercise {
       private FitnessExerciseGoal goal;
       private string name;

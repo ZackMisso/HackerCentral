@@ -1,4 +1,6 @@
-﻿namespace HackerCentral.School {
+﻿using System.Text;
+
+namespace HackerCentral.School {
    public class SchoolStudyTask : SchoolTask{
       public override string ToString() {
          var sb = new StringBuilder();

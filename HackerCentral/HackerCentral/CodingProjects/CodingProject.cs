@@ -1,5 +1,7 @@
 ﻿using System;
+using System.IO;
 using System.Text;
+using System.Linq;
 using System.Collections.Generic;
 using HackerCentral.Common;
 
@@ -7,7 +9,8 @@ namespace HackerCentral.CodingProjects {
    public class CodingProject {
       private List<string> typesOfFiles;
       private List<CodingProjectsTask> tasks;
-      private CodingProjectsGoal projectGoal;
+      private int projectGoal;
+      private DateTime lastUpdate;
       private string url;
       private string name;
       private string description;
@@ -17,7 +20,7 @@ namespace HackerCentral.CodingProjects {
       public CodingProject(string val) {
          typesOfFiles = new List<string>();
          tasks = new List<CodingProjectsTask>();
-         projectGoal = null;
+         projectGoal = -1;
          url = val;
          name = "";
          description = "";
@@ -26,10 +29,22 @@ namespace HackerCentral.CodingProjects {
       }
 
       public void update(CodingProjectsIO io) {
-         // to be implemented
+         linesOfCode = getLinesInDirectory(url);
       }
 
-      public void addTask(Task task) {
+      public int getLinesInDirectory(string path) {
+         var directories = Directory.GetDirectories(path);
+         var files = Directory.GetFiles(path);
+         var count = 0;
+         foreach (string directory in directories)
+            count += getLinesInDirectory(directory);
+         foreach (string file in files)
+            if (typesOfFiles.Contains(Path.GetExtension(file)))
+               count += File.ReadLines(file).Count();
+         return count;
+      }
+
+      public void addTask(CodingProjectsTask task) {
          tasks.Add(task);
       }
 
@@ -41,7 +56,7 @@ namespace HackerCentral.CodingProjects {
          sb.Append(" " + linesOfCode.ToString());
          sb.Append(" " + projectID.ToString());
          if (projectGoal != null)
-            sb.Append(" " + projectGoal.getGoalID());
+            sb.Append(" " + projectGoal.ToString());
          else
             sb.Append(" -1");
          sb.Append(" " + tasks.Count);
@@ -58,7 +73,8 @@ namespace HackerCentral.CodingProjects {
       // getter methods
       public List<string> getTypesOfFiles() { return typesOfFiles; }
       public List<CodingProjectsTask> getTasks() { return tasks; }
-      public CodingProjectsGoal getProjectGoal() { return projectGoal; }
+      public DateTime getLastUpdate() { return lastUpdate; }
+      public int getProjectGoal() { return projectGoal; }
       public string getName() { return name; }
       public string getDescription() { return description; }
       public string getUrl() { return url; }
@@ -68,7 +84,8 @@ namespace HackerCentral.CodingProjects {
       // setter methods
       public void setTypesOfFiles(List<string> param) { typesOfFiles = param; }
       public void setTasks(List<CodingProjectsTask> param) { tasks = param; }
-      public void setProjectGoal(CodingProjectsGoal param) { projectGoal = param; }
+      public void setLastUpdate(DateTime param) { lastUpdate = param; }
+      public void setProjectGoal(int param) { projectGoal = param; }
       public void setName(string param) { name = param; }
       public void setDescription(string param) { description = param; }
       public void setUrl(string param) { url = param; }

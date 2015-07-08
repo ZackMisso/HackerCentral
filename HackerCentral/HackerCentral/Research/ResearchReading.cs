@@ -1,4 +1,6 @@
-﻿namespace HackerCentral.Research {
+﻿using System.Text;
+
+namespace HackerCentral.Research {
    public class ResearchReading {
       private string path;
       private string notesPath;
