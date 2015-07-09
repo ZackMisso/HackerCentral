@@ -48,8 +48,8 @@ namespace HackerCentral.CodingProjects {
             projectNameLabels.RemoveAt(0);
          }
          while(projectNumberOfLinesLabels.Count > 0){
-            removeControlFromWindow(projectNameLabels[0]);
-            projectNameLabels.RemoveAt(0);
+            removeControlFromWindow(projectNumberOfLinesLabels[0]);
+            projectNumberOfLinesLabels.RemoveAt(0);
          }
          setWindow(null);
       }
@@ -59,15 +59,15 @@ namespace HackerCentral.CodingProjects {
             // create name label
             Label name = createLabel(new Point(12, 40 + i * 30), new Size(70, 13), "Name:");
             // create descriptions label
-            Label description = createLabel(new Point(100, 40 + i * 30), new Size(70, 13), "Description:");
+            Label description = createLabel(new Point(180, 40 + i * 30), new Size(70, 13), "Description:");
             // create number of lines label
             Label numberOfLines = createLabel(new Point(12, 52 + i * 30), new Size(70, 13), "Lines of Code:");
             // create project name label
             Label projectName = createLabel(new Point(82, 40 + i * 30), new Size(70, 13), projects[i].getName());
             // create descriptions label
-            Label projectDescription = createLabel(new Point(180, 40 + i * 30), new Size(70, 13), projects[i].getDescription());
+            Label projectDescription = createLabel(new Point(250, 40 + i * 30), new Size(70, 13), projects[i].getDescription());
             // create number of lines label
-            Label projectNumberOfLines = createLabel(new Point(82, 52 + i * 30), new Size(70, 13), projects[i].getLinesOfCode().ToString());
+            Label projectNumberOfLines = createLabel(new Point(92, 52 + i * 30), new Size(70, 13), projects[i].getLinesOfCode().ToString());
             // add items to window
             projectNameLabels.Add(name);
             projectDescriptionLabels.Add(description);

@@ -70,15 +70,30 @@ namespace HackerCentral {
       }
 
       private void tasksToolStripMenuItem_Click(object sender, EventArgs e) {
-
+         if (view != null)
+            view.clear();
+         currentManager = globalManager.getCodingProjectsManager();
+         currentIO = currentManager.getIO();
+         view = new CodingProjectsTasksPanel();
+         ((CodingProjectsTasksPanel)view).initialize(this);
       }
 
       private void historyToolStripMenuItem_Click(object sender, EventArgs e) {
-
+         if (view != null)
+            view.clear();
+         currentManager = globalManager.getCodingProjectsManager();
+         currentIO = currentManager.getIO();
+         view = new CodingProjectsHistoryPanel();
+         ((CodingProjectsHistoryPanel)view).initialize(this);
       }
 
       private void goalsToolStripMenuItem2_Click(object sender, EventArgs e) {
-
+         if (view != null)
+            view.clear();
+         currentManager = globalManager.getCodingProjectsManager();
+         currentIO = currentManager.getIO();
+         view = new CodingProjectsGoalsPanel();
+         ((CodingProjectsGoalsPanel)view).initialize(this);
       }
 
       private void tasksToolStripMenuItem1_Click(object sender, EventArgs e) {

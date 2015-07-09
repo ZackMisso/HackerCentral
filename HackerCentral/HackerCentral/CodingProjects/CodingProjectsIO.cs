@@ -43,6 +43,9 @@ namespace HackerCentral.CodingProjects {
                project.setUrl(contents[index++]);
                // read last update here //
                //project.
+               index++;
+               index++;
+               index++;
                ///////////////////////////
                project.setLinesOfCode(Convert.ToInt32(contents[index++]));
                project.setProjectID(Convert.ToInt32(contents[index++]));
@@ -58,7 +61,7 @@ namespace HackerCentral.CodingProjects {
                   fileTypes.Add(contents[index++]);
                project.setTypesOfFiles(fileTypes);
                var sb = new StringBuilder();
-               for(int i = 0; i < contents.Length; i++)
+               for(int i = index; i < contents.Length; i++)
                   sb.Append(contents[i] + " ");
                //sb.Append("");
                project.setDescription(sb.ToString());
@@ -75,6 +78,25 @@ namespace HackerCentral.CodingProjects {
             var filePath = codingProjectsUrl + "\\Projects\\" + project.getName() + ".txt";
             File.WriteAllText(filePath, project.ToString());
          }
+      }
+
+      public void writeCodingProjectsToHistory(List<CodingProject> list) {
+         foreach (CodingProject project in list) {
+            var filePath = codingProjectsUrl + "\\History\\Projects\\" + project.getName() + ".txt";
+            using (StreamWriter sw = File.AppendText(filePath))
+               sw.Write(project.ToString());
+         }
+      }
+
+      public void writeCodingProjectToFile(CodingProject project) {
+         var filePath = codingProjectsUrl + "\\Projects\\" + project.getName() + ".txt";
+         File.WriteAllText(filePath, project.ToString());
+      }
+
+      public void writeCodingProjectToHistory(CodingProject project) {
+         var filePath = codingProjectsUrl + "\\History\\Projects\\" + project.getName() + ".txt";
+         using (StreamWriter sw = File.AppendText(filePath))
+            sw.Write(project.ToString());
       }
 
       public List<CodingProjectsTask> readTasksFromFiles(){

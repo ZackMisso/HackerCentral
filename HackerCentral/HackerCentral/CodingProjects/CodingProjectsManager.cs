@@ -29,9 +29,21 @@ namespace HackerCentral.CodingProjects {
             project.update(io);
       }
 
+      public bool doesCodingProjectExistByID(CodingProject project) {
+         return (project.getProjectID() > 0) && (project.getProjectID() < nextProjectID);
+      }
+
+      public bool doesCodingProjectExistByName(CodingProject project) {
+         foreach (CodingProject proj in projects)
+            if (proj.getName().Trim().Equals(project.getName().Trim()))
+               return true;
+         return false;
+      }
+
       public void addNewCodingProject(CodingProject project) {
          project.setProjectID(nextProjectID++);
          projects.Add(project);
+         io.writeCodingProjectToFile(project);
       }
 
       public void addNewCodingTask(CodingProjectsTask task) {

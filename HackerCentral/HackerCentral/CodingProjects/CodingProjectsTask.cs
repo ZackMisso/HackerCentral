@@ -4,6 +4,7 @@ using HackerCentral.Common;
 namespace HackerCentral.CodingProjects {
    public class CodingProjectsTask : Task{
       private CodingProject project;
+      //private string type;
 
       public override string ToString() {
          var sb = new StringBuilder();
@@ -13,8 +14,10 @@ namespace HackerCentral.CodingProjects {
 
       // getter methods
       public CodingProject getProject() { return project; }
+      //public string getType() { return type; }
 
       // setter methods
       public void setProject(CodingProject param) { project = param; }
+      //public void setType(string param) { type = param; }
    }
 }

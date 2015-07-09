@@ -9,8 +9,8 @@ namespace HackerCentral.CodingProjects {
    public class CodingProject {
       private List<string> typesOfFiles;
       private List<CodingProjectsTask> tasks;
-      private int projectGoal;
       private DateTime lastUpdate;
+      private int projectGoal;
       private string url;
       private string name;
       private string description;

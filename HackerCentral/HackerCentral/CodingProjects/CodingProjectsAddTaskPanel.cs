@@ -27,9 +27,9 @@ namespace HackerCentral.CodingProjects {
          submitButton = createButton(new Point(100,200), new Size(75,23), "Submit");
          submitButton.Click += new System.EventHandler(submitButtonClicked);
          // create the name label
-         nameLabel = createLabel(new Point(15, 60), new Size(70, 13), "Enter Project Name: ");
+         nameLabel = createLabel(new Point(15, 60), new Size(70, 13), "Enter Task Name: ");
          // create the description label
-         descriptionLabel = createLabel(new Point(15, 140), new Size(70, 13), "Enter Project Description: ");
+         descriptionLabel = createLabel(new Point(15, 140), new Size(70, 13), "Enter Task Description: ");
          // create the effort level label
          effortLabel = createLabel(new Point(15, 100), new Size(70, 13), "Effort Level: ");
          // create the coding projects label

@@ -58,6 +58,10 @@ namespace HackerCentral.CodingProjects {
          foreach (string extension in extensions)
             project.getTypesOfFiles().Add(extension);
          project.update((CodingProjectsIO)getIO());
+         if (((CodingProjectsManager)getManager()).doesCodingProjectExistByName(project)) {
+            MessageBox.Show("Project with the same name already exists");
+            return;
+         }
          ((CodingProjectsManager)getManager()).addNewCodingProject(project);
       }
 
