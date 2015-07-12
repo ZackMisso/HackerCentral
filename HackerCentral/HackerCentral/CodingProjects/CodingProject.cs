@@ -10,10 +10,10 @@ namespace HackerCentral.CodingProjects {
       private List<string> typesOfFiles;
       private List<CodingProjectsTask> tasks;
       private DateTime lastUpdate;
-      private int projectGoal;
       private string url;
       private string name;
       private string description;
+      private int projectGoal;
       private int linesOfCode;
       private int projectID;
 
@@ -29,7 +29,13 @@ namespace HackerCentral.CodingProjects {
       }
 
       public void update(CodingProjectsIO io) {
+         DateTime time = DateTime.UtcNow;
+         if (lastUpdate == null || (time.Year != lastUpdate.Year && time.Month != lastUpdate.Month && time.Day != lastUpdate.Day)) {
+            io.writeCodingProjectToHistory(this);
+            lastUpdate = time;
+         }
          linesOfCode = getLinesInDirectory(url);
+         io.writeCodingProjectToFile(this);
       }
 
       public int getLinesInDirectory(string path) {
@@ -65,8 +71,16 @@ namespace HackerCentral.CodingProjects {
          sb.Append(" " + typesOfFiles.Count);
          foreach (string ext in typesOfFiles)
             sb.Append(" " + ext);
-         sb.Append(description);
+         sb.Append(" " + description);
+         Console.WriteLine(description);
+         // adding one line
+         // adding two lines
+         // adding three lines
+         int index = 0;
+         index++;
+         index++;
          sb.Append("\n");
+         Console.WriteLine(sb.ToString());
          return sb.ToString();
       }
 

@@ -1,6 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using System.Drawing;
 using System.Windows.Forms;
+using System.Collections.Generic;
 using HackerCentral.Common;
+using HackerCentral.Common.Enum;
 
 namespace HackerCentral.CodingProjects {
    public class CodingProjectsTasksPanel : CustomPanel{
@@ -21,20 +23,23 @@ namespace HackerCentral.CodingProjects {
          projectNameLabels = new List<Label>();
          nameLabels = new List<Label>();
          effortLabels = new List<Label>();
-         taskDescriptionLabels = List<Label>();
-         taskProjectNameLabels = List<Label>();
-         taskNameLabels = List<Label>();
-         taskEffortLabels = List<Label>();
-         statusLabels = List<Label>();
+         taskDescriptionLabels = new List<Label>();
+         taskProjectNameLabels = new List<Label>();
+         taskNameLabels = new List<Label>();
+         taskEffortLabels = new List<Label>();
+         statusLabels = new List<Label>();
          statusBoxes = new List<ListBox>();
       }
 
       public void initialize(Form1 form) {
          base.initialize(form);
          createLabels(((CodingProjectsManager)getManager()).getTasks());
+         acceptChanges = createButton(new Point(150, 10), new Size(70, 13), "Save Changes");
+         addControlToWindow(acceptChanges);
       }
 
       public override void clear() {
+         removeControlFromWindow(acceptChanges);
          while (descriptionLabels.Count > 0) {
             removeControlFromWindow(descriptionLabels[0]);
             descriptionLabels.RemoveAt(0);
@@ -81,41 +86,53 @@ namespace HackerCentral.CodingProjects {
       public void createLabels(List<CodingProjectsTask> tasks) {
          for (int i = 0; i < tasks.Count; i++) {
             // create description label
-            Label description;
+            Label description = createLabel(new Point(12, 55 + i * 40), new Size(70, 13), "Description:");
             // create project name label
-            Label projectName;
+            Label projectName = createLabel(new Point(12, 70 + i * 40), new Size(70, 13), "Project Name:");
             // create name label
-            Label name = createLabel(new Point(12, 40 + i * 30), new Size(70, 13), "Name:");
+            Label name = createLabel(new Point(12, 40 + i * 40), new Size(70, 13), "Name:");
             // create effort label1
-            Label effort;
+            Label effort = createLabel(new Point(180, 40 + i * 40), new Size(70, 13), "Effort:");
             // create task description labels
-            Label taskDescription;
+            Label taskDescription = createLabel(new Point(100, 55 + i * 40), new Size(70, 13), tasks[i].getDescription());
             // create task project name labels
-            Label taskDescriptionName;
+            Label taskProjectName = createLabel(new Point(100, 70 + i * 40), new Size(70, 13), tasks[i].getProject().getName());
+            // create task name label
+            Label taskName = createLabel(new Point(100, 40 + i * 40), new Size(70, 13), tasks[i].getName());
+            // create task effort level label
+            Label taskEffort = createLabel(new Point(240, 40 + i * 40), new Size(70, 13), tasks[i].getEffort().ToString());
             // create status labels
-            Label status;
+            Label status = createLabel(new Point(90, 70 + i * 40), new Size(70, 13), "Status:");
             // create status boxes
-            ListBox statusBox;
+            ListBox statusBox = createListBox(new Point(140, 70 + i * 40), new Size(100, 13));
+            statusBox.Items.Add("To Do");
+            statusBox.Items.Add("Canceled");
+            statusBox.Items.Add("Done");
+            statusBox.Items.Add("Failed");
+            statusBox.Items.Add("In Progress");
+            if(tasks[i].getStatus() == TaskStatusEnum.ToDo){
+               statusBox.SelectedIndex = 0;
+            }else if(tasks[i].getStatus() == TaskStatusEnum.Canceled){
+               statusBox.SelectedIndex = 1;
+            }else if(tasks[i].getStatus() == TaskStatusEnum.Done){
+               statusBox.SelectedIndex = 2;
+            }else if(tasks[i].getStatus() == TaskStatusEnum.Failed){
+               statusBox.SelectedIndex = 3;
+            }else if(tasks[i].getStatus() == TaskStatusEnum.InProgress){
+               statusBox.SelectedIndex = 4;
+            }
             // add items to window
             descriptionLabels.Add(description);
-            projectNAmeLabels.Add(projectName);
+            projectNameLabels.Add(projectName);
             nameLabels.Add(name);
             effortLabels.Add(effort);
             taskDescriptionLabels.Add(taskDescription);
-            //taskProjectNameLabels.Add(taskDescriptionName);
-            // Continue FROM HEAR
+            taskProjectNameLabels.Add(taskProjectName);
+            taskNameLabels.Add(taskName);
+            taskEffortLabels.Add(taskEffort);
+            statusLabels.Add(status);
+            statusBoxes.Add(statusBox);
          }
       }
-
-      //private List<Label> descriptionLabels;
-      //private List<Label> projectNameLabels;
-      //private List<Label> nameLabels;
-      //private List<Label> effortLabels;
-      //private List<Label> taskDescriptionLabels;
-      //private List<Label> taskProjectNameLabels;
-      //private List<Label> taskNameLabels;
-      //private List<Label> taskEffortLabels;
-      //private List<Label> statusLabels;
-      //private List<ListBox> statusBoxes;
    }
 }

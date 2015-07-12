@@ -64,8 +64,6 @@ namespace HackerCentral.Common {
          return false;
       }
 
-      //public abstract ClickResults handleClick(int x, int y); // maybe implement later
-      //public abstract void handleResults(ResultHandler handler); // maybe implement later
       public abstract void clear();
 
       // getter methods

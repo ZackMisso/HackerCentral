@@ -22,6 +22,7 @@ namespace HackerCentral.CodingProjects {
          projects = io.readCodingProjectsFromFiles();
          tasks = io.readTasksFromFiles();
          goals = io.readGoalsFromFiles();
+         update();
       }
 
       public void update() {
@@ -59,12 +60,16 @@ namespace HackerCentral.CodingProjects {
       // getters
       public IO getIO() { return io; }
       public List<CodingProject> getProjects() { return projects; }
+      public List<CodingProjectsTask> getTasks() { return tasks; }
+      public List<CodingProjectsGoal> getGoals() { return goals; }
       public int getNextProjectID() { return nextProjectID; }
       public int getNextTaskID() { return nextTaskID; }
       public int getNextGoalID() { return nextGoalID; }
 
       // setters
       public void setProjects(List<CodingProject> param) { projects = param; }
+      public void setTasks(List<CodingProjectsTask> param) { tasks = param; }
+      public void setGoals(List<CodingProjectsGoal> param) { goals = param; }
       public void setIO(CodingProjectsIO param) { io = param; }
    }
 }
