@@ -51,6 +51,14 @@ namespace HackerCentral.Common {
          return box;
       }
 
+      public ComboBox createComboBox(Point loc, Size size) {
+         var box = new ComboBox();
+         box.Location = loc;
+         box.Size = size;
+         addControlToWindow(box);
+         return box;
+      }
+
       public void addControlToWindow(Control control) {
          window.Controls.Add(control);
       }

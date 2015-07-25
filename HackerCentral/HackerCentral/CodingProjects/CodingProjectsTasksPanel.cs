@@ -15,8 +15,13 @@ namespace HackerCentral.CodingProjects {
       private List<Label> taskNameLabels;
       private List<Label> taskEffortLabels;
       private List<Label> statusLabels;
-      private List<ListBox> statusBoxes;
+      private List<ComboBox> statusBoxes;
       private Button acceptChanges;
+      private Button nextPage;
+      private Button prevPage;
+      private int currentPage;
+      private int itemsPerPage;
+      private int maxPage;
 
       public CodingProjectsTasksPanel() : base(){
          descriptionLabels = new List<Label>();
@@ -28,18 +33,64 @@ namespace HackerCentral.CodingProjects {
          taskNameLabels = new List<Label>();
          taskEffortLabels = new List<Label>();
          statusLabels = new List<Label>();
-         statusBoxes = new List<ListBox>();
+         statusBoxes = new List<ComboBox>();
+         currentPage = 0;
+         itemsPerPage = 0;
+         maxPage = 0;
       }
 
       public void initialize(Form1 form) {
          base.initialize(form);
          createLabels(((CodingProjectsManager)getManager()).getTasks());
-         acceptChanges = createButton(new Point(150, 10), new Size(70, 13), "Save Changes");
+         acceptChanges = createButton(new Point(115, 500), new Size(70, 30), "Save");
+         acceptChanges.Click += new System.EventHandler(save);
+         nextPage = createButton(new Point(200, 500), new Size(20, 30), ">");
+         nextPage.Click += new System.EventHandler(nextPageClick);
+         prevPage = createButton(new Point(80, 500), new Size(20, 30), "<");
+         prevPage.Click += new System.EventHandler(prevPageClick);
          addControlToWindow(acceptChanges);
+         addControlToWindow(nextPage);
+         addControlToWindow(prevPage);
+         currentPage = 0;
+         itemsPerPage = 8;
+         maxPage = statucLabels.Count%8 == 0 ? statusLabels.Count/8 : statusLabels.Count / 8 + 1;
+      }
+
+      public void nextPageClick(object sender, EventArgs e) {
+         if (currentPage != maxPage)
+            currentPage++;
+         // TODO :: redraw the list
+      }
+
+      public void prevPageClick(object sender, EventArgs e) {
+         if (currentPage != 0)
+            currentPage--;
+         // TODO :: redraw the list
+      }
+
+      public void save(object sender, EventArgs e) {
+         var list = ((CodingProjectsManager)getManager()).getTasks();
+         for (int i = 0; i < itemsPerPage; i++) {
+            var task = list[i + currentPage * itemsInPage];
+            var status = statusLabels[i + currentPage * itemsInPage].Text;
+            if (status.Equals("To Do"))
+               task.setStatus(TaskStatusEnum.ToDo);
+            else if (status.Equals("Canceled"))
+               task.setStatus(TaskStatusEnum.Canceled);
+            else if (status.Equals("Done"))
+               task.setStatus(TaskStatusEnum.Done);
+            else if (status.Equals("Failed"))
+               task.setStatus(TaskStatusEnum.Failed);
+            else if (status.Equals("In Progress"))
+               task.setStatus(TaskStatusEnum.InProgress);
+         }
+         ((CodingProjectsIO)getIO()).writeTasksToFiles(list);
       }
 
       public override void clear() {
          removeControlFromWindow(acceptChanges);
+         removeControlFromWindow(nextPage);
+         removeControlFromWindow(prevPage);
          while (descriptionLabels.Count > 0) {
             removeControlFromWindow(descriptionLabels[0]);
             descriptionLabels.RemoveAt(0);
@@ -86,25 +137,25 @@ namespace HackerCentral.CodingProjects {
       public void createLabels(List<CodingProjectsTask> tasks) {
          for (int i = 0; i < tasks.Count; i++) {
             // create description label
-            Label description = createLabel(new Point(12, 55 + i * 40), new Size(70, 13), "Description:");
+            Label description = createLabel(new Point(12, 55 + i * 60), new Size(70, 13), "Description:");
             // create project name label
-            Label projectName = createLabel(new Point(12, 70 + i * 40), new Size(70, 13), "Project Name:");
+            Label projectName = createLabel(new Point(12, 70 + i * 60), new Size(70, 13), "Project Name:");
             // create name label
-            Label name = createLabel(new Point(12, 40 + i * 40), new Size(70, 13), "Name:");
+            Label name = createLabel(new Point(12, 40 + i * 60), new Size(70, 13), "Name:");
             // create effort label1
-            Label effort = createLabel(new Point(180, 40 + i * 40), new Size(70, 13), "Effort:");
+            Label effort = createLabel(new Point(560, 40 + i * 60), new Size(70, 13), "Effort:");
             // create task description labels
-            Label taskDescription = createLabel(new Point(100, 55 + i * 40), new Size(70, 13), tasks[i].getDescription());
+            Label taskDescription = createLabel(new Point(100, 55 + i * 60), new Size(70, 13), tasks[i].getDescription());
             // create task project name labels
-            Label taskProjectName = createLabel(new Point(100, 70 + i * 40), new Size(70, 13), tasks[i].getProject().getName());
+            Label taskProjectName = createLabel(new Point(100, 70 + i * 60), new Size(70, 13), tasks[i].getProject().getName());
             // create task name label
-            Label taskName = createLabel(new Point(100, 40 + i * 40), new Size(70, 13), tasks[i].getName());
+            Label taskName = createLabel(new Point(100, 40 + i * 60), new Size(70, 13), tasks[i].getName());
             // create task effort level label
-            Label taskEffort = createLabel(new Point(240, 40 + i * 40), new Size(70, 13), tasks[i].getEffort().ToString());
+            Label taskEffort = createLabel(new Point(600, 40 + i * 60), new Size(70, 13), tasks[i].getEffort().ToString());
             // create status labels
-            Label status = createLabel(new Point(90, 70 + i * 40), new Size(70, 13), "Status:");
+            Label status = createLabel(new Point(560, 70 + i * 60), new Size(70, 13), "Status:");
             // create status boxes
-            ListBox statusBox = createListBox(new Point(140, 70 + i * 40), new Size(100, 13));
+            ComboBox statusBox = createComboBox(new Point(650, 70 + i * 60), new Size(100, 80));
             statusBox.Items.Add("To Do");
             statusBox.Items.Add("Canceled");
             statusBox.Items.Add("Done");

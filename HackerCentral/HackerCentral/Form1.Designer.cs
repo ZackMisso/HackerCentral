@@ -33,6 +33,7 @@
          this.codingGoalsItem = new System.Windows.Forms.ToolStripMenuItem();
          this.codingNewProjectItem = new System.Windows.Forms.ToolStripMenuItem();
          this.codingProjectsNewTaskItem = new System.Windows.Forms.ToolStripMenuItem();
+         this.codingProjectsNewGoalItem = new System.Windows.Forms.ToolStripMenuItem();
          this.financesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
          this.fitnessProgressItem = new System.Windows.Forms.ToolStripMenuItem();
          this.fitnessHistoryItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -70,7 +71,6 @@
          this.schoolClassesItem = new System.Windows.Forms.ToolStripMenuItem();
          this.schoolAddClassItem = new System.Windows.Forms.ToolStripMenuItem();
          this.InfoPanel = new System.Windows.Forms.Panel();
-         this.codingProjectsNewGoalItem = new System.Windows.Forms.ToolStripMenuItem();
          this.MainMenu.SuspendLayout();
          this.SuspendLayout();
          // 
@@ -167,6 +167,13 @@
          this.codingProjectsNewTaskItem.Size = new System.Drawing.Size(153, 22);
          this.codingProjectsNewTaskItem.Text = "New Task";
          this.codingProjectsNewTaskItem.Click += new System.EventHandler(this.codingProjectsNewTaskItem_Click);
+         // 
+         // codingProjectsNewGoalItem
+         // 
+         this.codingProjectsNewGoalItem.Name = "codingProjectsNewGoalItem";
+         this.codingProjectsNewGoalItem.Size = new System.Drawing.Size(153, 22);
+         this.codingProjectsNewGoalItem.Text = "New Goal";
+         this.codingProjectsNewGoalItem.Click += new System.EventHandler(this.codingProjectsNewGoalItem_Click);
          // 
          // financesToolStripMenuItem
          // 
@@ -456,13 +463,6 @@
          this.InfoPanel.Size = new System.Drawing.Size(204, 573);
          this.InfoPanel.TabIndex = 1;
          this.InfoPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.InfoPanel_Paint);
-         // 
-         // codingProjectsNewGoalItem
-         // 
-         this.codingProjectsNewGoalItem.Name = "codingProjectsNewGoalItem";
-         this.codingProjectsNewGoalItem.Size = new System.Drawing.Size(153, 22);
-         this.codingProjectsNewGoalItem.Text = "New Goal";
-         this.codingProjectsNewGoalItem.Click += new System.EventHandler(this.codingProjectsNewGoalItem_Click);
          // 
          // Form1
          // 

@@ -50,6 +50,7 @@ namespace HackerCentral.CodingProjects {
       public void addNewCodingTask(CodingProjectsTask task) {
          task.setTaskID(nextTaskID++);
          tasks.Add(task);
+         io.writeCodingTaskToFile(task);
       }
 
       public void addNewCodingGoal(CodingProjectsGoal goal) {

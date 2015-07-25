@@ -86,14 +86,6 @@ namespace HackerCentral.CodingProjects {
             var filePath = codingProjectsUrl + "\\History\\Projects\\" + project.getName() + ".txt";
             using (StreamWriter sw = File.AppendText(filePath))
                sw.WriteLine(project.ToString());
-               // Hello I added a line
-               // Hello this is another line;
-         }
-         int i = 0;
-         for (; i < 100; i++) {
-            string name = "";
-            name += "a";
-            // I am doing this to test that the History gets changed when I save the file
          }
       }
 
@@ -115,7 +107,15 @@ namespace HackerCentral.CodingProjects {
       }
 
       public void writeTasksToFiles(List<CodingProjectsTask> list) {
-         // to be implemented
+         foreach (CodingProjectsTask task in list) {
+            var filePath = codingProjectUrl + "\\Tasks\\" + task.getName() + ".txt";
+            File.WriteAllText(filePath, task.ToString());
+         }
+      }
+
+      public void writeCodingTaskToFile(CodingProjectsTask task) {
+         var filePath = codingProjectUrl + "\\Tasks\\" + task.getName() + ".txt";
+         File.WriteAllText(filePath, task.ToString());
       }
 
       public List<CodingProjectsTask> readFinishedTasksFromFile(){
