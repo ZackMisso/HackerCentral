@@ -1,0 +1,10 @@
+﻿Task:
+string name;
+string description;
+int taskID;
+int effort;
+TaskStatusEnum status;
+CodingProject project;
+
+Data:
+name,taskID,effort,status(string),project.ID,description

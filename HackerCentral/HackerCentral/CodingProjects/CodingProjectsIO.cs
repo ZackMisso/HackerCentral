@@ -3,12 +3,15 @@ using System.IO;
 using System.Text;
 using System.Collections.Generic;
 using HackerCentral.Common;
+using HackerCentral.Common.Enum;
 
 namespace HackerCentral.CodingProjects {
    public class CodingProjectsIO : IO{
+      CodingProjectsManager manager;
       private string codingProjectsUrl;
 
-      public CodingProjectsIO(string url) {
+      public CodingProjectsIO(CodingProjectsManager param,string url) {
+         manager = param;
          codingProjectsUrl = url;
       }
 
@@ -102,7 +105,33 @@ namespace HackerCentral.CodingProjects {
 
       public List<CodingProjectsTask> readTasksFromFiles(){
          var list = new List<CodingProjectsTask>();
-         // to be impelemnted
+         var files = Directory.GetFiles(codingProjectsUrl + "\\Tasks");
+         foreach (string file in files) {
+            var reader = new StreamReader(file);
+            var task new CodingProjectsTask();
+            string line;
+            while ((line = reader.ReadLine()) != null) {
+               var contents = line.Split('^');
+               task.setName(contents[0]);
+               task.setTaskID(Convert.ToInt32(contents[1]));
+               task.setEffort(Convert.ToInt32(contents[2]));
+               var status = contents[3];
+               if(status.Equals("InProgress"))
+                  task.setStatus(TaskStatusEnum.InProgress);
+               if(status.Equals("ToDo"))
+                  task.setStatus(TaskStatusEnum.ToDo);
+               if(status.Equals("Failed"))
+                  task.setStatus(TaskStatusEnum.Failed);
+               if(status.Equals("Done"))
+                  task.setStatus(TaskStatusEnum.Done);
+               if(status.Equals("Canceled"))
+                  task.setStatus(TaskStatusEnum.Canceled);
+               task.setProjectID(contents[4]);
+               task.setDescription(contents[5]);
+               list.Add(task);
+            }
+            reader.Close();
+         }
          return list;
       }
 
@@ -152,6 +181,32 @@ namespace HackerCentral.CodingProjects {
          var lines = 0;
          // to be implemented
          return lines;
+      }
+
+      public void checkCodingProjectsSaveFile() {
+         if (!File.Exists(codingProjectsUrl + "\\meta.txt"))
+            makeCodingProjectsSaveFile();
+         readCodingProjectsSaveFile();
+      }
+
+      public void makeCodingProjectsSaveFile() {
+         var filePath = codingProjectsUrl + "\\meta.txt";
+         File.WriteAllText(filePath, "0\n0\n0\n");
+      }
+
+      public void writeCodingProjectsSaveFile() {
+         var filePath = codingProjectsUrl + "\\meta.txt";
+         string str = manager.getNextProjectID() + "\n";
+         str += manager.getNextTaskID() + "\n";
+         str += manager.getNextGoalID() + "\n";
+         File.WriteAllText(filePath, str);
+      }
+
+      public void readCodingProjectsSaveFile() {
+         var reader = new StreamReader(codingProjectsUrl + "\\meta.txt");
+         manager.setNextProjectID(Convert.ToInt32(reader.ReadLine()));
+         manager.setNextTaskID(Convert.ToInt32(reader.ReadLine()));
+         manager.setNextGoalID(Convert.ToInt32(reader.ReadLine()));
       }
 
       // setter methods

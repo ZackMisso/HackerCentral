@@ -25,6 +25,21 @@ namespace HackerCentral.CodingProjects {
          update();
       }
 
+      public void match() { // there is a more efficient way to do this
+         for(CodingProjectsTask task in tasks)
+            for(int i=0;i<projects.size();i++)
+               if(task.getProjectID() == projects.get(i).getProjectID()){
+                  task.setProject(projects.get(i));
+                  i = projects.size();
+               }
+         for(CodingProjectsGoal goal in goals)
+            for(int i=0;i<projects.size();i++)
+               if(goal.getProjectID() == projects.get(i).getProjectID()){
+                  goal.setProject(projects.get(i));
+                  i = projects.size();
+               }
+      }
+
       public void update() {
          foreach (CodingProject project in projects)
             project.update(io);
@@ -72,5 +87,8 @@ namespace HackerCentral.CodingProjects {
       public void setTasks(List<CodingProjectsTask> param) { tasks = param; }
       public void setGoals(List<CodingProjectsGoal> param) { goals = param; }
       public void setIO(CodingProjectsIO param) { io = param; }
+      public int setNextProjectID(int param) { nextProjectID = param; }
+      public int setNextTaskID(int param) { nextTaskID = param; }
+      public int setNextGoalID(int param) { nextGoalID = param; }
    }
 }
