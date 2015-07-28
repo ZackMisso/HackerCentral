@@ -4,9 +4,11 @@ using HackerCentral.Common;
 
 namespace HackerCentral.Research {
    public class ResearchIO : IO{
+      private ResearchManager manager;
       private string researchUrl;
 
-      public ResearchIO(string url) {
+      public ResearchIO(ResearchManager param,string url) {
+         manager = param;
          researchUrl = url;
       }
 
@@ -37,6 +39,10 @@ namespace HackerCentral.Research {
       }
 
       public void writeReadingsToFiles(List<ResearchReading> list) {
+         // to be implemented
+      }
+
+      public void writeReadingToFile(ResearchReading reading) {
          // to be implemented
       }
 

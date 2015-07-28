@@ -9,6 +9,8 @@ namespace HackerCentral.Behavioral {
       private string name;
       private int value;
       private int startingValue;
+      private int limitID;
+      private int goalID;
       private bool hasGoal;
       private bool hasLimit;
       private bool updatesDaily;
@@ -28,6 +30,8 @@ namespace HackerCentral.Behavioral {
       public string getName() { return name; }
       public int getValue() { return value; }
       public int getStartingValue() { return startingValue; }
+      public int getLimitID() { return limitID; }
+      public int getGoalID() { return goalID; }
       public bool getHasGoal() { return hasGoal; }
       public bool getHasLimit() { return hasLimit; }
       public bool getUpdatesDaily() { return updatesDaily; }
@@ -41,6 +45,8 @@ namespace HackerCentral.Behavioral {
       public void setName(string param) { name = param; }
       public void setValue(int param) { value = param; }
       public void setStartingValue(int param) { startingValue = param; }
+      public void setLimitID(int param) { limitID = param; }
+      public void setGoalID(int param) { goalID = param; }
       public void setHasGoal(bool param) { hasGoal = param; }
       public void setHasLimit(bool param) { hasLimit = param; }
       public void setUpdatesDaily(bool param) { updatesDaily = param; }

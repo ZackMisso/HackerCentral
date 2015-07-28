@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace HackerCentral.Finances {
    public class FinancesBudget { // monthly budget
-      private Dictionary<string, float> budgetTypes;
+      private Dictionary<string, float> budgetTypes; // what was this again??
       private DateTime startDate;
       private DateTime endDate;
 

@@ -4,9 +4,11 @@ using HackerCentral.Common;
 
 namespace HackerCentral.Behavioral {
    public class BehavioralIO : IO{
+      private BehavioralManager manager;
       private string behavioralUrl;
 
-      public BehavioralIO(string url) {
+      public BehavioralIO(BehavioralManager param,string url) {
+         manager = param;
          behavioralUrl = url;
       }
 

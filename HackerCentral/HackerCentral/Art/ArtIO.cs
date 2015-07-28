@@ -4,9 +4,11 @@ using HackerCentral.Common;
 
 namespace HackerCentral.Art {
    public class ArtIO : IO{
+      private ArtManager manager;
       private string artUrl;
 
-      public ArtIO(string url) {
+      public ArtIO(ArtManager param,string url) {
+         manager = param;
          artUrl = url;
       }
 

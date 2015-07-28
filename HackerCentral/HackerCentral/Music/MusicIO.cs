@@ -4,9 +4,11 @@ using HackerCentral.Common;
 
 namespace HackerCentral.Music {
    public class MusicIO : IO{
+      private MusicManager manager;
       private string musicUrl;
 
-      public MusicIO(string url) {
+      public MusicIO(MusicManager param,string url) {
+         manager = param;
          musicUrl = url;
       }
 

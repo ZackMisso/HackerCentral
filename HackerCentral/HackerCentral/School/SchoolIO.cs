@@ -4,9 +4,11 @@ using HackerCentral.Common;
 
 namespace HackerCentral.School {
    public class SchoolIO : IO{
+      private SchoolManager manager;
       private string schoolUrl;
 
-      public SchoolIO(string url) {
+      public SchoolIO(SchoolManager param,string url) {
+         manager = param;
          schoolUrl = url;
       }
 

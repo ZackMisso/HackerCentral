@@ -4,9 +4,11 @@ using HackerCentral.Common;
 
 namespace HackerCentral.Fitness {
    public class FitnessIO : IO{
+      private FitnessManager manager;
       private string fitnessUrl;
 
-      public FitnessIO(string url) {
+      public FitnessIO(FitnessManager param,string url) {
+         manager = param;
          fitnessUrl = url;
       }
 

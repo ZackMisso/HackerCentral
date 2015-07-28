@@ -7,7 +7,7 @@ using HackerCentral.Common.Enum;
 
 namespace HackerCentral.CodingProjects {
    public class CodingProjectsIO : IO{
-      CodingProjectsManager manager;
+      private CodingProjectsManager manager;
       private string codingProjectsUrl;
 
       public CodingProjectsIO(CodingProjectsManager param,string url) {

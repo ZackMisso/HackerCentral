@@ -4,9 +4,11 @@ using HackerCentral.Common;
 
 namespace HackerCentral.Finances {
    public class FinancesIO : IO{
+      private FinancesManager manager;
       private string financesUrl;
 
-      public FinancesIO(string url) {
+      public FinancesIO(FinancesManager param,string url) {
+         manager = param;
          financesUrl = url;
       }
 

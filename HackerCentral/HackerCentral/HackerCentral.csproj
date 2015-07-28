@@ -128,6 +128,7 @@
     <Compile Include="Music\MusicTasksPanel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Research\ResearchCodingTask.cs" />
     <Compile Include="Research\ResearchGoal.cs" />
     <Compile Include="Research\ResearchGoalsPanel.cs" />
     <Compile Include="Research\ResearchHistoryPanel.cs" />
