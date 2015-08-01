@@ -6,6 +6,7 @@ namespace HackerCentral.School {
       private List<SchoolGradeContainer> grades;
       private List<SchoolAssignment> assignments;
       private string name;
+      private int classID;
 
       public SchoolClass() {
          grades = new List<SchoolGradeContainer>();
@@ -22,10 +23,12 @@ namespace HackerCentral.School {
       public List<SchoolGradeContainer> getGrades() { return grades; }
       public List<SchoolAssignment> getAssignments() { return assignments; }
       public string getName() { return name; }
+      public int getClassID() { return classID; }
 
       // setter methods
       public void setGrades(List<SchoolGradeContainer> param) { grades = param; }
       public void setAssignments(List<SchoolAssignment> param) { assignments = param; }
       public void setName(string param) { name = param; }
+      public void setClassID(int param) { classID = param; }
    }
 }

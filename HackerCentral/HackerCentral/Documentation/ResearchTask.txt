@@ -1,0 +1,1 @@
+﻿This file describes how ResearchTasks are saved to files

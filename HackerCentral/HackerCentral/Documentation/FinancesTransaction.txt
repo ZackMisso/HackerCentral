@@ -1,0 +1,12 @@
+﻿This file describes how FinanceTransactions are saved to files
+
+FinanceTransaction ::
+   DateTime date;
+   string receiptID;
+   float amount;
+   int budgetType;
+   int transactionID;
+   bool doneByCash;
+
+Data ::
+   transactionID budgetType recieptID amount date doneByCash

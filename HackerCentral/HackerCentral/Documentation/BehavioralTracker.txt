@@ -1,0 +1,21 @@
+﻿This file describes how BehavioralTrackers are saved to files
+
+BehavioralTracker ::
+   BehavioralGoal goal;
+   BehavioralLimit limit;
+   DateTime start;
+   string name;
+   int value;
+   int startingValue;
+   int limitID; 
+   int goalID;
+   int trackerID;
+   bool hasGoal; 
+   bool hasLimit;
+   bool updatesDaily;
+   bool updatesWeekly;
+   bool updatesMonthly;
+
+Data ::
+   trackerID limitID goalID startingValue value start hasGoal hasLimit
+   updatesDaily updatesWeekly updatesMonthly name

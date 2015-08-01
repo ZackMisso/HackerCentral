@@ -1,0 +1,13 @@
+﻿This file describes how ArtPieces are saved to files
+
+ArtPiece ::
+   DateTime begin
+   DateTime finished
+   string file
+   string name
+   string format
+   int iteration
+   int pieceID
+
+Data ::
+   pieceID begin finished iteration file format name

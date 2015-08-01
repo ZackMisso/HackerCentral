@@ -1,0 +1,1 @@
+﻿This file describes how SchoolGoals are saved to files

@@ -1,0 +1,1 @@
+﻿This file describes how SchoolTasks are saved to files

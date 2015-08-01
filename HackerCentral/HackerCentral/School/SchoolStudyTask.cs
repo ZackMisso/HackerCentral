@@ -8,6 +8,7 @@ namespace HackerCentral.School {
       private int clasID;
       private int hours;
       private int inDays;
+      private bool weekly;
 
       public override string ToString() {
          var sb = new StringBuilder();
@@ -21,6 +22,7 @@ namespace HackerCentral.School {
       public int getClasID() { return clasID; }
       public int getHours() { return hours; }
       public int getInDays() { return inDays; }
+      public bool getWeekly() { return weekly; }
 
       // setter methods
       public void setClas(SchoolClass param) { clas = param; }
@@ -28,5 +30,6 @@ namespace HackerCentral.School {
       public void setClasID(int param) { clasID = param; }
       public void setHours(int param) { hours = param; }
       public void setInDays(int param) { inDays = param; }
+      public void setWeekly(bool param) { weekly = param; }
    }
 }

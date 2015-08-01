@@ -1,0 +1,16 @@
+﻿Version 0.0.1 ::
+   
+   This is the initial release for this application, meaning this application now
+   has enough functionality that I am going to be using it to manage my life. This
+   release will include:
+
+   - Fully Implemented Coding Projects section
+   - Fully Implemented School section
+   - Fully Implemented Research section
+   - IO functionality implemented for all sections
+   - Functionality Implemented for Art section
+   - Functionality Implemented for Behavioral section
+   - Functionality Implemented for Finances section
+   - Functionality Implemented for Fitness section
+   - Functionality Implemented for Music section
+   (Functionality Implemented means that everything but the UI is implemented).

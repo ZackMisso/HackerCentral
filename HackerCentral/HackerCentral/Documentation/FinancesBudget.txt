@@ -1,0 +1,10 @@
+﻿This file describes how FinanceBudgets are saved to files
+
+FinanceBudget ::
+   Dictionary<string, float> budgetTypes;
+   DateTime startDate;
+   DateTime endDate;
+   int budgetID;
+
+Data ::
+   budgetID startDate endDate budgetTypes.Count (budgetTypes.Key/Value)...

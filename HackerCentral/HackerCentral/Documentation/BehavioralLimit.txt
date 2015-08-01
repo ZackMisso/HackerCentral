@@ -1,0 +1,10 @@
+﻿This file describes how BehavioralLimit are saved to files
+
+BehavioralLimit ::
+   BehavioralTracker tracker;
+   int trackerID;
+   int limit;
+   int limitID;
+
+Data ::
+   limitID limit trackerID

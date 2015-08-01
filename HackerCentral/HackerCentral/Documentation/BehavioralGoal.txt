@@ -1,0 +1,22 @@
+﻿This file describes how BehavioralGoal are saved to files
+
+Goal ::
+   GoalStatusEnum status
+   float percentAccomplished
+   int goalID
+
+BehavioralGoal ::
+   List<BehavioralTracker> trackers
+   List<int> trackerIDs
+   List<BehavioralLimits> limits
+   List<int> limitIDs
+   DateTime startDate
+   bool moreNeeded
+   bool monthly
+   bool dailey
+   bool weekly
+
+Data ::
+   BehavioralGoal goalID status percentAccomplished trackerIDs.Count
+   trackerIDs limitIDs.Count limitIDs startDate moreNeeded monthly
+   dailey weekly

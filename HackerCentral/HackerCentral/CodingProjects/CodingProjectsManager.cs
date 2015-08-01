@@ -15,13 +15,14 @@ namespace HackerCentral.CodingProjects {
          projects = new List<CodingProject>();
          tasks = new List<CodingProjectsTask>();
          goals = new List<CodingProjectsGoal>();
-         io = null;
       }
 
       public void initialize() {
+         // Read in IDs
          projects = io.readCodingProjectsFromFiles();
          tasks = io.readTasksFromFiles();
          goals = io.readGoalsFromFiles();
+         match();
          update();
       }
 

@@ -7,6 +7,7 @@ namespace HackerCentral.Finances {
       private Dictionary<string, float> budgetTypes; // what was this again??
       private DateTime startDate;
       private DateTime endDate;
+      private int budgetID;
 
       public FinancesBudget() {
          budgetTypes = new Dictionary<string, float>();
@@ -22,10 +23,12 @@ namespace HackerCentral.Finances {
       public Dictionary<string, float> getBudgetTypes() { return budgetTypes; }
       public DateTime getStartDate() { return startDate; }
       public DateTime getEndDate() { return endDate; }
+      public int getBudgetID() { return budgetID; }
 
       // setter methods
       public void setBudgetTypes(Dictionary<string, float> param) { budgetTypes = param; }
       public void setStartDate(DateTime param) { startDate = param; }
       public void setEndDate(DateTime param) { endDate = param; }
+      public void setBudgetID(int param) { budgetID = param; }
    }
 }

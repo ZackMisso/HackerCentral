@@ -7,8 +7,9 @@ namespace HackerCentral.Art {
       private DateTime finished;
       private string file;
       private string name;
-      private string format;
+      private string format; // what ???
       private int iteration;
+      private int pieceID;
 
       public override string ToString() {
          var sb = new StringBuilder();
@@ -23,6 +24,7 @@ namespace HackerCentral.Art {
       public string getName() { return name; }
       public string getFormat() { return format; }
       public int getIteration() { return iteration; }
+      public int getPieceID() { return pieceID; }
 
       // setter methods
       public void setBegan(DateTime param) { began = param; }
@@ -31,5 +33,6 @@ namespace HackerCentral.Art {
       public void setName(string param) { name = param; }
       public void setFormat(string param) { format = param; }
       public void setIteration(int param) { iteration = param; }
+      public void setPieceID(int param) { pieceID = param; }
    }
 }

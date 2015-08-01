@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Text;
+using HackerCentral.Common;
 
 namespace HackerCentral.Fitness {
-   public class FitnessExercise {
+   public class FitnessExercise : Task{
       private FitnessExerciseGoal goal;
       private DateTime startTime;
       private string name;
       private int totalReps;
+      private int goalID;
       private int exerciseID;
       private bool hasGoal;
       private bool updatesPerWeek;
@@ -24,6 +26,7 @@ namespace HackerCentral.Fitness {
       public string getName() { return name; }
       public int getTotalReps() { return totalReps; }
       public int getExerciesID() { return exerciseID; }
+      public int getGoalID() { return goalID; }
       public bool getHasGoal() { return hasGoal; }
       public bool getUpdatesPerWeek() { return updatesPerWeek; }
       public bool getUpdatesPerMonth() { return updatesPerMonth; }
@@ -34,6 +37,7 @@ namespace HackerCentral.Fitness {
       public void setName(string param) { name = param; }
       public void setTotalReps(int param) { totalReps = param; }
       public void setExerciseID(int param) { exerciseID = param; }
+      public void setGoalID(bool param) { goalID = param; }
       public void setHasGoal(bool param) { hasGoal = param; }
       public void setUpdatesPerWeek(bool param) { updatesPerWeek = param; }
       public void setUpdatesPerMonth(bool param) { updatesPerMonth = param; }

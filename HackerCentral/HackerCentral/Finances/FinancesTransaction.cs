@@ -7,6 +7,7 @@ namespace HackerCentral.Finances {
       private string receiptID;
       private float amount;
       private int budgetType;
+      private int transactionID;
       private bool doneByCash;
 
       public override string ToString() {
@@ -20,6 +21,7 @@ namespace HackerCentral.Finances {
       public string getReceiptID() { return receiptID; }
       public float getAmount() { return amount; }
       public int getBudgetType() { return budgetType; }
+      public int getTransactionID() { return transactionID; }
       public bool getDoneByCash() { return doneByCash; }
 
       // setter methods
@@ -27,6 +29,7 @@ namespace HackerCentral.Finances {
       public void setRecieptID(string param) { receiptID = param; }
       public void setAmount(float param) { amount = param; }
       public void setBudgetType(int param) { budgetType = param; }
+      public void setTransactionID(int param) { transactionID = param; }
       public void getDoneByCash(bool param) { doneByCash = param; }
    }
 }

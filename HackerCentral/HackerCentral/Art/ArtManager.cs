@@ -7,6 +7,9 @@ namespace HackerCentral.Art {
       private List<ArtTask> tasks;
       private List<ArtGoal> goals;
       private ArtIO io;
+      private int nextPieceID;
+      private int nextTaskID;
+      private int nextGoalID;
 
       public ArtManager() {
          pieces = new List<ArtPiece>();
@@ -15,7 +18,15 @@ namespace HackerCentral.Art {
       }
 
       public void initialize() {
-         // to be implemented
+         // Read in IDs
+         pieces = io.readPiecesFromFiles;
+         tasks = io.readTasksFromFiles;
+         goals = io.readGoalsFromFiles;
+         match();
+      }
+
+      public void match() {
+         // implement mixing
       }
 
       public void update() {
@@ -27,11 +38,17 @@ namespace HackerCentral.Art {
       public List<ArtTask> getTasks() { return tasks; }
       public List<ArtGoal> getGoals() { return goals; }
       public IO getIO() { return io; }
+      public int getNextPieceID() { return nextPieceID; }
+      public int getNextTaskID() { return nextTaskID; }
+      public int getNextGoalID() { return nextGoalID; }
 
       // setter methods
       public void setPieces(List<ArtPiece> param) { pieces = param; }
       public void setTasks(List<ArtTask> param) { tasks = param; }
       public void setGoals(List<ArtGoal> param) { goals = param; }
       public void setIO(ArtIO param) { io = param; }
+      public void setNextPieceID(int param) { nextPieceID = param; }
+      public void setNextTaskID(int param) { nextTaskID = param; }
+      public void setNextGoalId(int param) { nextGoalID = param; }
    }
 }
