@@ -1,1 +1,13 @@
 ﻿This file describes how SchoolAssignments are saved to files
+
+SchoolAssignment ::
+   SchoolGradeContainer container;
+   int containerID;
+   DateTime dueDate;
+   string name;
+   float outOf;
+   float grade;
+   int assignmentID;
+
+Data ::
+   assignmentID containerID dueDate name outOf grade   

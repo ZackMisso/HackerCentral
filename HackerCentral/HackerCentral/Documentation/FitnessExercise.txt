@@ -1,1 +1,15 @@
 ﻿This file describes how FitnessExercises are saved to files
+
+FitnessExercise ::
+   FitnessExerciseGoal goal;
+   DateTime startTime;
+   string name;
+   int totalReps;
+   int goalID;
+   int exerciseID;
+   bool hasGoal;
+   bool updatesPerWeek;
+   bool updatesPerMonth;
+
+Data ::
+   exerciseID goalID name totalReps hasGoal updatesPerWeek updatesPerMonth

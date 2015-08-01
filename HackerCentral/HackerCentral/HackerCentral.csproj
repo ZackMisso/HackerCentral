@@ -198,6 +198,7 @@
     <Content Include="Documentation\FinancesTransaction.txt" />
     <Content Include="Documentation\FitnessExercise.txt" />
     <Content Include="Documentation\FitnessExerciseGoal.txt" />
+    <Content Include="Documentation\FitnessTask.txt" />
     <Content Include="Documentation\MusicGoal.txt" />
     <Content Include="Documentation\MusicPiece.txt" />
     <Content Include="Documentation\MusicTask.txt" />

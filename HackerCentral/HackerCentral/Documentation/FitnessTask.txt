@@ -1,0 +1,19 @@
+﻿This file describes how FitnessTask are saved to files
+
+Task ::
+   string name
+   string description
+   int taskID
+   int effort
+   TaskStatusEnum status
+
+FitnessTask ::
+   FitnessExercise exercise;
+   int exerciseID;
+   int reps;
+   bool daily;
+   bool weekly;
+   bool monthly;
+
+Data ::
+   FitnessTask exerciseID reps daily weekly monthly name taskID effort status description

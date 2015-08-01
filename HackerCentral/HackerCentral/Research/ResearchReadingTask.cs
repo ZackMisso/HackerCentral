@@ -3,6 +3,7 @@
 namespace HackerCentral.Research {
    public class ResearchReadingTask : ResearchTask{
       private ResearchReading reading;
+      private int readingID;
       private int pagesToRead;
       private int pagesRead;
       private bool takeNotes;
@@ -16,6 +17,7 @@ namespace HackerCentral.Research {
 
       // getter methods
       public ResearchReading getReading() { return reading; }
+      public int getReadingID() { return readingID; }
       public int getPagesToRead() { return pagesToRead; }
       public int getPagesRead() { return pagesRead; }
       public bool getTakeNotes() { return takeNotes; }
@@ -23,6 +25,7 @@ namespace HackerCentral.Research {
 
       // setter methods
       public void setReading(ResearchReading param) { reading = param; }
+      public void setReadingID(int param) { readingID = param; }
       public void setPagesToRead(int param) { pagesToRead = param; }
       public void setPagesRead(int param) { pagesRead = param; }
       public void setTakeNotes(bool param) { takeNotes = param; }

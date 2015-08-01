@@ -1,1 +1,16 @@
 ﻿This file describes how FitnessExerciseGoals are saved to files
+
+Goal ::
+   GoalStatusEnum status
+   float percentAccomplished
+   int goalID
+
+FitnessExerciseGoal ::
+   FitnessExercise exercise;
+   int exerciseID;
+   int totalReps;
+   int dailyReps;
+   bool perDay;
+
+Data ::
+   FitnessExerciseGoal exerciseID totalReps daileyReps perDay status goalID percentAccomplished

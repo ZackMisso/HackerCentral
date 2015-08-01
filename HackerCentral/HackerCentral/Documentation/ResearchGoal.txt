@@ -1,1 +1,20 @@
 ﻿This file describes how ResearchGoals are saved to files
+
+Goal ::
+   GoalStatusEnum status
+   float percentAccomplished
+   int goalID
+
+ResearchGoal ::
+   
+ResearchReadingsGoal ::
+   List<ResearchReading> toRead;
+   List<int> toReadIDs;
+   int totalPages;
+   int pagesRead;
+   bool goalBasedOnReadings;
+   bool goalBasedOnPages;
+   bool allReadings;
+
+   Data ::
+      ResearchReadingsGoal goalID status percentAccomplished toReadIDs.size() toReadIDs... totalPages pagesRead goalBasedOnReadings goalBasedOnPages allReadings

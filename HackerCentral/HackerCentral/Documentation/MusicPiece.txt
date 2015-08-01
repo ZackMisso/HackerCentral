@@ -1,1 +1,11 @@
 ﻿This file describes how MusicPieces are saved to files
+
+MusicPiece ::
+   string name;
+   string location;
+   int iteration;
+   int pieceID;
+   bool done;
+
+Data ::
+   name location iteration pieceID done

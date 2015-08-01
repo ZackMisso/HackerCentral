@@ -1,1 +1,17 @@
 ﻿This file describes how MusicTasks are saved to files
+
+Task ::
+   string name
+   string description
+   int taskID
+   int effort
+   TaskStatusEnum status
+
+MusicTask ::
+   MusicPiece piece;
+   int pieceID;
+   int startIteration;
+   int endIteration;
+
+Data ::
+   MusicTask pieceID startIteration endIteration name taskID effort status description

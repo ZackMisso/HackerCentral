@@ -1,1 +1,20 @@
 ﻿This file describes how MusicGoals are saved to files
+
+Goal ::
+   GoalStatusEnum status
+   float percentAccomplished
+   int goalID
+
+MusicGoal ::
+   List<MusicTask> tasks;
+   List<int> taskIDs;
+   MusicPiece piece;
+   int pieceID;
+   int iterations;
+   int startIteration;
+   bool taskGoal;
+   bool iterationsGoal;
+   bool genericIterationsGoal;
+
+Data ::
+   MusicGoal goalID status percentAccomplished pieceID iterations startIteration taskGoal iterationsGoal genericIterationsGoal taskIDs.size() taskIDs...

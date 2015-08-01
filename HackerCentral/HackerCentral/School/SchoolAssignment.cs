@@ -4,6 +4,7 @@ using System.Text;
 namespace HackerCentral.School {
    public class SchoolAssignment {
       private SchoolGradeContainer container;
+      private int containerID;
       private DateTime dueDate;
       private string name;
       private float outOf;
@@ -18,6 +19,7 @@ namespace HackerCentral.School {
 
       // getter methods
       public SchoolGradeContainer getContainer() { return container; }
+      public int getContainerID() { return containerID; }
       public DateTime getDueDate() { return dueDate; }
       public string getName() { return name; }
       public float getOutOf() { return outOf; }
@@ -26,6 +28,7 @@ namespace HackerCentral.School {
 
       // setter methods
       public void setContainer(SchoolGradeContainer param) { container = param; }
+      public void setContainerID(int param) { containerID = param; }
       public void setDueDate(DateTime param) { dueDate = param; }
       public void setName(string param) { name = param; }
       public void setOutOf(float param) { outOf = param; }

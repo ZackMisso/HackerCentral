@@ -7,6 +7,7 @@ namespace HackerCentral.School {
       private List<int> assignmentIDs;
       private string title;
       private float percentOfFinalGrade;
+      private int containerID;
       private int clasID;
 
       public SchoolGradeContainer() {
@@ -20,6 +21,7 @@ namespace HackerCentral.School {
       public List<int> getAssignmentIDs() { return assignmentIDs; }
       public string getTitle() { return title; }
       public float getPercentOfFinalGrade() { return percentOfFinalGrade; }
+      public int getContainerID() { return containerID; }
       public int getClasID() { return clasID; }
 
       // setter methods
@@ -29,5 +31,6 @@ namespace HackerCentral.School {
       public void setTitle(string param) { title = param; }
       public void setPercentOfFinalGrade(float param) { percentOfFinalGrade = param; }
       public void setClasID(int param) { clasID = param; }
+      public void setContainerID(int param) { containerID = param; }
    }
 }

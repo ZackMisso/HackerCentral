@@ -1,1 +1,18 @@
 ﻿This file describes how ResearchReadings are saved to files
+
+ResearchReading ::
+   List<ResearchReadingTask> tasks;
+   List<ResearchReadingsGoal> goals;
+   List<int> goalIDs;
+   List<int> taskIDs;
+   string path;
+   string notesPath;
+   string title;
+   int pagesRead;
+   int totalPages;
+   bool isFile;
+   bool isUrl;
+   bool done;
+
+Data ::
+   title path notesPath pagesRead totalPages isFile isUrl done goalIDs.size() goalIDs... taskIDs.size() taskIDs...

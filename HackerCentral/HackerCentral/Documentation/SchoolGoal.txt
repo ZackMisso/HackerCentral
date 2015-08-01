@@ -1,1 +1,17 @@
 ﻿This file describes how SchoolGoals are saved to files
+
+Goal ::
+   GoalStatusEnum status
+   float percentAccomplished
+   int goalID
+
+SchoolGoal ::
+   List<SchoolClass> classes;
+   List<int> classIDs;
+   List<SchoolGradeContainer> containers;
+   List<int> containerIDs;
+   List<float> goalAverages;
+   bool byClass;
+
+Data ::
+   SchoolGoal goalID status percentAccomplised classIDs.size classIDs... containerIDs.size() containerIDs... goalAverages.size() goalAverages... byClass

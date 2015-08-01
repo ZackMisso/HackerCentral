@@ -1,1 +1,12 @@
 ﻿This file describes how SchoolClasses are saved to files
+
+SchoolClass ::
+   List<SchoolGradeContainer> grades;
+   List<SchoolAssignment> assignments;
+   List<int> gradeIDs;
+   List<int> assignmentIDs;
+   string name;
+   int classID;
+
+Data ::
+   name classID gradeIDs.size() gradeIDs... assignmentIDs.size() assignmentIDs...

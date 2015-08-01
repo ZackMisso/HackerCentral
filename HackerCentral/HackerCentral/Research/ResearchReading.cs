@@ -9,6 +9,7 @@ namespace HackerCentral.Research {
       private List<int> taskIDs;
       private string path;
       private string notesPath;
+      private string title;
       private int pagesRead;
       private int totalPages;
       private bool isFile;
@@ -35,6 +36,7 @@ namespace HackerCentral.Research {
       public List<int> getTaskIDs() { return taskIDs; }
       public string getPath() { return path; }
       public string getNotesPath() { return notesPath; }
+      public string getTitle() { return title; }
       public int getPagesRead() { return pagesRead; }
       public int getTotalPages() { return totalPages; }
       public bool getIsFile() { return isFile; }
@@ -48,6 +50,7 @@ namespace HackerCentral.Research {
       public void setTaskIDs(List<int> param) { taskIDs = param; }
       public void setPath(string param) { path = param; }
       public void setNotesPath(string param) { notesPath = param; }
+      public void setTitle(string param) { title = param; }
       public void setPagesRead(int param) { pagesRead = param; }
       public void setTotalPages(int param) { totalPages = param; }
       public void setIsFile(bool param) { isFile = param; }
