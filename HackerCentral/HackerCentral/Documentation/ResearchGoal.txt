@@ -1,6 +1,7 @@
 ﻿This file describes how ResearchGoals are saved to files
 
 Goal ::
+   string name
    GoalStatusEnum status
    float percentAccomplished
    int goalID
@@ -17,4 +18,4 @@ ResearchReadingsGoal ::
    bool allReadings;
 
    Data ::
-      ResearchReadingsGoal goalID status percentAccomplished toReadIDs.size() toReadIDs... totalPages pagesRead goalBasedOnReadings goalBasedOnPages allReadings
+      ResearchReadingsGoal goalID status name percentAccomplished toReadIDs.size() toReadIDs... totalPages pagesRead goalBasedOnReadings goalBasedOnPages allReadings

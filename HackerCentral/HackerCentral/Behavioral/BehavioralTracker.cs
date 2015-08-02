@@ -20,7 +20,19 @@ namespace HackerCentral.Behavioral {
 
       public override string ToString() {
          var sb = new StringBuilder();
-         // to be implemented
+         sb.Append(trackerID.ToString() + "^");
+         sb.Append(limitID.ToString() + "^");
+         sb.Append(goalID.ToString() + "^");
+         sb.Append(startingValue.ToString() + "^");
+         sb.Append(value.ToString() + "^");
+         sb.Append(start.ToString("MM/dd/yyyy") + "^");
+         sb.Append(hasGoal + "^");
+         sb.Append(hasLimit + "^");
+         sb.Append(updatesDailey + "^");
+         sb.Append(updatesWeekly + "^");
+         sb.Append(updatesMonthly + "^");
+         sb.Append(name + "^");
+         sb.Append("\n");
          return sb.ToString();
       }
 

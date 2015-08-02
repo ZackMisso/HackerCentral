@@ -13,17 +13,25 @@ namespace HackerCentral.Finances {
       }
 
       public void createDirectoryStructure() {
-         if (!Directory.Exists(financesUrl + "\\Transactions"))
-            Directory.CreateDirectory(financesUrl + "\\Transactions");
-         if (!Directory.Exists(financesUrl + "\\Budget"))
-            Directory.CreateDirectory(financesUrl + "\\Budget");
-         if (!Directory.Exists(financesUrl + "\\History"))
-            Directory.CreateDirectory(financesUrl + "\\History");
-         if (!Directory.Exists(financesUrl + "\\History\\Transactions"))
-            Directory.CreateDirectory(financesUrl + "\\History\\Transactions");
-         if (!Directory.Exists(financesUrl + "\\History\\Budget"))
-            Directory.CreateDirectory(financesUrl + "\\History\\Budget");
+         if (!Directory.Exists(getTransactionsUrl())
+            Directory.CreateDirectory(getTransactionsUrl());
+         if (!Directory.Exists(getBudgetUrl())
+            Directory.CreateDirectory(getBudgetUrl();
+         if (!Directory.Exists(getHistoryUrl())
+            Directory.CreateDirectory(getHistoryUrl());
+         if (!Directory.Exists(getTransactionHistoryUrl())
+            Directory.CreateDirectory(getTransactionHistoryUrl());
+         if (!Directory.Exists(getBudgetHistoryUrl())
+            Directory.CreateDirectory(getBudgetHistoryUrl());
       }
+
+      private string getTransactionsUrl() { return financesUrl + "\\Transactions"; }
+      private string getBudgetUrl() { return financesUrl + "\\Budget"; }
+      private string getHistoryUrl() { return financesUrl + "\\History"; }
+      private string getTransactionHistoryUrl() { return getHistoryUrl() + "\\Transactions"; }
+      private string getBudgetHistoryUrl() { return getHistoryUrl() + "\\Budget"; }
+
+      #region Transactions
 
       public List<FinancesTransaction> readTransactionsFromFiles() {
          var list = new List<FinancesTransaction>();
@@ -45,6 +53,18 @@ namespace HackerCentral.Finances {
          // to be implemented
       }
 
+      public void writeTransactionToFile(FinancesTransaction transaction) {
+         // to be implemented
+      }
+
+      public void writeTransactionToHistory(FinancesTransaction transaction) {
+         // to be implemented
+      }
+
+      #endregion
+
+      #region Budgets
+
       public List<FinancesBudget> readBudgetFromFiles() {
          var list = new List<FinancesBudget>();
          // to be implemented
@@ -64,6 +84,16 @@ namespace HackerCentral.Finances {
       public void writeBudgetToHistory(List<FinancesBudget> list) {
          // to be implemented
       }
+
+      public void writeBudgetToFile(FinancesBudget budget) {
+         // to be implemented
+      }
+
+      public void writeBudgetToHistory(FinancesBudget budget) {
+         // to be implemented
+      }
+
+      #endregion
 
       // setters
       public void setFinancesUrl(string param) { financesUrl = param; }

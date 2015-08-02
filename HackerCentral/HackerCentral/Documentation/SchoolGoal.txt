@@ -1,6 +1,7 @@
 ﻿This file describes how SchoolGoals are saved to files
 
 Goal ::
+   string name
    GoalStatusEnum status
    float percentAccomplished
    int goalID
@@ -14,4 +15,4 @@ SchoolGoal ::
    bool byClass;
 
 Data ::
-   SchoolGoal goalID status percentAccomplised classIDs.size classIDs... containerIDs.size() containerIDs... goalAverages.size() goalAverages... byClass
+   SchoolGoal goalID status name percentAccomplised classIDs.size classIDs... containerIDs.size() containerIDs... goalAverages.size() goalAverages... byClass

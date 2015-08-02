@@ -12,6 +12,8 @@ namespace HackerCentral.School {
          schoolUrl = url;
       }
 
+      #region Classes
+
       public List<SchoolClass> readClassesFromFiles() {
          var list = new List<SchoolClass>();
          // to be implemented
@@ -31,6 +33,18 @@ namespace HackerCentral.School {
       public void writeClassesToHistory(List<SchoolClass> list) {
          // to be implemented
       }
+
+      public void writeClassToFile(SchoolClass clas) {
+         // to be implemented
+      }
+
+      public void writeClassToHistory(SchoolClass clas) {
+         // to be implemented
+      }
+
+      #endregion
+
+      #region Assignments
 
       public List<SchoolAssignment> readAssignmentsFromFiles() {
          var list = new List<SchoolAssignment>();
@@ -52,6 +66,18 @@ namespace HackerCentral.School {
          // to be implemented
       }
 
+      public void writeAssignmentToFile(SchoolAssignment assignment) {
+         // to be implemented
+      }
+
+      public void writeAssignmentToHistory(SchoolAssignment assignment) {
+         // to be implemented
+      }
+
+      #endregion
+
+      #region Goals
+
       public List<SchoolGoal> readGoalsFromFiles() {
          var list = new List<SchoolGoal>();
          // to be implemented
@@ -71,6 +97,18 @@ namespace HackerCentral.School {
       public void writeGoalsToHistory(List<SchoolGoal> list) {
          // to be implemented
       }
+
+      public void writeGoalToFile(SchoolGoal goal) {
+         // to be implemented
+      }
+
+      public void writeGoalToHistory(SchoolGoal goal) {
+         // to be implemented
+      }
+
+      #endregion
+
+      #region Tasks
 
       public List<SchoolTask> readTasksFromFiles() {
          var list = new List<SchoolTask>();
@@ -92,26 +130,85 @@ namespace HackerCentral.School {
          // to be implemented
       }
 
-      public void createDirectoryStructure() {
-         if (!Directory.Exists(schoolUrl + "\\Assignments"))
-            Directory.CreateDirectory(schoolUrl + "\\Assignments");
-         if (!Directory.Exists(schoolUrl + "\\Goals"))
-            Directory.CreateDirectory(schoolUrl + "\\Goals");
-         if (!Directory.Exists(schoolUrl + "\\Tasks"))
-            Directory.CreateDirectory(schoolUrl + "\\Tasks");
-         if (!Directory.Exists(schoolUrl + "\\Classes"))
-            Directory.CreateDirectory(schoolUrl + "\\Classes");
-         if (!Directory.Exists(schoolUrl + "\\History"))
-            Directory.CreateDirectory(schoolUrl + "\\History");
-         if (!Directory.Exists(schoolUrl + "\\History\\Assignments"))
-            Directory.CreateDirectory(schoolUrl + "\\History\\Assignments");
-         if (!Directory.Exists(schoolUrl + "\\History\\Goals"))
-            Directory.CreateDirectory(schoolUrl + "\\History\\Goals");
-         if (!Directory.Exists(schoolUrl + "\\History\\Tasks"))
-            Directory.CreateDirectory(schoolUrl + "\\History\\Tasks");
-         if (!Directory.Exists(schoolUrl + "\\History\\Classes"))
-            Directory.CreateDirectory(schoolUrl + "\\History\\Classes");
+      public void writeTaskToFile(SchoolTask task) {
+         // to be implemented
       }
+
+      public void writeTaskToHistory(SchoolTask task) {
+         // to be implemented
+      }
+
+      #endregion
+
+      #region Grades
+
+      public List<SchoolGradeContainer> readGradesFromFiles() {
+         var list = new List<SchoolGradeContainer>();
+         // to be implemented
+         return list;
+      }
+
+      public void writeGradesToFiles(List<SchoolGradeContainer> list) {
+         // to be implemented
+      }
+
+      public List<SchoolGradeContainer> readGradesFromHistory() {
+         var list = new List<SchoolGradeContainer>();
+         // to be implemetned
+         return list;
+      }
+
+      public void writeGradesToHistory(List<SchoolGradeContainer> list) {
+         // to be implemented
+      }
+
+      public void writeGradeToFile(SchoolGradeContainer grade) {
+         // to be implemented
+      }
+
+      public void writeGradeToHistory(SchoolGradeContainer grade) {
+         // to be implemented
+      }
+
+      #endregion
+
+      public void createDirectoryStructure() {
+         if (!Directory.Exists(getAssignmentUrl())
+            Directory.CreateDirectory(getAssignmentUrl());
+         if (!Directory.Exists(getGoalUrl()))
+            Directory.CreateDirectory(getGoalUrl());
+         if (!Directory.Exists(getTaskUrl()))
+            Directory.CreateDirectory(getTaskUrl());
+         if (!Directory.Exists(getClassUrl()))
+            Directory.CreateDirectory(getClassUrl());
+         if (!Directory.Exists(getGradeUrl())) // grade containers
+            Directory.CreateDirectory(getGradeUrl());
+         if (!Directory.Exists(getHistoryUrl()))
+            Directory.CreateDirectory(getHistoryUrl());
+         if (!Directory.Exists(getAssignmentHistoryUrl()))
+            Directory.CreateDirectory(getAssignmentHistoryUrl());
+         if (!Directory.Exists(getGoalHistoryUrl()))
+            Directory.CreateDirectory(getGoalHistoryUrl());
+         if (!Directory.Exists(getTaskHistoryUrl()))
+            Directory.CreateDirectory(getTaskHistoryUrl());
+         if (!Directory.Exists(getClassHistoryUrl()))
+            Directory.CreateDirectory(getClassHistoryUrl());
+         if (!Directory.Exists(getGradeHistoryUrl()))
+            Directory.CreateDirectory(getGradeHistoryUrl());
+      }
+
+      private string getAssignmentUrl() { return schoolUrl + "\\Assignments"; }
+      private string getGoalUrl() { return schoolUrl + "\\Goals"; }
+      private string getTaskUrl() { return schoolUrl + "\\Tasks"; }
+      private string getClassUrl() { return schoolUrl + "\\Classes"; }
+      private string getGradeUrl() { return schoolUrl + "\\Grades"; }
+      private string getHistoryUrl() { return schoolUrl + "\\History"; }
+      private string getAssignmentHistoryUrl() { return getHistoryUrl() + "\\Assignments"; }
+      private string getGoalHistoryUrl() { return getHistoryUrl() + "\\Goals"; }
+      private string getTaskHistoryUrl() { return getHistoryUrl() + "\\Tasks"; }
+      private string getClassHistoryUrl() { return getHistoryUrl() + "\\Classes"; }
+      private string getGradeHistoryUrl() { return getHistoryUrl() + "\\Grades"; }
+
 
       // setters
       public void setSchoolUrl(string param) { schoolUrl = param; }

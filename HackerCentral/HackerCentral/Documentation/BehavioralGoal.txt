@@ -1,6 +1,7 @@
 ﻿This file describes how BehavioralGoal are saved to files
 
 Goal ::
+   string name
    GoalStatusEnum status
    float percentAccomplished
    int goalID
@@ -17,6 +18,6 @@ BehavioralGoal ::
    bool weekly
 
 Data ::
-   BehavioralGoal goalID status percentAccomplished trackerIDs.Count
+   BehavioralGoal goalID status name percentAccomplished trackerIDs.Count
    trackerIDs limitIDs.Count limitIDs startDate moreNeeded monthly
    dailey weekly

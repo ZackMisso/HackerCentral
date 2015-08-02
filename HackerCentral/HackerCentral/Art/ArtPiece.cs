@@ -13,7 +13,14 @@ namespace HackerCentral.Art {
 
       public override string ToString() {
          var sb = new StringBuilder();
-         // to be implemented
+         sb.Append(pieceID.ToString() + "^");
+         sb.Append(began.ToString("MM/dd/yyyy") + "^");
+         sb.Append(finished.ToString("MM/dd/yyy") + "^");
+         sb.Append(iteration.ToString() + "^");
+         sb.Append(file + "^");
+         sb.Append(formal + "^");
+         sb.Append(name + "^");
+         sb.Append("\n");
          return sb.ToString();
       }
 

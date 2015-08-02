@@ -1,1 +1,32 @@
 ﻿This file describes how SchoolTasks are saved to files
+
+Task ::
+   string name;
+   string description;
+   int taskID;
+   int effort;
+   TaskStatusEnum status;
+   CodingProject project;
+
+SchoolTask ::
+
+SchoolStudyTask ::
+   SchoolClass clas;
+   DateTime startDate;
+   int clasID;
+   int hours;
+   int inDays;
+   bool weekly;
+
+   Data ::
+      SchoolStudyTask clasID hours inDays startDate weekly name taskID effort status description 
+
+SchoolAssignmnetTask ::
+   SchoolAssignment assignment;
+   SchoolClass clas;
+   int assignmentID;
+   int clasID;
+   bool anyAssignmentForClass;
+
+   Data ::
+      SchoolAssignmentTask clasID assignmentID anyAssignmentForClass name taskID effort status description

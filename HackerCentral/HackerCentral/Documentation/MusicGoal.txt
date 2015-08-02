@@ -1,6 +1,7 @@
 ﻿This file describes how MusicGoals are saved to files
 
 Goal ::
+   string name
    GoalStatusEnum status
    float percentAccomplished
    int goalID
@@ -17,4 +18,4 @@ MusicGoal ::
    bool genericIterationsGoal;
 
 Data ::
-   MusicGoal goalID status percentAccomplished pieceID iterations startIteration taskGoal iterationsGoal genericIterationsGoal taskIDs.size() taskIDs...
+   MusicGoal goalID status name percentAccomplished pieceID iterations startIteration taskGoal iterationsGoal genericIterationsGoal taskIDs.size() taskIDs...

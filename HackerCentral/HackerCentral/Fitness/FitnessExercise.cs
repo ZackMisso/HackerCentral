@@ -16,7 +16,14 @@ namespace HackerCentral.Fitness {
 
       public override string ToString() {
          var sb = new StringBuilder();
-         // to be implemented
+         sb.Append(exerciseID.ToString() + "^");
+         sb.Append(goalID.ToString() + "^");
+         sb.Append(name + "^");
+         sb.Append(totalReps.ToString() + "^");
+         sb.Append(hasGoal + "^");
+         sb.Append(updatesPerWeek + "^");
+         sb.Append(updatesPerMonth + "^");
+         sb.Append("\n")
          return sb.ToString();
       }
       

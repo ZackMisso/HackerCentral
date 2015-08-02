@@ -13,21 +13,31 @@ namespace HackerCentral.Behavioral {
       }
 
       public void createDirectoryStructure() {
-         if (!Directory.Exists(behavioralUrl + "\\Limits"))
-            Directory.CreateDirectory(behavioralUrl + "\\Limits");
-         if (!Directory.Exists(behavioralUrl + "\\Goals"))
-            Directory.CreateDirectory(behavioralUrl + "\\Goals");
-         if (!Directory.Exists(behavioralUrl + "\\Trackers"))
-            Directory.CreateDirectory(behavioralUrl + "\\Trackers");
-         if (!Directory.Exists(behavioralUrl + "\\History"))
-            Directory.CreateDirectory(behavioralUrl + "\\History");
-         if (!Directory.Exists(behavioralUrl + "\\History\\Limits"))
-            Directory.CreateDirectory(behavioralUrl + "\\History\\Limits");
-         if (!Directory.Exists(behavioralUrl + "\\History\\Goals"))
-            Directory.CreateDirectory(behavioralUrl + "\\History\\Goals");
-         if (!Directory.Exists(behavioralUrl + "\\History\\Trackers"))
-            Directory.CreateDirectory(behavioralUrl + "\\History\\Trackers");
+         if (!Directory.Exists(getLimitsUrl();)
+            Directory.CreateDirectory(getLimitsUrl());
+         if (!Directory.Exists(getGoalsUrl())
+            Directory.CreateDirectory(getGoalsUrl());
+         if (!Directory.Exists(getTrackerUrl())
+            Directory.CreateDirectory(getTrackerUrl());
+         if (!Directory.Exists(getHistoryUrl())
+            Directory.CreateDirectory(getHistoryUrl());
+         if (!Directory.Exists(getLimitHistoryUrl()))
+            Directory.CreateDirectory(getLimitHistoryUrl());
+         if (!Directory.Exists(getGoalHistoryUrl())
+            Directory.CreateDirectory(getGoalHistoryUrl());
+         if (!Directory.Exists(getTrackerHistoryUrl())
+            Directory.CreateDirectory(getTrackerHistoryUrl());
       }
+
+      private string getLimitsUrl() { return behavioralUrl + "\\Limits"; }
+      private string getGoalsUrl() { return behavioralUrl + "\\Goals"; }
+      private string getTrackerUrl() { return trackerUrl + "\\Trackers"; }
+      private string getHistoryUrl() { return behavioralUrl + "\\History"; }
+      private string getLimitHistory() { return getHistoryUrl() + "\\Limits"; }
+      private string getGoalHistory() { return getHistoryUrl() + "\\Goals"; }
+      private string getTrackerHistory() { return getHistoryUrl() + "\\Trackers"; }
+
+      #region Limits
 
       public List<BehavioralLimit> readLimitsFromFiles() {
          var list = new List<BehavioralLimit>();
@@ -36,7 +46,10 @@ namespace HackerCentral.Behavioral {
       }
 
       public void writeLimitsToFiles(List<BehavioralLimit> list) {
-         // to be implemented
+         foreach (BehavioralLimit limit in list) {
+            var filePath = getLimitsUrl() + limit.getTracker().getName()+ "Limit" + ".txt";
+            File.WriteAllText(filePath, limit.ToString());
+         }
       }
 
       public List<BehavioralLimit> readLimitsFromHistory() {
@@ -46,8 +59,27 @@ namespace HackerCentral.Behavioral {
       }
 
       public void writeLimitsToHistory(List<BehavioralLimit> list) {
-         // to be implemented
+         foreach (BehavioralLimit limit in list) {
+            var filePath = getLimitHistoryUrl() + limit.getTracker().getName() + "Limit" + ".txt";
+            using (StreamWriter sw = File.AppendText(filePath))
+               sw.WriteLine(limit.ToString());
+         }
       }
+
+      public void writeLimitToFile(BehavioralLimit limit) {
+         var filePath = getLimitsUrl() + limit.getTracker().getName() + "Limit" + ".txt";
+         File.WriteAllText(filePath, limit.ToString());
+      }
+
+      public void writeLimitToHistory(BehavioralLimit limie) {
+         var filePath = getLimitHistoryUrl() + limit.getTracker().getName() + "Limit" + ".txt";
+         using (StreamWriter sw = File.AppendText(filePath))
+            sw.WriteLine(limit.ToString());
+      }
+
+      #endregion
+
+      #region Goals
 
       public List<BehavioralGoal> readGoalsFromFiles() {
          var list = new List<BehavioralGoal>();
@@ -69,6 +101,18 @@ namespace HackerCentral.Behavioral {
          // to be implemented
       }
 
+      public void writeGoalToFile(BehavioralGoal goal) {
+         // to be implemented
+      }
+
+      public void writeGoalToHistory(BehavioralGoal goal) {
+         // to be implemented
+      }
+
+      #endregion
+
+      #region Trackers
+
       public List<BehavioralTracker> readTrackersFromFiles() {
          var list = new List<BehavioralTracker>();
          // to be implemented
@@ -88,6 +132,16 @@ namespace HackerCentral.Behavioral {
       public void writeTrackersToHistory(List<BehavioralTracker> list) {
          // to be implemented
       }
+
+      public void writeTrackerToFile(BehavioralTracker tracker) {
+         // to be implemented
+      }
+
+      public void writeTrackerToHistory(BehavioralTracker tracker) {
+         // to be implemented
+      }
+
+      #endregion
 
       // setter method
       public void setBehavioralUrl(string param) { behavioralUrl = param; }

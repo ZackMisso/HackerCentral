@@ -1,6 +1,7 @@
 ﻿using System.Text;
 using System.Collections.Generic;
 using HackerCentral.Common;
+using HackerCentral.Common.Enum;
 
 namespace HackerCentral.Art {
    public class ArtGoal : Goal {
@@ -21,7 +22,27 @@ namespace HackerCentral.Art {
 
       public override string ToString() {
          var sb = new StringBuilder();
-         // to be implemented
+         sb.Append("ArtGoal" + "^");
+         sb.Append(getGoalID() + "^");
+         if (getStatus() == GoalStatusEnum.None)
+            sb.Append("None" + "^");
+         if (getStatus() == GoalStatusEnum.NotStarted)
+            sb.Append("Not Started" + "^");
+         if (getStatus() == GoalStatusEnum.InProgress)
+            sb.Append("In Progress" + "^");
+         if (getStatus() == GoalStatusEnum.Succeeded)
+            sb.Append("Succeeded" + "^");
+         if (getStatus() == GoalStatusEnum.Failed)
+            sb.Append("Failed" + "^");
+         sb.Append(getName() + "^");
+         sb.Append(getPercentAccomplished().ToString() + "^");
+         sb.Append(tasks.Count + "^");
+         foreach (ArtTask task in tasks)
+            sb.Append(task.getTaskID().ToString() + "^");
+         sb.Append(numberOfTasks.ToString() + "^");
+         sb.Append(finishedTasks.ToString() + "^");
+         sb.Append(allTasks + "^");
+         sb.Append("\n");
          return sb.ToString();
       }
 

@@ -1,11 +1,40 @@
-﻿namespace HackerCentral.Fitness {
-   public class FitnessTask {
+﻿using System.Text;
+using HackerCentral.Common;
+
+namespace HackerCentral.Fitness {
+   public class FitnessTask : Task{
       private FitnessExercise exercise;
       private int exerciseID;
       private int reps;
       private bool daily;
       private bool weekly;
       private bool monthly;
+
+      public string public override string ToString(){
+         var sb = new StringBuilder();
+         sb.Append("FitnessTask" + "^");
+         sb.Append(exerciseID.ToString() + "^");
+         sb.Append(reps.ToString() + "^");
+         sb.Append(daily + "^");
+         sb.Append(weekly + "^");
+         sb.Append(monthly + "^");
+         sb.Append(getName() + "^");
+         sb.Append(getTaskID().ToString() + "^");
+         sb.Append(getEffort().ToString() + "^");
+         if (getStatus() == TaskStatusEnum.ToDo)
+            sb.Append("To Do" + "^");
+         if (getStatus() == TaskStatusEnum.InProgress)
+            sb.Append("In Progress" + "^");
+         if (getStatus() == TaskStatusEnum.Done)
+            sb.Append("Done" + "^");
+         if (getStatus() == TaskStatusEnum.Canceled)
+            sb.Append("Canceled" + "^");
+         if (getStatus() == TaskStatusEnum.Failed)
+            sb.Append("Failed" + "^");
+         sb.Append(getDescription() "^");
+         sb.Append("\n");
+         return sb.ToString();
+      }
 
       // getter methods
       public FitnessExercise getFitnessExercise() { return exercise; }

@@ -9,7 +9,10 @@ namespace HackerCentral.Behavioral {
 
       public override string ToString() {
          var sb = new StringBuilder();
-         // to be implemented
+         sb.Append(limitID.ToString() + "^");
+         sb.Append(limit.ToString() + "^");
+         sb.Append(trackerID.ToString() + "^");
+         sb.Append("\n");
          return sb.ToString();
       }
 

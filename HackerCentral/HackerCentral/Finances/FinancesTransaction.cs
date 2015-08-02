@@ -12,7 +12,13 @@ namespace HackerCentral.Finances {
 
       public override string ToString() {
          var sb = new StringBuilder();
-         // to be implemented
+         sb.Append(transactionID.ToString() + "^");
+         sb.Append(budgetType.ToString() + "^");
+         sb.Append(recieptID + "^");
+         sb.Append(amount.ToString() + "^");
+         sb.Append(date.ToString("MM/dd/yyyy") + "^");
+         sb.Append(doneByCash + "^");
+         sb.Append("\n");
          return sb.ToString();
       }
 

@@ -1,6 +1,7 @@
 ﻿This file describes how ArtGoals are saved to files
 
 Goal ::
+   string name
    GoalStatusEnum status
    float percentAccomplished
    int goalID
@@ -13,6 +14,6 @@ ArtGoal ::
    bool allTasks
 
 Data ::
-   ArtGoal goalID status percentAccomplished tasks.Count taskIDs... 
+   ArtGoal goalID status name percentAccomplished tasks.Count taskIDs... 
    numberOfTasks finishedTasks allTasks
    

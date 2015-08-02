@@ -28,7 +28,31 @@ namespace HackerCentral.Behavioral {
 
       public override string ToString() {
          var sb = new StringBuilder();
-         // to be implemented
+         sb.Append("BehavioralGoal" + "^");
+         sb.Append(getGoalID() + "^");
+         if (getStatus() == GoalStatusEnum.None)
+            sb.Append("None" + "^");
+         if (getStatus() == GoalStatusEnum.NotStarted)
+            sb.Append("Not Started" + "^");
+         if (getStatus() == GoalStatusEnum.InProgress)
+            sb.Append("In Progress" + "^");
+         if (getStatus() == GoalStatusEnum.Succeeded)
+            sb.Append("Succeeded" + "^");
+         if (getStatus() == GoalStatusEnum.Failed)
+            sb.Append("Failed" + "^");
+         sb.Append(getName() + "^");
+         sb.Append(getPercentAccomplished().ToString() + "^");
+         sb.Append(trackers.Count + "^");
+         foreach (BehavioralTracker tracker in trackers)
+            sb.Append(tracker.getTrackerID().ToString() + "^");
+         foreach (BehavioralLimit limit in limits)
+            sb.Append(limit.getLimitID().ToString() + "^");
+         sb.Append(startDate.ToString("MM/dd/yyyy") + "^");
+         sb.Append(moreNeeded + "^");
+         sb.Append(monthly + "^");
+         sb.Append(dailey + "^");
+         sb.Append(weekly + "^");
+         sb.Append("\n");
          return sb.ToString();
       }
 
