@@ -21,7 +21,10 @@ namespace HackerCentral.School {
       }
 
       public void writeClassesToFiles(List<SchoolClass> list) {
-         // to be implemented
+         foreach (SchoolClass clas in list) {
+            var filePath = getClassUrl() + clas.getName() + ".txt";
+            File.WriteAllText(filePath, clas.ToString());
+         }
       }
 
       public List<SchoolClass> readClassesFromHistory() {
@@ -31,15 +34,20 @@ namespace HackerCentral.School {
       }
 
       public void writeClassesToHistory(List<SchoolClass> list) {
-         // to be implemented
+         foreach (SchoolClass clas in list) {
+            var filePath = getClassHistoryUrl() + clas.getName() + ".txt";
+            File.WriteAllText(filePath, clas.ToString());
+         }
       }
 
       public void writeClassToFile(SchoolClass clas) {
-         // to be implemented
+         var filePath = getClassUrl() + clas.getName() + ".txt";
+         File.WriteAllText(filePath, clas.ToString());
       }
 
       public void writeClassToHistory(SchoolClass clas) {
-         // to be implemented
+         var filePath = getClassHistoryUrl() + clas.getName() + ".txt";
+         File.WriteAllText(filePath, clas.ToString());
       }
 
       #endregion
@@ -53,7 +61,10 @@ namespace HackerCentral.School {
       }
 
       public void writeAssignmentsToFiles(List<SchoolAssignment> list) {
-         // to be implemented
+         foreach (SchoolAssignment assignment in list) {
+            var filePath = getAssignmentUrl() + assignment.getName() + ".txt";
+            File.WriteAllText(filePath, assignment.ToString());
+         }
       }
 
       public List<SchoolAssignment> readAssignmentsFromHistory() {
@@ -63,15 +74,20 @@ namespace HackerCentral.School {
       }
 
       public void writeAssignmentsToHistory(List<SchoolAssignment> list) {
-         // to be implemented
+         foreach (SchoolAssignment assignment in list) {
+            var filePath = getAssignmentHistoryUrl() + assignment.getName() + ".txt";
+            File.WriteAllText(filePath, assignment.ToString());
+         }
       }
 
       public void writeAssignmentToFile(SchoolAssignment assignment) {
-         // to be implemented
+         var filePath = getAssignmentUrl() + assignment.getName() + ".txt";
+         File.WriteAllText(filePath, assignment.ToString());
       }
 
       public void writeAssignmentToHistory(SchoolAssignment assignment) {
-         // to be implemented
+         var filePath = getAssignmentHistoryUrl() + assignment.getName() + ".txt";
+         File.WriteAllText(filePath, assignment.ToString());
       }
 
       #endregion
@@ -85,7 +101,10 @@ namespace HackerCentral.School {
       }
 
       public void writeGoalsToFiles(List<SchoolGoal> list) {
-         // to be implemented
+         foreach (SchoolGoal goal in list) {
+            var filePath = getGoalUrl() + goal.getName() + ".txt";
+            File.WriteAllText(filePath, goal.ToString());
+         }
       }
 
       public List<SchoolGoal> readGoalsFromHistory() {
@@ -95,15 +114,20 @@ namespace HackerCentral.School {
       }
 
       public void writeGoalsToHistory(List<SchoolGoal> list) {
-         // to be implemented
+         foreach (SchoolGoal goal in list) {
+            var filePath = getGoalHistoryUrl() + goal.getName() + ".txt";
+            File.WriteAllText(filePath, goal.ToString());
+         }
       }
 
       public void writeGoalToFile(SchoolGoal goal) {
-         // to be implemented
+         var filePath = getGoalUrl() + goal.getName() + ".txt";
+         File.WriteAllText(filePath, goal.ToString());
       }
 
       public void writeGoalToHistory(SchoolGoal goal) {
-         // to be implemented
+         var filePath = getGoalHistoryUrl() + goal.getName() + ".txt";
+         File.WriteAllText(filePath, goal.ToString());
       }
 
       #endregion
@@ -117,7 +141,10 @@ namespace HackerCentral.School {
       }
 
       public void writeTasksToFiles(List<SchoolTask> list) {
-         // to be implemented
+         foreach (SchoolTask task in list) {
+            var filePath = getTaskUrl() + task.getName() + ".txt";
+            File.WriteAllText(filePath, task.ToString());
+         }
       }
 
       public List<SchoolTask> readTasksFromHistory() {
@@ -127,15 +154,20 @@ namespace HackerCentral.School {
       }
 
       public void writeTasksToHistory(List<SchoolTask> list) {
-         // to be implemented
+         foreach (SchoolTask task in list) {
+            var filePath = getTaskHistoryUrl() + task.getName() + ".txt";
+            File.WriteAllText(filePath, task.ToString());
+         }
       }
 
       public void writeTaskToFile(SchoolTask task) {
-         // to be implemented
+         var filePath = getTaskHistoryUrl() + task.getName() + ".txt";
+         File.WriteAllText(filePath, task.ToString());
       }
 
       public void writeTaskToHistory(SchoolTask task) {
-         // to be implemented
+         var filePath = getTaskHistoryUrl() + task.getName() + ".txt";
+         File.WriteAllText(filePath, task.ToString());
       }
 
       #endregion
@@ -149,7 +181,10 @@ namespace HackerCentral.School {
       }
 
       public void writeGradesToFiles(List<SchoolGradeContainer> list) {
-         // to be implemented
+         foreach (SchoolGradeContainer grade in list) {
+            var filePath = getGradeUrl() + grade.getName() + ".txt";
+            File.WriteAllText(filePath, grade.ToString());
+         }
       }
 
       public List<SchoolGradeContainer> readGradesFromHistory() {
@@ -159,15 +194,20 @@ namespace HackerCentral.School {
       }
 
       public void writeGradesToHistory(List<SchoolGradeContainer> list) {
-         // to be implemented
+         foreach (SchoolGradeContainer grade in list) {
+            var filePath = getGradeHistoryUrl() + grade.getName() + ".txt";
+            File.WriteAllText(filePath, grade.ToString());
+         }
       }
 
       public void writeGradeToFile(SchoolGradeContainer grade) {
-         // to be implemented
+         var filePath = getGradeUrl() + grade.getName() + ".txt";
+         File.WriteAllText(filePath, grade.ToString());
       }
 
       public void writeGradeToHistory(SchoolGradeContainer grade) {
-         // to be implemented
+         var filePath = getGradeHistoryUrl() + grade.getName() + ".txt";
+         File.WriteAllText(filePath, grade.ToString());
       }
 
       #endregion

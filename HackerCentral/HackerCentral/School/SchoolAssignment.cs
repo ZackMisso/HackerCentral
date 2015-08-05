@@ -13,7 +13,13 @@ namespace HackerCentral.School {
 
       public override string ToString() {
          var sb = new StringBuilder();
-         // to be implemented
+         sb.Append(assignmentID.ToString() + "^");
+         sb.Append(containerID.ToString() + "^");
+         sb.Append(dueDate.ToString("MM/dd/yyyy") + "^");
+         sb.Append(name + "^");
+         sb.Append(outOf.ToString() + "^");
+         sb.Append(grade.ToString() + "^");
+         sb.Append("\n");
          return sb.ToString();
       }
 

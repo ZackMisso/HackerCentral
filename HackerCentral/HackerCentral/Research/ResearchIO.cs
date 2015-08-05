@@ -21,7 +21,10 @@ namespace HackerCentral.Research {
       }
 
       public void writeGoalsToFiles(List<ResearchGoal> list) {
-         // to be implemented
+         foreach (ResearchGoal goal in list) {
+            var filePath = getGoalUrl() + goal.getName() + ".txt";
+            File.WriteAllText(filePath, goal.ToString());
+         }
       }
 
       public List<ResearchGoal> readGoalsFromHistory() {
@@ -31,15 +34,20 @@ namespace HackerCentral.Research {
       }
 
       public void writeGoalsToHistory(List<ResearchGoal> list) {
-         // to be implemented
+         foreach (ResearchGoal goal in list) {
+            var filePath = getGoalHistoryUrl() + goal.getName() + ".txt";
+            File.WriteAllText(filePath, goal.ToString());
+         }
       }
 
       public void writeGoalToFile(ResearchGoal goal) {
-         // to be implemented
+         var filePath = getGoalUrl() + goal.getName() + ".txt";
+         File.WriteAllText(filePath, goal.ToString());
       }
 
       public void writeGoalToHistory(ResearchGoal goal) {
-         // to be implemented
+         var filePath = getGoalHistoryUrl() + goal.getName() + ".txt";
+         File.WriteAllText(filePath, goal.ToString());
       }
 
       #endregion
@@ -53,7 +61,10 @@ namespace HackerCentral.Research {
       }
 
       public void writeReadingsToFiles(List<ResearchReading> list) {
-         // to be implemented
+         foreach (ResearchReading reading in list) {
+            var filePath = getReadingUrl() + reading.getName() + ".txt";
+            File.WriteAllText(filePath, reading.ToString());
+         }
       }
 
       public List<ResearchReading> readReadingsFromHistory() {
@@ -63,15 +74,20 @@ namespace HackerCentral.Research {
       }
 
       public void writeReadingsToHistory(List<ResearchReading> list) {
-         // to be implemented
+         foreach (ResearchReading reading in list) {
+            var filePath = getReadingHistoryUrl() + reading.getName() + ".txt";
+            File.WriteAllText(filePath, reading.ToString());
+         }
       }
 
       public void writeReadingToFile(ResearchReading reading) {
-         // to be implemented
+         var filePath = getReadingUrl() + reading.getName() + ".txt";
+         File.WriteAllText(filePath, reading.ToString());
       }
 
       public void writeReadingToHistory(ResearchReading reading) {
-         // to be implemented
+         var filePath = getReadingHistoryUrl() + reading.getName() + ".txt";
+         File.WriteAllText(filePath, reading.ToString());
       }
 
       #endregion
@@ -85,7 +101,10 @@ namespace HackerCentral.Research {
       }
 
       public void writeTasksToFiles(List<ResearchTask> list) {
-         // to be implemented
+         foreach (ResearchTask task in list) {
+            var filePath = getTaskUrl() + task.getName() + ".txt";
+            File.WriteAllText(filePath, task.ToString());
+         }
       }
 
       public List<ResearchTask> readTasksFromHistory() {
@@ -95,15 +114,20 @@ namespace HackerCentral.Research {
       }
 
       public void writeTasksToHistory(List<ResearchTask> list) {
-         // to be implemented
+         foreach (ResearchTask task in list) {
+            var filePath = getTaskHistoryUrl() + task.getName() + ".txt";
+            File.WriteAllText(filePath, task.ToString());
+         }
       }
 
       public void writeTaskToFile(ResearchTask task) {
-         // to be implemented
+         var filePath = getTaskUrl() + task.getName() + ".txt";
+         File.WriteAllText(filePath, task.ToString());
       }
 
       public void writeTaskToHistory(ResearchTask task) {
-         // to be implemented
+         var filePath = getTaskHistoryUrl() + task.getName() + ".txt";
+         File.WriteAllText(filePath, task.ToString());
       }
 
       #endregion

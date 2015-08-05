@@ -25,7 +25,20 @@ namespace HackerCentral.Research {
 
       public override string ToString() {
          var sb = new StringBuilder();
-         // to be implemented
+         sb.Append(title + "^");
+         sb.Append(path + "^");
+         sb.Append(notesPath + "^");
+         sb.Append(pagesRead.ToString() + "^");
+         sb.Append(totalPages.ToString() + "^");
+         sb.Append(isFile + "^");
+         sb.Append(isUrl + "^");
+         sb.Append(done + "^");
+         sb.Append(goals.Count + "^");
+         foreach (ResearchReadingsGoal goal in goals)
+            sb.Append(goal.getGoalID().ToString() + "^");
+         foreach (ResearchReadingTask task in tasks)
+            sb.Append(task.getTaskID().ToString() + "^");
+         sb.Append("\n")
          return sb.ToString();
       }
 

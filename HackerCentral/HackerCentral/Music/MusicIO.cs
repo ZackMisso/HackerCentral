@@ -21,7 +21,10 @@ namespace HackerCentral.Music {
       }
 
       public void writePiecesToFiles(List<MusicPiece> list) {
-         // to be implemented
+         foreach (MusicPiece piece in list) {
+            var filePath = getPieceUrl() + piece.getName() + ".txt";
+            File.WriteAllText(filePath, piece.ToString());
+         }
       }
 
       public List<MusicPiece> readPiecesFromHistory() {
@@ -31,15 +34,20 @@ namespace HackerCentral.Music {
       }
 
       public void writePiecesToHistory(List<MusicPiece> list) {
-         // to be implemented
+         foreach (MusicPiece piece in list) {
+            var filePath = getPieceHistoryUrl() + piece.getName() + ".txt";
+            File.WriteAllText(filePath, piece.ToString());
+         }
       }
 
       public void writePieceToFile(MusicPiece piece) {
-         // to be implemented
+         var filePath = getPieceUrl() + piece.getName() + ".txt";
+         File.WriteAllText(filePath, piece.ToString());
       }
 
       public void writePieceToHistory(MusicPiece piece) {
-         // to be implemented
+         var filePath = getPieceHistoryUrl() + piece.getName() + ".txt";
+         File.WriteAllText(filePath, piece.ToString());
       }
 
       #endregion
@@ -53,7 +61,10 @@ namespace HackerCentral.Music {
       }
 
       public void writeTasksToFiles(List<MusicTask> list) {
-         // to be implemented
+         foreach (MusicTask task in list) {
+            var filePath = getTaskUrl() + task.getName() + ".txt";
+            File.WriteAllText(filePath, task.ToString());
+         }
       }
 
       public List<MusicTask> readTasksFromHistory() {
@@ -63,15 +74,20 @@ namespace HackerCentral.Music {
       }
 
       public void writeTasksToHistory(List<MusicTask> list) {
-         // to be implemented
+         foreach (MusicTask task in list) {
+            var filePath = getTaskHistoryUrl() + task.getName() + ".txt";
+            File.WriteAllText(filePath, task.ToString());
+         }
       }
 
       public void writeTaskToFile(MusicTask task) {
-         // to be implemented
+         var filePath = getTaskUrl() + task.getName() + ".txt";
+         File.WriteAllText(filePath, task.ToString());
       }
 
       public void writeTaskToHistory(MusicTask task) {
-         // to be implemented
+         var filePath = getTaskHistoryUrl() + task.getName() + ".txt";
+         File.WriteAllText(filePath, task.ToString());
       }
 
       #endregion
@@ -85,7 +101,10 @@ namespace HackerCentral.Music {
       }
 
       public void writeGoalsToFiles(List<MusicGoal> list) {
-         // to be implemented
+         foreach (MusicGoal goal in list) {
+            var filePath = getGoalUrl() + goal.getName() + ".txt";
+            File.WriteAllText(filePath, goal.ToString());
+         }
       }
 
       public List<MusicGoal> readGoalsFromHistory() {
@@ -95,15 +114,20 @@ namespace HackerCentral.Music {
       }
 
       public void writeGoalsToHistory(List<MusicGoal> list) {
-         // to be implemented
+         foreach (MusicGoal goal in list) {
+            var filePath = getGoalHistoryUrl() + goal.getName() + ".txt";
+            File.WriteAllText(filePath, goal.ToString());
+         }
       }
 
       public void writeGoalToFile(MusicGoal goal) {
-         // to be implemented
+         var filePath = getGoalUrl() + goal.getName() + ".txt";
+         File.WriteAllText(filePath, goal.ToString());
       }
 
       public void writeGoalToHistory(MusicGoal goal) {
-         // to be implemented
+         var filePath = getGoalHistoryUrl() + goal.getName() + ".txt";
+         File.WriteAllText(filePath, goal.ToString());
       }
 
       #endregion

@@ -40,7 +40,10 @@ namespace HackerCentral.Finances {
       }
 
       public void writeTransactionsToFiles(List<FinancesTransaction> list) {
-         // to be implemented
+         foreach (FinancesTransaction transaction in list) {
+            var filePath = getTransactionUrl() + transaction.getTransactionID().ToString() + ".txt";
+            File.WriteAllText(filePath, transaction.ToString());
+         }
       }
 
       public List<FinancesTransaction> readTransactionsFromHistory() {
@@ -50,15 +53,20 @@ namespace HackerCentral.Finances {
       }
 
       public void writeTransactionsToHistory(List<FinancesTransaction> list) {
-         // to be implemented
+         foreach (FinancesTransaction transaction in list) {
+            var filePath = getTransactionHistoryUrl() + transaction.getTransactionID().ToString() + ".txt";
+            File.WriteAllText(filePath, transaction.ToString());
+         }
       }
 
       public void writeTransactionToFile(FinancesTransaction transaction) {
-         // to be implemented
+         var filePath = getTransactionUrl() + transaction.getTransactionID().ToString() + ".txt";
+         File.WriteAllText(filePath, transaction.ToString());
       }
 
       public void writeTransactionToHistory(FinancesTransaction transaction) {
-         // to be implemented
+         var filePath = getTransactionHistoryUrl() + transaction.getTransactionID().ToString() + ".txt";
+         File.WriteAllText(filePath, transaction.ToString());
       }
 
       #endregion
@@ -72,7 +80,10 @@ namespace HackerCentral.Finances {
       }
 
       public void writeBudgetToFiles(List<FinancesBudget> list) {
-         // to be implemented
+         foreach (FinancesBudget budget in list) {
+            var filePath = getBudgetUrl() + budget.getBudgetID().ToString() + ".txt";
+            File.WriteAllText(filePath, budget.ToString());
+         }
       }
 
       public List<FinancesBudget> readBudgetFromHistory() {
@@ -82,15 +93,20 @@ namespace HackerCentral.Finances {
       }
 
       public void writeBudgetToHistory(List<FinancesBudget> list) {
-         // to be implemented
+         foreach (FinancesBudget budget in list) {
+            var filePath = getBudgetHistoryUrl() + budget.getBudgetID().ToString() + ".txt";
+            File.WriteAllText(filePath, budget.ToString());
+         }
       }
 
       public void writeBudgetToFile(FinancesBudget budget) {
-         // to be implemented
+         var filePath = getBudgetUrl() + budget.getBudgetID().ToString() + ".txt";
+         File.WriteAllText(filePath, budget.ToString());
       }
 
       public void writeBudgetToHistory(FinancesBudget budget) {
-         // to be implemented
+         var filePath = getBudgetHistoryUrl() + budget.getBudgetID().ToString() + ".txt";
+         File.WriteAllText(filePath, budget.ToString());
       }
 
       #endregion

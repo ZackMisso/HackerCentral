@@ -19,7 +19,15 @@ namespace HackerCentral.School {
 
       public override string ToString() {
          var sb = new StringBuilder();
-         // to be implemented
+         sb.Append(name + "^");
+         sb.Append(classID.ToString() + "^");
+         sb.Append(grades.Count + "^");
+         foreach (SchoolGradeContainer grade in grades)
+            sb.Append(grade.getGradeID() + "^");
+         sb.Append(assignments.Count + "^");
+         foreach (SchoolAssignment assignment in assignments)
+            sb.Append(assignment.getAssignmentID() + "^");
+         sb.Append("\n");
          return sb.ToString();
       }
 

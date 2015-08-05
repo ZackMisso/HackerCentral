@@ -10,7 +10,12 @@ namespace HackerCentral.Music {
 
       public override string ToString() {
          var sb = new StringBuilder();
-         // to be implemented
+         sb.Append(name + "^");
+         sb.Append(location + "^");
+         sb.Append(iteration.ToString() + "^");
+         sb.Append(pieceID.ToString() + "^");
+         sb.Append(done + "^");
+         sb.Append("\n");
          return sb.ToString();
       }
 

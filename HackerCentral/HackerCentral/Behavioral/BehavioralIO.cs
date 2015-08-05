@@ -88,7 +88,10 @@ namespace HackerCentral.Behavioral {
       }
 
       public void writeGoalsToFiles(List<BehavioralGoal> list) {
-         // to be implemented
+         foreach (BehavioralGoal goal in list) {
+            var filePath = getGoalUrl() + goal.getName() + ".txt";
+            File.WriteAllText(filePath, goal.ToString());
+         }
       }
 
       public List<BehavioralGoal> readGoalsFromHistory() {
@@ -98,15 +101,20 @@ namespace HackerCentral.Behavioral {
       }
 
       public void writeGoalsToHistory(List<BehavioralGoal> list) {
-         // to be implemented
+         foreach (BehavioralGoal goal in list) {
+            var filePath = getGoalHistoryUrl() + goal.getName() + ".txt";
+            File.WriteAllText(filePath, goal.ToString());
+         }
       }
 
       public void writeGoalToFile(BehavioralGoal goal) {
-         // to be implemented
+         var filePath = getGoalUrl() + goal.getName() + ".txt";
+         File.WriteAllText(filePath, goal.ToString());
       }
 
       public void writeGoalToHistory(BehavioralGoal goal) {
-         // to be implemented
+         var filePath = getGoalHistoryUrl() + goal.getName() + ".txt";
+         File.WriteAllText(filePath, goal.ToString());
       }
 
       #endregion
@@ -120,7 +128,10 @@ namespace HackerCentral.Behavioral {
       }
 
       public void writeTrackersToFiles(List<BehavioralTracker> list) {
-         // to be implemented
+         foreach (BehavioralTracker tracker in list) {
+            var filePath = getTrackerUrl() + tracker.getName() + ".txt";
+            File.WriteAllText(filePath, tracker.ToString());
+         }
       }
 
       public List<BehavioralTracker> readTrackersFromHistory() {
@@ -130,15 +141,20 @@ namespace HackerCentral.Behavioral {
       }
 
       public void writeTrackersToHistory(List<BehavioralTracker> list) {
-         // to be implemented
+         foreach (BehavioralTracker tracker in list) {
+            var filePath = getTrackerHistoryUrl() + tracker.getName() + ".txt";
+            File.WriteAllText(filePath, tracker.ToString());
+         }
       }
 
       public void writeTrackerToFile(BehavioralTracker tracker) {
-         // to be implemented
+         var filePath = getTrackerUrl() + tracker.getName() + ".txt";
+         File.WriteAllText(filePath, tracker.ToString());
       }
 
       public void writeTrackerToHistory(BehavioralTracker tracker) {
-         // to be implemented
+         var filePath = getTrackerHistoryUrl() + tracker.getName() + ".txt";
+         File.WriteAllText(filePath, tracker.ToString());
       }
 
       #endregion

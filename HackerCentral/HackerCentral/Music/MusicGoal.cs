@@ -25,7 +25,30 @@ namespace HackerCentral.Music {
 
       public override string ToString() {
          var sb = new StringBuilder();
-         // to be implemented
+         sb.Append("MusicGoal" + "^");
+         sb.Append(getGoalID.ToString() + "^");
+         if (getStatus() == GoalStatusEnum.None)
+            sb.Append("None" + "^");
+         if (getStatus() == GoalStatusEnum.NotStarted)
+            sb.Append("Not Started" + "^");
+         if (getStatus() == GoalStatusEnum.InProgress)
+            sb.Append("In Progress" + "^");
+         if (getStatus() == GoalStatusEnum.Succeeded)
+            sb.Append("Succeeded" + "^");
+         if (getStatus() == GoalStatusEnum.Failed)
+            sb.Append("Failed" + "^");
+         sb.Append(getName() + "^");
+         sb.Append(getPercentAccomplished().ToString() + "^");
+         sb.Append(pieceID.ToString() + "^");
+         sb.Append(iterations.ToString() + "^");
+         sb.Append(startIteration.ToString() + "^");
+         sb.Append(taskGoal + "^");
+         sb.Append(iterationsGoal + "^");
+         sb.Append(genericIterationsGoal + "^");
+         sb.Append(tasks.Count + "^");
+         foreach (MusicTask task in tasks)
+            sb.Append(task.getTaskID() + "^");
+         sb.Append("\n");
          return sb.ToString();
       }
 

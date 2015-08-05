@@ -46,7 +46,10 @@ namespace HackerCentral.Fitness {
       }
 
       public void writeExercisesToFiles(List<FitnessExercise> list) {
-         // to be implemented
+         foreach (FitnessExercise exercise in list) {
+            var filePath = getExerciseUrl() + exercise.getName() + ".txt";
+            File.WriteAllText(filePath, exercise.ToString());
+         }
       }
 
       public List<FitnessExercise> readExercisesFromHistory() {
@@ -56,15 +59,20 @@ namespace HackerCentral.Fitness {
       }
 
       public void writeExercisesToHistory(List<FitnessExercise> list) {
-         // to be implemented
+         foreach (FitnessExercise exercise in list) {
+            var filePath = getExerciseHistoryUrl() + exercise.getName() + ".txt";
+            File.WriteAllText(filePath, exercise.ToString());
+         }
       }
 
       public void writeExerciseToFile(FitnessExercise exercise) {
-         // to be implemented
+         var filePath = getExerciseUrl() + exercise.getName() + ".txt";
+         File.WriteAllText(filePath, exercise.ToString());
       }
 
       public void writeExerciseToHistory(FitnessExercise exercise) {
-         // to be implemented
+         var filePath = getExerciseHistoryUrl() + exercise.getName() + ".txt";
+         File.WriteAllText(filePath, exercise.ToString());
       }
 
       #endregion
@@ -78,7 +86,10 @@ namespace HackerCentral.Fitness {
       }
 
       public void writeExerciseGoalsToFiles(List<FitnessExerciseGoal> list) {
-         // to be implemented
+         foreach (FitnessExerciseGoal goal in list) {
+            var filePath = getGoalUrl() + goal.getName() + ".txt";
+            File.WriteAllText(filePath, goal.ToString());
+         }
       }
 
       public List<FitnessExerciseGoal> readExerciseGoalFromHistory() {
@@ -88,15 +99,20 @@ namespace HackerCentral.Fitness {
       }
 
       public void writeExerciseGoalToHistory(List<FitnessExerciseGoal> list) {
-         // to be implemented
+         foreach (FitnessExerciseGoal goal in list) {
+            var filePath = getGoalHistoryUrl() + goal.getName() + ".txt";
+            File.WriteAllText(filePath, goal.ToString());
+         }
       }
 
       public void writeExerciseGoalToFile(FitnessExerciseGoal goal) {
-         // to be implemented
+         var filePath = getGoalUrl() + goal.getName() + ".txt";
+         File.WriteAllText(filePath, goal.ToString());
       }
 
       public void writeExerciseGoalToHistory(FitnessExerciseGoal goal) {
-         // to be implemented
+         var filePath = getGoalHistoryUrl() + goal.getName() + ".txt";
+         File.WriteAllText(filePath, goal.ToString());
       }
 
       #endregion
@@ -110,7 +126,10 @@ namespace HackerCentral.Fitness {
       }
 
       public void writeTasksToFiles(List<FitnessTask> list) {
-         // to be implemented
+         foreach (FitnessTask task in list) {
+            var filePath = getTaskUrl() + task.getName() + ".txt";
+            File.WriteAllText(filePath, task.ToString());
+         }
       }
 
       public List<FitnessTask> readTasksFromHistory() {
@@ -120,7 +139,20 @@ namespace HackerCentral.Fitness {
       }
 
       public void writeFitnessTaskToHistory(List<FitnessTask> list) {
-         // to be implemented
+         foreach (FitnessTask task in list) {
+            var filePath = getTaskHistoryUrl() + task.getName() + ".txt";
+            File.WriteAllText(filePath, task.ToString());
+         }
+      }
+
+      public void writeFitnessTaskToFile(FitnessTask task) {
+         var filePath = getTaskUrl() + task.getName() + ".txt";
+         File.WriteAllText(filePath, task.ToString());
+      }
+
+      public void writeFitnessTaskToHistory(FitnessTask task) {
+         var filePath = getTaskHistoryUrl() + task.getName() + ".txt";
+         File.WriteAllText(filePath, task.ToString());
       }
 
       #endregion

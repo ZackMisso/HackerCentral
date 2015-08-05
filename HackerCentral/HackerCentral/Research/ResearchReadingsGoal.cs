@@ -18,7 +18,29 @@ namespace HackerCentral.Research {
 
       public override string ToString() {
          var sb = new StringBuilder();
-         // to be implemented
+         sb.Append("ResearchReadingsGoal" + "^");
+         sb.Append(getGoalID().ToString() + "^");
+         if (getStatus() == GoalStatusEnum.None)
+            sb.Append("None" + "^");
+         if (getStatus() == GoalStatusEnum.NotStarted)
+            sb.Append("Not Started" + "^");
+         if (getStatus() == GoalStatusEnum.InProgress)
+            sb.Append("In Progress" + "^");
+         if (getStatus() == GoalStatusEnum.Succeeded)
+            sb.Append("Succeeded" + "^");
+         if (getStatus() == GoalStatusEnum.Failed)
+            sb.Append("Failed" + "^");
+         sb.Append(getName() + "^");
+         sb.Append(getPercentAccomplished().ToString() + "^");
+         sb.Append(toRead.Count + "^");
+         foreach (ResearchReading reading in toRead)
+            sb.Append(reading.getReadingID() + "^");
+         sb.Append(totalPages.ToString() + "^");
+         sb.Append(pagesRead.ToString() + "^");
+         sb.Append(goalBasedOnReadings + "^");
+         sb.Append(goalBasedOnPages + "^");
+         sb.Append(allReadings + "^");
+         sb.Append("\n");
          return sb.ToString();
       }
 
