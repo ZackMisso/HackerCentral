@@ -1,6 +1,8 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using HackerCentral.Common;
+using HackerCentral.Common.Enum;
 
 namespace HackerCentral.Art {
    public class ArtIO : IO{
@@ -41,14 +43,82 @@ namespace HackerCentral.Art {
 
       public List<ArtTask> readTasksFromFiles() {
          var list = new List<ArtTask>();
-         // to be implemented
+         var files = Directory.GetFiles(GetTaskUrl());
+         foreach (string file in files) {
+            var reader = new StreamReader(file);
+            var goal = new ArtGoal();
+            string line;
+            while ((line = reader.ReadLine()) != null) {
+               var contents = line.Split('^');
+               if(contents[0].Equals("ArtPieceTask"))
+                  list.Add(readArtPieceTask(contents));
+               else if(contents[0].Equals("ArtIterationTask"))
+                  list.Add(readArtIterationTask(contents));
+            }
+         }
          return list;
       }
 
       public List<ArtTask> readTasksFromHistory() {
          var list = new List<ArtTask>();
-         // to be implemented
+         var files = Directory.GetFiles(GetTaskHistoryUrl());
+         foreach (string file in files) {
+            var reader = new StreamReader(file);
+            var goal = new ArtGoal();
+            string line;
+            while ((line = reader.ReadLine()) != null) {
+               var contents = line.Split('^');
+               if(contents[0].Equals("ArtPieceTask"))
+                  list.Add(readArtPieceTask(contents));
+               else if(contents[0].Equals("ArtIterationTask"))
+                  list.Add(readArtIterationTask(contents));
+            }
+         }
          return list;
+      }
+
+      public ArtTask readArtPieceTask(string[] contents){
+         var task = new ArtPieceTask();
+         task.setPieceID(Convert.ToInt32(contents[1]));
+         task.setName(contents[2]);
+         task.setTaskID(contents[3]);
+         task.setEffort(Convert.ToInt32(contents[4]));
+         var status = contents[5];
+         if(status.Equals("ToDo"))
+            task.setStatus(TaskStatusEnum.ToDo);
+         else if(status.Equals("InProgress"))
+            task.setStatus(TaskStatusEnum.InProgress);
+         else if(status.Equals("Done"))
+            task.setStatus(TaskStatusEnum.Done);
+         else if(status.Equals("Canceled"))
+            task.setStatus(TaskStatusEnum.Canceled);
+         else
+            task.setStatus(TaskStatusEnum.Failed);
+         task.setDescription(contents[6]);
+         return task;
+      }
+
+      public ArtTask readArtIterationTask(string[] contents){
+         var task = new ArtIterationTask();
+         task.setPieceID(Convert.ToInt32(contents[1]));
+         task.setStartIteration(Convert.ToInt32(contents[2]));
+         task.setEndIteration(Convert.ToInt32(contents[3]));
+         task.setName(contents[4]);
+         task.setTaskID(contents[5]);
+         task.setEffort(Convert.ToInt32(contents[6]));
+         var status = contents[7];
+         if(status.Equals("ToDo"))
+            task.setStatus(TaskStatusEnum.ToDo);
+         else if(status.Equals("InProgress"))
+            task.setStatus(TaskStatusEnum.InProgress);
+         else if(status.Equals("Done"))
+            task.setStatus(TaskStatusEnum.Done);
+         else if(status.Equals("Canceled"))
+            task.setStatus(TaskStatusEnum.Canceled);
+         else
+            task.setStatus(TaskStatusEnum.Failed);
+         task.setDescription(contents[8]);
+         return tasl;
       }
 
       public void writeTasksToFiles(List<ArtTask> list) {
@@ -83,13 +153,77 @@ namespace HackerCentral.Art {
 
       public List<ArtGoal> readGoalsFromFiles() {
          var list = new List<ArtGoal>();
-         // to be implemented
+         var files = Directory.GetFiles(GetGoalUrl());
+         foreach (string file in files) {
+            var reader = new StreamReader(file);
+            var goal = new ArtGoal();
+            string line;
+            while ((line = reader.ReadLine()) != null) {
+               var contents = line.Split('^');
+               goal.setGoalID(Convert.ToInt32(contents[1]));
+               var status = contents[2];
+               if (status.Equals("None"))
+                  goal.setStatus(GoalStatusEnum.None);
+               else if (status.Equals("NotStarted"))
+                  goal.setStatus(GoalStatusEnum.NotStarted);
+               else if (status.Equals("InProgress"))
+                  goal.setStatus(GoalStatusEnum.InProgress);
+               else if (status.Equals("Succeeded"))
+                  goal.setStatus(GoalStatusEnum.Succeeded);
+               else
+                  goal.setStatus(GoalStatusEnum.Failed);
+               goal.setName(contents[3]);
+               goal.setPercentComplete((float)Convert.ToDouble(contents[4]));
+               var numOfTasks = Convert.ToInt32(contents[5]);
+               int num = 5;
+               for (int i = 0; i < numOfTasks; i++) {
+                  goal.getTaskIDs().Add(contents[6] + i);
+                  num++;
+               }
+               goal.setNumberOfTasks(Convert.ToInt32(contents[num++]));
+               goal.setFinishedTasks(Convert.ToInt32(contents[num++]));
+               goal.setAllTasks(contents[num].Equals("true"));
+               list.Add(goal);
+            }
+         }
          return list;
       }
 
       public List<ArtGoal> readGoalsFromHistory() {
          var list = new List<ArtGoal>();
-         // to be implemented
+         var files = Directory.GetFiles(GetGoalHistoryUrl());
+         foreach (string file in files) {
+            var reader = new StreamReader(file);
+            var goal = new ArtGoal();
+            string line;
+            while ((line = reader.ReadLine()) != null) {
+               var contents = line.Split('^');
+               goal.setGoalID(Convert.ToInt32(contents[1]));
+               var status = contents[2];
+               if (status.Equals("None"))
+                  goal.setStatus(GoalStatusEnum.None);
+               else if (status.Equals("NotStarted"))
+                  goal.setStatus(GoalStatusEnum.NotStarted);
+               else if (status.Equals("InProgress"))
+                  goal.setStatus(GoalStatusEnum.InProgress);
+               else if (status.Equals("Succeeded"))
+                  goal.setStatus(GoalStatusEnum.Succeeded);
+               else
+                  goal.setStatus(GoalStatusEnum.Failed);
+               goal.setName(contents[3]);
+               goal.setPercentComplete((float)Convert.ToDouble(contents[4]));
+               var numOfTasks = Convert.ToInt32(contents[5]);
+               int num = 5;
+               for (int i = 0; i < numOfTasks; i++) {
+                  goal.getTaskIDs().Add(contents[6] + i);
+                  num++;
+               }
+               goal.setNumberOfTasks(Convert.ToInt32(contents[num++]));
+               goal.setFinishedTasks(Convert.ToInt32(contents[num++]));
+               goal.setAllTasks(contents[num].Equals("true"));
+               list.Add(goal);
+            }
+         }
          return list;
       }
 
@@ -125,13 +259,43 @@ namespace HackerCentral.Art {
 
       public List<ArtPiece> readPiecesFromFiles() {
          var list = new List<ArtPiece>();
-         // to be implemented
+         var files = Directory.GetFiles(GetPieceUrl());
+         foreach (string file in files) {
+            var reader = new StreamReader(file);
+            var piece = new ArtPiece();
+            string line;
+            while ((line = reader.ReadLine()) != null) {
+               var contents = line.Split('^');
+               piece.setPieceID(Convert.ToInt32(contents[0]));
+               piece.setBegin(null); // read in begin date time
+               piece.setFinished(null); // read in finished date time
+               piece.setIteration(Convert.ToInt32(contents[3]));
+               piece.setFile(contents[4]);
+               piece.setFormat(contents[5]);
+               piece.setName(contents[6]);
+               list.Add(piece);
+            }
          return list;
       }
 
       public List<ArtPiece> readPiecesFromHistory() {
          var list = new List<ArtPiece>();
-         // to be implemented
+         var files = Directory.GetFiles(GetPieceHistoryUrl());
+         foreach (string file in files) {
+            var reader = new StreamReader(file);
+            var piece = new ArtPiece();
+            string line;
+            while ((line = reader.ReadLine()) != null) {
+               var contents = line.Split('^');
+               piece.setPieceID(Convert.ToInt32(contents[0]));
+               piece.setBegin(null); // read in begin date time
+               piece.setFinished(null); // read in finished date time
+               piece.setIteration(Convert.ToInt32(contents[3]));
+               piece.setFile(contents[4]);
+               piece.setFormat(contents[5]);
+               piece.setName(contents[6]);
+               list.Add(piece);
+            }
          return list;
       }
 
