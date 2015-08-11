@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using HackerCentral.Common;
 
@@ -16,7 +17,21 @@ namespace HackerCentral.Music {
 
       public List<MusicPiece> readPiecesFromFiles() {
          var list = new List<MusicPiece>();
-         // to be implemented
+         var files = Directory.GetFiles(getPieceUrl());
+         foreach (string file in files) {
+            var reader = new StreamReader(file);
+            string line;
+            while ((line = reader.ReadLine()) != null) {
+               var contents = line.Split('^');
+               var piece = new MusicPiece();
+               piece.setName(contents[0]);
+               piece.setLocation(conetents[1]);
+               piece.setIteration(Convert.ToInt32(contents[2]));
+               piece.setPieceID(Convert.ToInt32(contents[3]));
+               piece.setDone(contents[4].Equals("true"));
+               list.Add(piece);
+            }
+         }
          return list;
       }
 
@@ -29,7 +44,21 @@ namespace HackerCentral.Music {
 
       public List<MusicPiece> readPiecesFromHistory() {
          var list = new List<MusicPiece>();
-         // to be implemented
+         var files = Directory.GetFiles(getPieceHistoryUrl());
+         foreach (string file in files) {
+            var reader = new StreamReader(file);
+            string line;
+            while ((line = reader.ReadLine()) != null) {
+               var contents = line.Split('^');
+               var piece = new MusicPiece();
+               piece.setName(contents[0]);
+               piece.setLocation(conetents[1]);
+               piece.setIteration(Convert.ToInt32(contents[2]));
+               piece.setPieceID(Convert.ToInt32(contents[3]));
+               piece.setDone(contents[4].Equals("true"));
+               list.Add(piece);
+            }
+         }
          return list;
       }
 
@@ -56,7 +85,34 @@ namespace HackerCentral.Music {
 
       public List<MusicTask> readTasksFromFile() {
          var list = new List<MusicTask>();
-         // to be implemented
+         var files = Directory.GetFiles(getTaskUrl());
+         foreach (string file in files) {
+            var reader = new StreamReader(file);
+            string line;
+            while ((line = reader.ReadLine()) != null) {
+               var contents = line.Split('^');
+               var task = new MusicTask();
+               task.setPieceID(Convert.ToInt32(contents[1]));
+               task.setStartIteration(Convert.ToInt32(contents[2]));
+               task.setEndIteration(Convert.ToInt32(contents[3]));
+               task.setName(contents[4]);
+               task.setTaskID(contents[5]);
+               task.setEffort(Convert.ToInt32(contents[6]));
+               var status = contents[7];
+               if (status.Equals("ToDo"))
+                  task.setStatus(TaskStatusEnum.ToDo);
+               else if (status.Equals("InProgress"))
+                  task.setStatus(TaskStatusEnum.InProgress);
+               else if (status.Equals("Done"))
+                  task.setStatus(TaskStatusEnum.Done);
+               else if (status.Equals("Canceled"))
+                  task.setStatus(TaskStatusEnum.Canceled);
+               else
+                  task.setStatus(TaskStatusEnum.Failed);
+               task.setDescription(contents[8]);
+               list.Add(task);
+            }
+         }
          return list;
       }
 
@@ -69,7 +125,34 @@ namespace HackerCentral.Music {
 
       public List<MusicTask> readTasksFromHistory() {
          var list = new List<MusicTask>();
-         // to be implemented
+         var files = Directory.GetFiles(getTaskHistoryUrl());
+         foreach (string file in files) {
+            var reader = new StreamReader(file);
+            string line;
+            while ((line = reader.ReadLine()) != null) {
+               var contents = line.Split('^');
+               var task = new MusicTask();
+               task.setPieceID(Convert.ToInt32(contents[1]));
+               task.setStartIteration(Convert.ToInt32(contents[2]));
+               task.setEndIteration(Convert.ToInt32(contents[3]));
+               task.setName(contents[4]);
+               task.setTaskID(contents[5]);
+               task.setEffort(Convert.ToInt32(contents[6]));
+               var status = contents[7];
+               if (status.Equals("ToDo"))
+                  task.setStatus(TaskStatusEnum.ToDo);
+               else if (status.Equals("InProgress"))
+                  task.setStatus(TaskStatusEnum.InProgress);
+               else if (status.Equals("Done"))
+                  task.setStatus(TaskStatusEnum.Done);
+               else if (status.Equals("Canceled"))
+                  task.setStatus(TaskStatusEnum.Canceled);
+               else
+                  task.setStatus(TaskStatusEnum.Failed);
+               task.setDescription(contents[8]);
+               list.Add(task);
+            }
+         }
          return list;
       }
 
@@ -96,7 +179,39 @@ namespace HackerCentral.Music {
 
       public List<MusicGoal> readGoalsFromFiles() {
          var list = new List<MusicGoal>();
-         // to be implemented
+         var files = Directory.GetFiles(getGoalUrl());
+         foreach (string file in files) {
+            var reader = new StreamReader(file);
+            string line;
+            while ((line = reader.ReadLine()) != null) {
+               var contents = line.Split('^');
+               var goal = new MusicGoal();
+               goal.setGoalID(Convert.ToInt32(contents[1]));
+               var status = contents[2];
+               if (status.Equals("None"))
+                  goal.setStatus(GoalStatusEnum.None);
+               else if (status.Equals("NotStarted"))
+                  goal.setStatus(GoalStatusEnum.NotStarted);
+               else if (status.Equals("InProgress"))
+                  goal.setStatus(GoalStatusEnum.InProgress);
+               else if (status.Equals("Succeeded"))
+                  goal.setStatus(GoalStatusEnum.Succeeded);
+               else
+                  goal.setStatus(GoalStatusEnum.Failed);
+               goal.setName(contents[3]);
+               goal.setPercentAccomplished((float)Convert.ToDouble(contents[4]));
+               goal.setPieceID(Convert.ToInt32(contents[5]));
+               goal.setIterations(Convert.ToInt32(contents[6]));
+               goal.setStartIteration(Convert.ToInt32(contents[7]));
+               goal.setTaskGoal(contents[8].Equals("true"));
+               goal.setIterationsGoal(contents[9].Equals("true"));
+               goal.setGenericIterationsGoal(contents[10].Equals("true"));
+               var tasks = Convert.ToInt32(contents[11]);
+               for (var i = 0; i < tasks; i++)
+                  goal.getTaskIDs().Add(Convert.ToInt32(contents[12 + i]));
+               list.Add(goal);
+            }
+         }
          return list;
       }
 
@@ -109,7 +224,39 @@ namespace HackerCentral.Music {
 
       public List<MusicGoal> readGoalsFromHistory() {
          var list = new List<MusicGoal>();
-         // to be implemented
+         var files = Directory.GetFiles(getGoalHistoryUrl());
+         foreach (string file in files) {
+            var reader = new StreamReader(file);
+            string line;
+            while ((line = reader.ReadLine()) != null) {
+               var contents = line.Split('^');
+               var goal = new MusicGoal();
+               goal.setGoalID(Convert.ToInt32(contents[1]));
+               var status = contents[2];
+               if (status.Equals("None"))
+                  goal.setStatus(GoalStatusEnum.None);
+               else if (status.Equals("NotStarted"))
+                  goal.setStatus(GoalStatusEnum.NotStarted);
+               else if (status.Equals("InProgress"))
+                  goal.setStatus(GoalStatusEnum.InProgress);
+               else if (status.Equals("Succeeded"))
+                  goal.setStatus(GoalStatusEnum.Succeeded);
+               else
+                  goal.setStatus(GoalStatusEnum.Failed);
+               goal.setName(contents[3]);
+               goal.setPercentAccomplished((float)Convert.ToDouble(contents[4]));
+               goal.setPieceID(Convert.ToInt32(contents[5]));
+               goal.setIterations(Convert.ToInt32(contents[6]));
+               goal.setStartIteration(Convert.ToInt32(contents[7]));
+               goal.setTaskGoal(contents[8].Equals("true"));
+               goal.setIterationsGoal(contents[9].Equals("true"));
+               goal.setGenericIterationsGoal(contents[10].Equals("true"));
+               var tasks = Convert.ToInt32(contents[11]);
+               for (var i = 0; i < tasks; i++)
+                  goal.getTaskIDs().Add(Convert.ToInt32(contents[12 + i]));
+               list.Add(goal);
+            }
+         }
          return list;
       }
 

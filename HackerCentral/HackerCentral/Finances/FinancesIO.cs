@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using HackerCentral.Common;
 
@@ -35,7 +36,23 @@ namespace HackerCentral.Finances {
 
       public List<FinancesTransaction> readTransactionsFromFiles() {
          var list = new List<FinancesTransaction>();
-         // to be implemented
+         var files = Directory.GetFiles(GetTransactionsUrl());
+         foreach (string file in files) {
+            var reader = new StreamReader(file);
+            string line;
+            while ((line = reader.ReadLine()) != null) {
+               var contents = line.Split('^');
+               var transaction = new FinancesTransaction();
+               transaction.setTransactionID(Convert.ToInt32(contents[0]));
+               transaction.setBudgetType(Convert.ToInt32(contents[1]));
+               transaction.setRecieptID(Convert.ToInt32(contents[2]));
+               transaction.setAmount((float)Convert.ToDouble(contents[3]));
+               var date = contents[4];
+               // create date
+               transaction.setDoneByCash(contents[5].Equals("true"));
+               list.Add(transaction);
+            }
+         }
          return list;
       }
 
@@ -48,7 +65,23 @@ namespace HackerCentral.Finances {
 
       public List<FinancesTransaction> readTransactionsFromHistory() {
          var list = new List<FinancesTransaction>();
-         // to be implemented
+         var files = Directory.GetFiles(getTransactionHistoryUrl());
+         foreach (string file in files) {
+            var reader = new StreamReader(file);
+            string line;
+            while ((line = reader.ReadLine()) != null) {
+               var contents = line.Split('^');
+               var transaction = new FinancesTransaction();
+               transaction.setTransactionID(Convert.ToInt32(contents[0]));
+               transaction.setBudgetType(Convert.ToInt32(contents[1]));
+               transaction.setRecieptID(Convert.ToInt32(contents[2]));
+               transaction.setAmount((float)Convert.ToDouble(contents[3]));
+               var date = contents[4];
+               // create date
+               transaction.setDoneByCash(contents[5].Equals("true"));
+               list.Add(transaction);
+            }
+         }
          return list;
       }
 
@@ -75,7 +108,28 @@ namespace HackerCentral.Finances {
 
       public List<FinancesBudget> readBudgetFromFiles() {
          var list = new List<FinancesBudget>();
-         // to be implemented
+         var files = Directory.GetFiles(getBudgetUrl());
+         foreach (string file in files) {
+            var reader = new StreamReader(file);
+            string line;
+            while ((line = reader.ReadLine()) != null) {
+               var contents = line.Split('^');
+               var budget = new FinancesBudget();
+               budget.setBudgetId(Convert.ToInt32(contents[0]));
+               var startDate = contents[1];
+               // create startDate
+               var endDate = contents[2];
+               // create endDate
+               var types = Convert.ToInt32(contents[3]);
+               var itr = 4;
+               for (var i = 0; i < types; i++) {
+                  var key = contents[itr++];
+                  var val = (float)Convert.ToDouble(contents[itr++]);
+                  budget.getBudgetTypes().Add(key, value);
+               }
+               list.Add(budget);
+            }
+         }
          return list;
       }
 
@@ -88,7 +142,28 @@ namespace HackerCentral.Finances {
 
       public List<FinancesBudget> readBudgetFromHistory() {
          var list = new List<FinancesBudget>();
-         // to be implemented
+         var files = Directory.GetFiles(getBudgetHistoryUrl());
+         foreach (string file in files) {
+            var reader = new StreamReader(file);
+            string line;
+            while ((line = reader.ReadLine()) != null) {
+               var contents = line.Split('^');
+               var budget = new FinancesBudget();
+               budget.setBudgetId(Convert.ToInt32(contents[0]));
+               var startDate = contents[1];
+               // create startDate
+               var endDate = contents[2];
+               // create endDate
+               var types = Convert.ToInt32(contents[3]);
+               var itr = 4;
+               for (var i = 0; i < types; i++) {
+                  var key = contents[itr++];
+                  var val = (float)Convert.ToDouble(contents[itr++]);
+                  budget.getBudgetTypes().Add(key, value);
+               }
+               list.Add(budget);
+            }
+         }
          return list;
       }
 

@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using HackerCentral.Common;
 
@@ -41,7 +42,20 @@ namespace HackerCentral.Behavioral {
 
       public List<BehavioralLimit> readLimitsFromFiles() {
          var list = new List<BehavioralLimit>();
-         // to be implemented
+         var files = Directory.GetFiles(GetLimitsUrl());
+         foreach (string file in files) {
+            var reader = new StreamReader(file);
+            //var limit = new BehavioralLimit();
+            string line;
+            while ((line = reader.ReadLine()) != null) {
+               var limit = new BehavioralLimit();
+               var contents = line.Split('^');
+               limit.setLimitID(Convert.ToInt32(contents[0]));
+               limit.setLimit(Convert.ToInt32(contents[1]));
+               limit.setTrackerID(Convert.ToInt32(contents[2]));
+               list.Add(limit);
+            }
+         }
          return list;
       }
 
@@ -54,7 +68,20 @@ namespace HackerCentral.Behavioral {
 
       public List<BehavioralLimit> readLimitsFromHistory() {
          var list = new List<BehavioralLimit>();
-         // to be implemented
+         var files = Directory.GetFiles(GetLimitHistoryUrl());
+         foreach (string file in files) {
+            var reader = new StreamReader(file);
+            //var limit = new BehavioralLimit();
+            string line;
+            while ((line = reader.ReadLine()) != null) {
+               var limit = new BehavioralLimit();
+               var contents = line.Split('^');
+               limit.setLimitID(Convert.ToInt32(contents[0]));
+               limit.setLimit(Convert.ToInt32(contents[1]));
+               limit.setTrackerID(Convert.ToInt32(contents[2]));
+               list.Add(limit);
+            }
+         }
          return list;
       }
 
@@ -83,7 +110,45 @@ namespace HackerCentral.Behavioral {
 
       public List<BehavioralGoal> readGoalsFromFiles() {
          var list = new List<BehavioralGoal>();
-         // to be implemented
+         var files = Directory.GetFiles(GetGoalsUrl());
+         foreach (string file in files) {
+            var reader = new StreamReader(file);
+            //var goal = new BehavioralGoal();
+            string line;
+            while ((line = reader.ReadLine()) != null) {
+               var goal = new BehavioralGoal();
+               var contents = line.Split('^');
+               goal.setGoalID(Convert.ToInt32(contents[1]));
+               var status = contents[2];
+               if (status.Equals("None"))
+                  goal.setStatus(GoalStatusEnum.None);
+               else if (status.Equals("NotStarted"))
+                  goal.setStatus(GoalStatusEnum.NotStarted);
+               else if (status.Equals("InProgress"))
+                  goal.setStatus(GoalStatusEnum.InProgress);
+               else if (status.Equals("Succeeded"))
+                  goal.setStatus(GoalStatusEnum.Succeeded);
+               else
+                  goal.setStatus(GoalStatusEnum.Failed);
+               goal.setName(contents[3]);
+               goal.setPercentAccomplished((float)Convert.ToDouble(contents[4]));
+               var trackers = Convert.ToInt32(contents[5]);
+               var itr = 6;
+               for (var i = 0; i < trackers; i++)
+                  goal.getTrackerIDs().Add(Convert.ToInt32(contents[itr++]));
+               var limits = Convert.ToInt32(contents[itr++]);
+               for (var i = 0; i < limits; i++)
+                  goal.getLimitIDs().Add(Convert.ToInt32(contents[itr++]));
+               // implement Data
+               var date = contents[itr++];
+               //goal.setStartDate();
+               goal.setMoreNeeded(contents[itr++].Equals("true"));
+               goal.setMonthly(contents[itr++].Equals("true"));
+               goal.setDailey(contents[itr++].Equals("true"));
+               goal.setWeekly(contents[itr++].Equals("true"));
+               list.Add(goal);
+            }
+         }
          return list;
       }
 
@@ -96,7 +161,45 @@ namespace HackerCentral.Behavioral {
 
       public List<BehavioralGoal> readGoalsFromHistory() {
          var list = new List<BehavioralGoal>();
-         // to be implemented
+         var files = Directory.GetFiles(GetGoalHistoryUrl());
+         foreach (string file in files) {
+            var reader = new StreamReader(file);
+            //var goal = new BehavioralGoal();
+            string line;
+            while ((line = reader.ReadLine()) != null) {
+               var goal = new BehavioralGoal();
+               var contents = line.Split('^');
+               goal.setGoalID(Convert.ToInt32(contents[1]));
+               var status = contents[2];
+               if (status.Equals("None"))
+                  goal.setStatus(GoalStatusEnum.None);
+               else if (status.Equals("NotStarted"))
+                  goal.setStatus(GoalStatusEnum.NotStarted);
+               else if (status.Equals("InProgress"))
+                  goal.setStatus(GoalStatusEnum.InProgress);
+               else if (status.Equals("Succeeded"))
+                  goal.setStatus(GoalStatusEnum.Succeeded);
+               else
+                  goal.setStatus(GoalStatusEnum.Failed);
+               goal.setName(contents[3]);
+               goal.setPercentAccomplished((float)Convert.ToDouble(contents[4]));
+               var trackers = Convert.ToInt32(contents[5]);
+               var itr = 6;
+               for (var i = 0; i < trackers; i++)
+                  goal.getTrackerIDs().Add(Convert.ToInt32(contents[itr++]));
+               var limits = Convert.ToInt32(contents[itr++]);
+               for (var i = 0; i < limits; i++)
+                  goal.getLimitIDs().Add(Convert.ToInt32(contents[itr++]));
+               // implement Data
+               var date = contents[itr++];
+               //goal.setStartDate();
+               goal.setMoreNeeded(contents[itr++].Equals("true"));
+               goal.setMonthly(contents[itr++].Equals("true"));
+               goal.setDailey(contents[itr++].Equals("true"));
+               goal.setWeekly(contents[itr++].Equals("true"));
+               list.Add(goal);
+            }
+         }
          return list;
       }
 
@@ -123,7 +226,30 @@ namespace HackerCentral.Behavioral {
 
       public List<BehavioralTracker> readTrackersFromFiles() {
          var list = new List<BehavioralTracker>();
-         // to be implemented
+         var files = Directory.GetFiles(GetTrackerUrl());
+         foreach (string file in files) {
+            var reader = new StreamReader(file);
+            //var tracker = new BehavioralTracker();
+            string line;
+            while ((line = reader.ReadLine()) != null) {
+               var tracker = new BehavioralTracker();
+               var contents = line.Split('^');
+               tracker.setTrackerID(Convert.ToInt32(contents[0]));
+               tracker.setLimitID(Convert.ToInt32(contents[1]));
+               tracker.setGoalID(Convert.ToInt32(contents[2]));
+               tracker.setStartingValue(Convert.ToInt32(contents[3]));
+               tracker.setValue(Convert.ToInt32(contents[4]));
+               var startTime = contents[5];
+               // implemented data time start
+               tracker.setHasGoal(contents[6].Equals("true"));
+               tracker.setHasLimit(contents[7].Equals("true"));
+               tracker.setUpdatesDaily(contents[8].Equals("true"));
+               tracker.setUpdatesWeekly(contents[9].Equals("true"));
+               tracker.setUpdatesMonthly(contents[10].Equals("true"));
+               tracker.setName(contents[11]);
+               list.Add(tracker);
+            }
+         }
          return list;
       }
 
@@ -136,7 +262,30 @@ namespace HackerCentral.Behavioral {
 
       public List<BehavioralTracker> readTrackersFromHistory() {
          var list = new List<BehavioralTracker>();
-         // to be implemented
+         var files = Directory.GetFiles(GetTrackerHistoryUrl());
+         foreach (string file in files) {
+            var reader = new StreamReader(file);
+            //var tracker = new BehavioralTracker();
+            string line;
+            while ((line = reader.ReadLine()) != null) {
+               var tracker = new BehavioralTracker();
+               var contents = line.Split('^');
+               tracker.setTrackerID(Convert.ToInt32(contents[0]));
+               tracker.setLimitID(Convert.ToInt32(contents[1]));
+               tracker.setGoalID(Convert.ToInt32(contents[2]));
+               tracker.setStartingValue(Convert.ToInt32(contents[3]));
+               tracker.setValue(Convert.ToInt32(contents[4]));
+               var startTime = contents[5];
+               // implemented data time start
+               tracker.setHasGoal(contents[6].Equals("true"));
+               tracker.setHasLimit(contents[7].Equals("true"));
+               tracker.setUpdatesDaily(contents[8].Equals("true"));
+               tracker.setUpdatesWeekly(contents[9].Equals("true"));
+               tracker.setUpdatesMonthly(contents[10].Equals("true"));
+               tracker.setName(contents[11]);
+               list.Add(tracker);
+            }
+         }
          return list;
       }
 

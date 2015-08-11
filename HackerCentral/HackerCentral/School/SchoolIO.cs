@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using HackerCentral.Common;
 
@@ -16,7 +17,25 @@ namespace HackerCentral.School {
 
       public List<SchoolClass> readClassesFromFiles() {
          var list = new List<SchoolClass>();
-         // to be implemented
+         var files = Directory.GetFiles(getClassUrl());
+         foreach (string file in files) {
+            var reader = new StreamReader(file);
+            string line;
+            while ((line = reader.ReadLine()) != null) {
+               var contents = line.Split('^');
+               var clas = new SchoolClass();
+               clas.setName(contents[0]);
+               clas.setClassID(Convert.ToInt32(contents[1]));
+               var grades = Convert.ToInt32(contents[2]);
+               var itr = 3;
+               for(var i = 0; i < grades; i++)
+                  clas.getGradeIDs().Add(Convert.ToInt32(contents[itr++]));
+               var assingments = Convert.ToInt32(contents[itr++]);
+               for (var i = 0; i < assingments; i++)
+                  clas.getAssignmentIDs().Add(Convert.ToInt32(contents[itr++]));
+               list.Add(clas);
+            }
+         }
          return list;
       }
 
@@ -29,7 +48,25 @@ namespace HackerCentral.School {
 
       public List<SchoolClass> readClassesFromHistory() {
          var list = new List<SchoolClass>();
-         // to be implemented
+         var files = Directory.GetFiles(getClassHistoryUrl());
+         foreach (string file in files) {
+            var reader = new StreamReader(file);
+            string line;
+            while ((line = reader.ReadLine()) != null) {
+               var contents = line.Split('^');
+               var clas = new SchoolClass();
+               clas.setName(contents[0]);
+               clas.setClassID(Convert.ToInt32(contents[1]));
+               var grades = Convert.ToInt32(contents[2]);
+               var itr = 3;
+               for (var i = 0; i < grades; i++)
+                  clas.getGradeIDs().Add(Convert.ToInt32(contents[itr++]));
+               var assingments = Convert.ToInt32(contents[itr++]);
+               for (var i = 0; i < assingments; i++)
+                  clas.getAssignmentIDs().Add(Convert.ToInt32(contents[itr++]));
+               list.Add(clas);
+            }
+         }
          return list;
       }
 
@@ -56,7 +93,23 @@ namespace HackerCentral.School {
 
       public List<SchoolAssignment> readAssignmentsFromFiles() {
          var list = new List<SchoolAssignment>();
-         // to be implemented
+         var files = Directory.GetFiles(getAssignmentUrl());
+         foreach (string file in files) {
+            var reader = new StreamReader(file);
+            string line;
+            while ((line = reader.ReadLine()) != null) {
+               var contents = line.Split('^');
+               var assignment = new SchoolAssignment();
+               assignment.setAssignmentID(Convert.ToInt32(contents[0]));
+               assignment.setContainerID(Convert.ToInt32(contents[1]));
+               var dueDate = contents[3];
+               // set the due date
+               assignment.setName(contents[4]);
+               assignment.setOutOf((float)Convert.ToDouble(contents[5]));
+               assignment.setGrade((float)Convert.ToDouble(contents[6]));
+               list.Add(assignment);
+            }
+         }
          return list;
       }
 
@@ -69,7 +122,23 @@ namespace HackerCentral.School {
 
       public List<SchoolAssignment> readAssignmentsFromHistory() {
          var list = new List<SchoolAssignment>();
-         // to be implemented
+         var files = Directory.GetFiles(getAssignmentHistoryUrl());
+         foreach (string file in files) {
+            var reader = new StreamReader(file);
+            string line;
+            while ((line = reader.ReadLine()) != null) {
+               var contents = line.Split('^');
+               var assignment = new SchoolAssignment();
+               assignment.setAssignmentID(Convert.ToInt32(contents[0]));
+               assignment.setContainerID(Convert.ToInt32(contents[1]));
+               var dueDate = contents[3];
+               // set the due date
+               assignment.setName(contents[4]);
+               assignment.setOutOf((float)Convert.ToDouble(contents[5]));
+               assignment.setGrade((float)Convert.ToDouble(contents[6]));
+               list.Add(assignment);
+            }
+         }
          return list;
       }
 
@@ -96,7 +165,41 @@ namespace HackerCentral.School {
 
       public List<SchoolGoal> readGoalsFromFiles() {
          var list = new List<SchoolGoal>();
-         // to be implemented
+         var files = Directory.GetFiles(getGoalUrl());
+         foreach (string file in files) {
+            var reader = new StreamReader(file);
+            string line;
+            while ((line = reader.ReadLine()) != null) {
+               var contents = line.Split('^');
+               var goal = new SchoolGoal();
+               goal.setGoalID(Convert.ToInt32(contents[1]));
+               var status = contents[2];
+               if (status.Equals("None"))
+                  goal.setStatus(GoalStatusEnum.None);
+               else if (status.Equals("NotStarted"))
+                  goal.setStatus(GoalStatusEnum.NotStarted);
+               else if (status.Equals("InProgress"))
+                  goal.setStatus(GoalStatusEnum.InProgress);
+               else if (status.Equals("Succeeded"))
+                  goal.setStatus(GoalStatusEnum.Succeeded);
+               else
+                  goal.setStatus(GoalStatusEnum.Failed);
+               goal.setName(contents[3]);
+               goal.setPercentAccomplished((float)Convert.ToDouble(contents[4]));
+               var classIds = Convert.ToInt32(contents[5]);
+               var itr = 6;
+               for (var i = 0; i < classIds; i++)
+                  goal.getClassIDs().Add(Convert.ToInt32(contents[itr++]));
+               var containers = Convert.ToInt32(contents[itr++]);
+               for (var i = 0; i < containers; i++)
+                  goal.getContainerIDs().Add(Convert.ToInt32(contents[itr++]));
+               var averages = Convert.ToInt32(contents[itr++]);
+               for (var i = 0; i < avergaes; i++)
+                  goal.getGoalAverages().Add((float)Convert.ToDouble(contents[itr++]));
+               goal.setByClass(contents[itr++].Equals("true"));
+               list.Add(goal);
+            }
+         }
          return list;
       }
 
@@ -109,7 +212,41 @@ namespace HackerCentral.School {
 
       public List<SchoolGoal> readGoalsFromHistory() {
          var list = new List<SchoolGoal>();
-         // to be implemented
+         var files = Directory.GetFiles(getGoalHistoryUrl());
+         foreach (string file in files) {
+            var reader = new StreamReader(file);
+            string line;
+            while ((line = reader.ReadLine()) != null) {
+               var contents = line.Split('^');
+               var goal = new SchoolGoal();
+               goal.setGoalID(Convert.ToInt32(contents[1]));
+               var status = contents[2];
+               if (status.Equals("None"))
+                  goal.setStatus(GoalStatusEnum.None);
+               else if (status.Equals("NotStarted"))
+                  goal.setStatus(GoalStatusEnum.NotStarted);
+               else if (status.Equals("InProgress"))
+                  goal.setStatus(GoalStatusEnum.InProgress);
+               else if (status.Equals("Succeeded"))
+                  goal.setStatus(GoalStatusEnum.Succeeded);
+               else
+                  goal.setStatus(GoalStatusEnum.Failed);
+               goal.setName(contents[3]);
+               goal.setPercentAccomplished((float)Convert.ToDouble(contents[4]));
+               var classIds = Convert.ToInt32(contents[5]);
+               var itr = 6;
+               for (var i = 0; i < classIds; i++)
+                  goal.getClassIDs().Add(Convert.ToInt32(contents[itr++]));
+               var containers = Convert.ToInt32(contents[itr++]);
+               for (var i = 0; i < containers; i++)
+                  goal.getContainerIDs().Add(Convert.ToInt32(contents[itr++]));
+               var averages = Convert.ToInt32(contents[itr++]);
+               for (var i = 0; i < avergaes; i++)
+                  goal.getGoalAverages().Add((float)Convert.ToDouble(contents[itr++]));
+               goal.setByClass(contents[itr++].Equals("true"));
+               list.Add(goal);
+            }
+         }
          return list;
       }
 
@@ -136,8 +273,68 @@ namespace HackerCentral.School {
 
       public List<SchoolTask> readTasksFromFiles() {
          var list = new List<SchoolTask>();
-         // to be implemented
+         var files = Directory.GetFiles(getTaskUrl());
+         foreach (string file in files) {
+            var reader = new StreamReader(file);
+            string line;
+            while ((line = reader.ReadLine()) != null) {
+               var contents = line.Split('^');
+               if (contents[0].Equals("SchoolStudyTask"))
+                  list.Add(readSchoolStudyTask(contents));
+               else if (contents[0].Equals("SchoolAssignmentTask"))
+                  list.Add(readSchoolAssignmentTask(contents));
+            }
+         }
          return list;
+      }
+
+      private SchoolTask readSchoolStudyTask(string[] contents) {
+         var task = new SchoolStudyTask();
+         task.setClasID(Convert.ToInt32(contents[1]));
+         task.setHours(Convert.ToInt32(contents[2]));
+         task.setInDays(Convert.ToInt32(contents[3]));
+         var startDate = contents[4];
+         // set the start date
+         task.setWeekly(contents[5].Equals("true"));
+         task.setName(contents[6]);
+         task.setTaskID(contents[7]);
+         task.setEffort(Convert.ToInt32(contents[8]));
+         var status = contents[9];
+         if (status.Equals("ToDo"))
+            task.setStatus(TaskStatusEnum.ToDo);
+         else if (status.Equals("InProgress"))
+            task.setStatus(TaskStatusEnum.InProgress);
+         else if (status.Equals("Done"))
+            task.setStatus(TaskStatusEnum.Done);
+         else if (status.Equals("Canceled"))
+            task.setStatus(TaskStatusEnum.Canceled);
+         else
+            task.setStatus(TaskStatusEnum.Failed);
+         task.setDescription(contents[10]);
+         return task;
+      }
+
+      private SchoolTask readAssignmentTask(string[] contents) {
+         var task = new SchoolAssignmentTask();
+         task.setClassID(Convert.ToInt32(contents[1]));
+         task.setAssignmentID(Convert.ToInt32(contents[2]));
+         task.setAnyAssignmentForClass(contents[3].Equals("true"));
+         task.setName(contents[4]);
+         task.setTaskID(contents[5]);
+         task.setEffort(Convert.ToInt32(contents[6]));
+         var status = contents[7];
+         if (status.Equals("ToDo"))
+            task.setStatus(TaskStatusEnum.ToDo);
+         else if (status.Equals("InProgress"))
+            task.setStatus(TaskStatusEnum.InProgress);
+         else if (status.Equals("Done"))
+            task.setStatus(TaskStatusEnum.Done);
+         else if (status.Equals("Canceled"))
+            task.setStatus(TaskStatusEnum.Canceled);
+         else
+            task.setStatus(TaskStatusEnum.Failed);
+         task.setDescription(contents[8]);
+         return task;
       }
 
       public void writeTasksToFiles(List<SchoolTask> list) {
@@ -149,7 +346,18 @@ namespace HackerCentral.School {
 
       public List<SchoolTask> readTasksFromHistory() {
          var list = new List<SchoolTask>();
-         // to be implemetned
+         var files = Directory.GetFiles(getTaskHistoryUrl());
+         foreach (string file in files) {
+            var reader = new StreamReader(file);
+            string line;
+            while ((line = reader.ReadLine()) != null) {
+               var contents = line.Split('^');
+               if (contents[0].Equals("SchoolStudyTask"))
+                  list.Add(readSchoolStudyTask(contents));
+               else if (contents[0].Equals("SchoolAssignmentTask"))
+                  list.Add(readSchoolAssignmentTask(contents));
+            }
+         }
          return list;
       }
 
@@ -176,7 +384,24 @@ namespace HackerCentral.School {
 
       public List<SchoolGradeContainer> readGradesFromFiles() {
          var list = new List<SchoolGradeContainer>();
-         // to be implemented
+         var files = Directory.GetFiles(getGradeUrl());
+         foreach (string file in files) {
+            var reader = new StreamReader(file);
+            string line;
+            while ((line = reader.ReadLine()) != null) {
+               var contents = line.Split('^');
+               var grade = new SchoolGradeContainer();
+               grade.setClasID(Convert.ToInt32(contents[0]));
+               grade.setContainerID(Convert.ToInt32(contents[1]));
+               grade.setTitle(contents[2]);
+               grade.setPercentOfFinalGrade((float)Convert.ToDouble(contents[3]));
+               var assignments = Convert.ToInt32(contents[4]);
+               var itr = 5;
+               for (var i = 0; i < assignments; i++)
+                  grade.getAssignmentIDs().Add(Convert.ToInt32(contents[itr++]));
+               list.Add(grade);
+            }
+         }
          return list;
       }
 
@@ -189,7 +414,24 @@ namespace HackerCentral.School {
 
       public List<SchoolGradeContainer> readGradesFromHistory() {
          var list = new List<SchoolGradeContainer>();
-         // to be implemetned
+         var files = Directory.GetFiles(getGradeHistoryUrl());
+         foreach (string file in files) {
+            var reader = new StreamReader(file);
+            string line;
+            while ((line = reader.ReadLine()) != null) {
+               var contents = line.Split('^');
+               var grade = new SchoolGradeContainer();
+               grade.setClasID(Convert.ToInt32(contents[0]));
+               grade.setContainerID(Convert.ToInt32(contents[1]));
+               grade.setTitle(contents[2]);
+               grade.setPercentOfFinalGrade((float)Convert.ToDouble(contents[3]));
+               var assignments = Convert.ToInt32(contents[4]);
+               var itr = 5;
+               for (var i = 0; i < assignments; i++)
+                  grade.getAssignmentIDs().Add(Convert.ToInt32(contents[itr++]));
+               list.Add(grade);
+            }
+         }
          return list;
       }
 

@@ -208,6 +208,7 @@
     <Content Include="Documentation\SchoolAssignment.txt" />
     <Content Include="Documentation\SchoolClass.txt" />
     <Content Include="Documentation\SchoolGoal.txt" />
+    <Content Include="Documentation\SchoolGradeContainer.txt" />
     <Content Include="Documentation\SchoolTask.txt" />
     <Content Include="Documentation\VersionInformation.txt" />
   </ItemGroup>

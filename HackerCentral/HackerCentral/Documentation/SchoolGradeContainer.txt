@@ -1,0 +1,12 @@
+﻿This file describes how SchoolGradeContainers are saved to files
+
+SchoolGradeContainer ::
+   List<SchoolAssignment> gradedAssignments;
+   List<int> assignmentIDs;
+   string title;
+   float percentOfFinalGrade;
+   int containerID;
+   int clasID;
+
+Data ::
+   clasID containerID title percentOfFinalGrade assignmentIDs.size() assignmentIDs...

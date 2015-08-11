@@ -118,7 +118,7 @@ namespace HackerCentral.Art {
          else
             task.setStatus(TaskStatusEnum.Failed);
          task.setDescription(contents[8]);
-         return tasl;
+         return task;
       }
 
       public void writeTasksToFiles(List<ArtTask> list) {
