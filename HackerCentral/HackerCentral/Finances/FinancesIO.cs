@@ -186,6 +186,40 @@ namespace HackerCentral.Finances {
 
       #endregion
 
+      #region MetaData
+
+      public void checkFinancesSaveFile() {
+         // To be implemented
+         //if (!File.Exists(codingProjectsUrl + "\\meta.txt"))
+         //   makeCodingProjectsSaveFile();
+         //readCodingProjectsSaveFile();
+      }
+
+      public void makeFinancesSaveFile() {
+         // to be implemented
+         //var filePath = codingProjectsUrl + "\\meta.txt";
+         //File.WriteAllText(filePath, "0\n0\n0\n");
+      }
+
+      public void writeFinancesSaveFile() {
+         // to be implemented
+         //var filePath = codingProjectsUrl + "\\meta.txt";
+         //string str = manager.getNextProjectID() + "\n";
+         //str += manager.getNextTaskID() + "\n";
+         //str += manager.getNextGoalID() + "\n";
+         //File.WriteAllText(filePath, str);
+      }
+
+      public void readFinancesSaveFile() {
+         // to be implemented
+         //var reader = new StreamReader(codingProjectsUrl + "\\meta.txt");
+         //manager.setNextProjectID(Convert.ToInt32(reader.ReadLine()));
+         //manager.setNextTaskID(Convert.ToInt32(reader.ReadLine()));
+         //manager.setNextGoalID(Convert.ToInt32(reader.ReadLine()));
+      }
+
+      #endregion
+
       // setters
       public void setFinancesUrl(string param) { financesUrl = param; }
    }

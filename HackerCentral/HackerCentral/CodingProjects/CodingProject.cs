@@ -9,6 +9,7 @@ namespace HackerCentral.CodingProjects {
    public class CodingProject {
       private List<string> typesOfFiles;
       private List<CodingProjectsTask> tasks;
+      private List<int> taskIDs;
       private DateTime lastUpdate;
       private string url;
       private string name;
@@ -19,6 +20,7 @@ namespace HackerCentral.CodingProjects {
 
       public CodingProject(string val) {
          typesOfFiles = new List<string>();
+         taskIDs = new List<int>();
          tasks = new List<CodingProjectsTask>();
          projectGoal = -1;
          url = val;
@@ -38,6 +40,7 @@ namespace HackerCentral.CodingProjects {
          io.writeCodingProjectToFile(this);
       }
 
+      // gets the number of lines of code in the directory with the specified extensions
       public int getLinesInDirectory(string path) {
          var directories = Directory.GetDirectories(path);
          var files = Directory.GetFiles(path);
@@ -56,37 +59,30 @@ namespace HackerCentral.CodingProjects {
 
       public override string ToString() {
          var sb = new StringBuilder();
-         sb.Append(name);
-         sb.Append(" " + url);
-         sb.Append(" " + DateTime.UtcNow.ToString());
-         sb.Append(" " + linesOfCode.ToString());
-         sb.Append(" " + projectID.ToString());
+         sb.Append(name + "^");
+         sb.Append(url + "^");
+         sb.Append(DateTime.UtcNow.ToString("MM/dd/yyyy")+"^");
+         sb.Append(linesOfCode.ToString() + "^");
+         sb.Append(projectID.ToString() + "^");
          if (projectGoal != null)
-            sb.Append(" " + projectGoal.ToString());
+            sb.Append(projectGoal.ToString() + "^");
          else
-            sb.Append(" -1");
-         sb.Append(" " + tasks.Count);
+            sb.Append("-1" + "^");
+         sb.Append(tasks.Count + "^");
          foreach (CodingProjectsTask task in tasks)
-            sb.Append(" " + task.getTaskID());
-         sb.Append(" " + typesOfFiles.Count);
+            sb.Append(task.getTaskID() + "^");
+         sb.Append(typesOfFiles.Count + "^");
          foreach (string ext in typesOfFiles)
-            sb.Append(" " + ext);
-         sb.Append(" " + description);
-         Console.WriteLine(description);
-         // adding one line
-         // adding two lines
-         // adding three lines
-         int index = 0;
-         index++;
-         index++;
+            sb.Append(ext + "^");
+         sb.Append(description + "^");
          sb.Append("\n");
-         Console.WriteLine(sb.ToString());
          return sb.ToString();
       }
 
       // getter methods
       public List<string> getTypesOfFiles() { return typesOfFiles; }
       public List<CodingProjectsTask> getTasks() { return tasks; }
+      public List<int> getTaskIDs() { return taskIDs; }
       public DateTime getLastUpdate() { return lastUpdate; }
       public int getProjectGoal() { return projectGoal; }
       public string getName() { return name; }
@@ -97,6 +93,7 @@ namespace HackerCentral.CodingProjects {
 
       // setter methods
       public void setTypesOfFiles(List<string> param) { typesOfFiles = param; }
+      public void setTaskIDs(List<int> param) { taskIDs = param; }
       public void setTasks(List<CodingProjectsTask> param) { tasks = param; }
       public void setLastUpdate(DateTime param) { lastUpdate = param; }
       public void setProjectGoal(int param) { projectGoal = param; }

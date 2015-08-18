@@ -302,6 +302,40 @@ namespace HackerCentral.Fitness {
 
       #endregion
 
+      #region MetaData
+
+      public void checkFitnessSaveFile() {
+         // To be implemented
+         //if (!File.Exists(codingProjectsUrl + "\\meta.txt"))
+         //   makeCodingProjectsSaveFile();
+         //readCodingProjectsSaveFile();
+      }
+
+      public void makeFitnessSaveFile() {
+         // to be implemented
+         //var filePath = codingProjectsUrl + "\\meta.txt";
+         //File.WriteAllText(filePath, "0\n0\n0\n");
+      }
+
+      public void writeFitnessSaveFile() {
+         // to be implemented
+         //var filePath = codingProjectsUrl + "\\meta.txt";
+         //string str = manager.getNextProjectID() + "\n";
+         //str += manager.getNextTaskID() + "\n";
+         //str += manager.getNextGoalID() + "\n";
+         //File.WriteAllText(filePath, str);
+      }
+
+      public void readFitnessSaveFile() {
+         // to be implemented
+         //var reader = new StreamReader(codingProjectsUrl + "\\meta.txt");
+         //manager.setNextProjectID(Convert.ToInt32(reader.ReadLine()));
+         //manager.setNextTaskID(Convert.ToInt32(reader.ReadLine()));
+         //manager.setNextGoalID(Convert.ToInt32(reader.ReadLine()));
+      }
+
+      #endregion
+
       // setters
       public void setFitnessUrl(string param) { fitnessUrl = param; }
    }

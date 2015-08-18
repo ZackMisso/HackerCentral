@@ -3,15 +3,13 @@ using HackerCentral.Common.Enum;
 
 namespace HackerCentral.Art {
    public class ArtIterationTask : ArtTask {
-      private ArtPiece piece;
-      private int pieceID;
       private int startIteration;
       private int endIteration;
 
       public override string ToString() {
          var sb = new StringBuilder();
          sb.Append("ArtIterationTask" + "^");
-         sb.Append(pieceID.ToString() + "^");
+         sb.Append(getPieceID().ToString() + "^");
          sb.Append(startIteration.ToString() + "^");
          sb.Append(endIteration.ToString() + "^");
          sb.Append(getName() + "^");
@@ -33,14 +31,10 @@ namespace HackerCentral.Art {
       }
 
       // getter methods
-      public ArtPiece getPiece() { return piece; }
-      public int getPieceID() { return pieceID; }
       public int getStartIteration() { return startIteration; }
       public int getEndIteration() { return endIteration; }
 
       // setter methods
-      public void setPiece(ArtPiece param) { piece = param; }
-      public void setPieceID(int param) { pieceID = param; }
       public void setStartIteration(int param) { startIteration = param; }
       public void setEndIteration(int param) { endIteration = param; }
    }

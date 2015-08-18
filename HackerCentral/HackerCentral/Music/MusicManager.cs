@@ -19,9 +19,9 @@ namespace HackerCentral.Music {
 
       public void initialize() {
          // Read in IDs
-         pieces = io.readPiecesFromFiles;
-         tasks = io.readTasksFromFile;
-         goals = io.readGoalsFromFiles;
+         pieces = io.readPiecesFromFiles();
+         tasks = io.readTasksFromFile();
+         goals = io.readGoalsFromFiles();
          match();
       }
 

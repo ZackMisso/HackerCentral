@@ -26,7 +26,7 @@ namespace HackerCentral.Finances {
       }
 
       public void match() {
-         // implement mixing
+         // currently does nothing
       }
 
       // getter methods

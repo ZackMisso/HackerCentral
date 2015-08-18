@@ -26,7 +26,7 @@ namespace HackerCentral.Research {
                var goal = new ResearchGoal();
                if (contents[0].Equals("ResearchReadingsGoal"))
                   list.Add(readResearchReadingsGoal(contents));
-               // to be implemented
+               // to be implemented more
                //list.Add(goal);
             }
          }
@@ -300,6 +300,40 @@ namespace HackerCentral.Research {
       private string getTaskHistoryUrl() { return getHistoryUrl() + "\\Tasks"; }
       private string getGoalHistoryUrl() { return getHistoryUrl() + "\\Goals"; }
       private string getReadingHistoryUrl() { return getHistoryUrl() + "\\Readings"; }
+
+      #region MetaData
+
+      public void checkResearchSaveFile() {
+         // To be implemented
+         //if (!File.Exists(codingProjectsUrl + "\\meta.txt"))
+         //   makeCodingProjectsSaveFile();
+         //readCodingProjectsSaveFile();
+      }
+
+      public void makeResearchSaveFile() {
+         // to be implemented
+         //var filePath = codingProjectsUrl + "\\meta.txt";
+         //File.WriteAllText(filePath, "0\n0\n0\n");
+      }
+
+      public void writeResearchSaveFile() {
+         // to be implemented
+         //var filePath = codingProjectsUrl + "\\meta.txt";
+         //string str = manager.getNextProjectID() + "\n";
+         //str += manager.getNextTaskID() + "\n";
+         //str += manager.getNextGoalID() + "\n";
+         //File.WriteAllText(filePath, str);
+      }
+
+      public void readResearchSaveFile() {
+         // to be implemented
+         //var reader = new StreamReader(codingProjectsUrl + "\\meta.txt");
+         //manager.setNextProjectID(Convert.ToInt32(reader.ReadLine()));
+         //manager.setNextTaskID(Convert.ToInt32(reader.ReadLine()));
+         //manager.setNextGoalID(Convert.ToInt32(reader.ReadLine()));
+      }
+
+      #endregion
 
       // setters
       public void setResearchUrl(string param) { researchUrl = param; }

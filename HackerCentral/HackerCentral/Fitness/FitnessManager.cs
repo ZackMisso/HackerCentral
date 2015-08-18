@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Linq;
+using System.Collections.Generic;
 using HackerCentral.Common;
 
 namespace HackerCentral.Fitness {
@@ -29,7 +30,12 @@ namespace HackerCentral.Fitness {
       }
 
       public void match() {
-         // implement mixing
+         foreach(FitnessExercise exercise in exercises)
+            exercise.setGoal(exerciseGoals.SingleOrDefault(x => x.getGoalID() == exercise.getGoalID()));
+         foreach(FitnessExerciseGoal goal in exerciseGoals)
+            goal.setExercise(exercises.SingleOrDefault(x => x.getExerciseID() == goal.getExerciseID()));
+         foreach(FitnessTask task in tasks)
+            task.setExercise(exercises.SingleOrDefault(x => x.getExerciseID() == task.getExerciseID()));
       }
 
       // getter methods

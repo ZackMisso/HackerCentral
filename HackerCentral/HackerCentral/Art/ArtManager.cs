@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
 using HackerCentral.Common;
 
+using System.Linq;
+
 namespace HackerCentral.Art {
    public class ArtManager : Manager{
       private List<ArtPiece> pieces;
@@ -19,14 +21,18 @@ namespace HackerCentral.Art {
 
       public void initialize() {
          // Read in IDs
-         pieces = io.readPiecesFromFiles;
-         tasks = io.readTasksFromFiles;
-         goals = io.readGoalsFromFiles;
+         pieces = io.readPiecesFromFiles();
+         tasks = io.readTasksFromFiles();
+         goals = io.readGoalsFromFiles();
          match();
       }
 
       public void match() {
-         // implement mixing
+         // no matching needs to be done for ArtPiece
+         foreach (ArtTask task in tasks)
+            task.setPiece(pieces.SingleOrDefault(x => x.getPieceID() == task.getPieceID()));
+         foreach (ArtGoal goal in goals)
+            goal.setTasks(tasks.Where(x => goal.getTaskIDs().Contains(x.getTaskID())));
       }
 
       public void update() {

@@ -327,6 +327,40 @@ namespace HackerCentral.Art {
 
       #endregion
 
+      #region MetaData
+
+      public void checkArtSaveFile() {
+         // To be implemented
+         //if (!File.Exists(codingProjectsUrl + "\\meta.txt"))
+         //   makeCodingProjectsSaveFile();
+         //readCodingProjectsSaveFile();
+      }
+
+      public void makeArtSaveFile() {
+         // to be implemented
+         //var filePath = codingProjectsUrl + "\\meta.txt";
+         //File.WriteAllText(filePath, "0\n0\n0\n");
+      }
+
+      public void writeArtSaveFile() {
+         // to be implemented
+         //var filePath = codingProjectsUrl + "\\meta.txt";
+         //string str = manager.getNextProjectID() + "\n";
+         //str += manager.getNextTaskID() + "\n";
+         //str += manager.getNextGoalID() + "\n";
+         //File.WriteAllText(filePath, str);
+      }
+
+      public void readArtSaveFile() {
+         // to be implemented
+         //var reader = new StreamReader(codingProjectsUrl + "\\meta.txt");
+         //manager.setNextProjectID(Convert.ToInt32(reader.ReadLine()));
+         //manager.setNextTaskID(Convert.ToInt32(reader.ReadLine()));
+         //manager.setNextGoalID(Convert.ToInt32(reader.ReadLine()));
+      }
+
+      #endregion
+
       // setter methods
       public void setArtUrl(string param) { artUrl = param; }
    }

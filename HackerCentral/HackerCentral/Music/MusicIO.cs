@@ -304,6 +304,40 @@ namespace HackerCentral.Music {
       private string getGoalHistoryUrl() { return getHistoryUrl() + "\\Goals"; }
       private string getPieceHistoryUrl() { return getHistoryUrl() + "\\Pieces"; }
 
+      #region MetaData
+
+      public void checkMusicSaveFile() {
+         // To be implemented
+         //if (!File.Exists(codingProjectsUrl + "\\meta.txt"))
+         //   makeCodingProjectsSaveFile();
+         //readCodingProjectsSaveFile();
+      }
+
+      public void makeMusicSaveFile() {
+         // to be implemented
+         //var filePath = codingProjectsUrl + "\\meta.txt";
+         //File.WriteAllText(filePath, "0\n0\n0\n");
+      }
+
+      public void writeMusicSaveFile() {
+         // to be implemented
+         //var filePath = codingProjectsUrl + "\\meta.txt";
+         //string str = manager.getNextProjectID() + "\n";
+         //str += manager.getNextTaskID() + "\n";
+         //str += manager.getNextGoalID() + "\n";
+         //File.WriteAllText(filePath, str);
+      }
+
+      public void readMusicSaveFile() {
+         // to be implemented
+         //var reader = new StreamReader(codingProjectsUrl + "\\meta.txt");
+         //manager.setNextProjectID(Convert.ToInt32(reader.ReadLine()));
+         //manager.setNextTaskID(Convert.ToInt32(reader.ReadLine()));
+         //manager.setNextGoalID(Convert.ToInt32(reader.ReadLine()));
+      }
+
+      #endregion
+
       // setters
       public void setMusicUrl(string param) { musicUrl = param; }
    }

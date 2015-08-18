@@ -1,1 +1,15 @@
 ﻿This file describes how CodingProjects are saved to files
+
+CodingProject ::
+   List<string> typesOfFiles;
+   List<CodingProjectsTask> tasks;
+   DateTime lastUpdate;
+   string url;
+   string name;
+   string description;
+   int projectGoal;
+   int linesOfCode;
+   int projectID;
+
+Data ::
+   name url DateTime.UtcNow linesOfCode projectID projectGoal task.Count tasks... typesOfFiles.Count typesOfFiles... description

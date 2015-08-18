@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Linq;
+using System.Collections.Generic;
 using HackerCentral.Common;
 
 namespace HackerCentral.Behavioral {
@@ -26,7 +27,16 @@ namespace HackerCentral.Behavioral {
       }
 
       public void match() {
-         // implement mixing
+         foreach (BehavioralTracker tracker in trackers) {
+            tracker.setGoal(goals.SingleOrDefault(x => x.getGoalID() == tracker.getGoalID()));
+            tracker.setLimit(limits.SingleOrDefault(x => x.getLimitID() == tracker.getLimitID()));
+         }
+         foreach (BehavioralGoal goal in goals) {
+            goal.setTrackers(trackers.Where(x => goal.getTrackerIDs.Contains(x.getTrackerID())));
+            goal.setLimits(limits.Where(x => goal.getLimitIDs.Contains(x.getLimitID())));
+         }
+         foreach (BehavioralLimit limit in limits)
+            limit.setTracker(trackers.SingleOrDefault(x => x.getTrackerID() == limit.getTrackerID()));
       }
 
       public void update() {
